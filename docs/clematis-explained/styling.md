@@ -4,9 +4,11 @@ sidebar_position: 2
 
 # Styling
 
+CSS Post-processors and UI Libraries
+
 ## Money Tracker
 
-This application uses Nx and Angular with Tailwind CSS / Sass to style components, although Angular works with any tool that outputs CSS. 
+This application uses [Nx](https://nx.dev) and [Angular](https://angular.dev) with [Tailwind CSS](https://tailwindcss.com) and [Sass](https://sass-lang.com) to style components, although Angular works with any tool that outputs [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS). 
 
 ### Tailwind
 
@@ -81,10 +83,17 @@ By default, Angular uses emulated encapsulation so that a component's styles onl
 
 More information: [Angular Styling Components] (https://angular.dev/guide/components/styling#)
 
+### Layout
+
+Since it is an Angular based application, it uses [Angular Material](https://material.angular.io) for layouts, themes and ready-to-use components.
+
+For the layout in particular see [mat-grid-system](https://material.angular.io/components/grid-list/overview).
+
+
 
 ## Pomodoro
 
-The application is using React and Webpack, therefore the latter takes care of the [Leaner Style Sheets aka Less](https://lesscss.org) configuration. Less allows variables, mixins, nested classes, operations, functions and many more if compared to convensional CSS. 
+The application is using [React](https://react.dev) and [Webpack](https://webpack.js.org), therefore the latter takes care of the [Leaner Style Sheets aka Less](https://lesscss.org) configuration. Less allows variables, mixins, nested classes, operations, functions and many more if compared to convensional CSS. 
 
 ### Less
 
@@ -124,9 +133,9 @@ devDependencies: {
 
 ### CSS Modules
 
-Components styles encapsulation is done with a help of CSS modules in the Webpack excerpt above, see [Webpack CSS-Loader](https://webpack.js.org/loaders/css-loader/#modules) for more options:
+Components styles encapsulation is done with a help of [CSS modules](https://github.com/css-modules/css-modules) in the Webpack excerpt above, see [Webpack CSS-Loader](https://webpack.js.org/loaders/css-loader/#modules) for more options:
 
-```json 
+```json title="cfg/webpack.server.config.js"
 options: {
     modules: {
         mode: "local",
@@ -135,6 +144,24 @@ options: {
     onlyLocals: true
 }
 ```
+
+It is necessary to declare modules to Typescript as well since it doesn't know what to do with *.css (or *.less) files out of the box:
+
+```typescript title="src/types/global.d.ts"
+declare module '*.less' {
+    const styles: {[key: string]: string};
+    export = styles;
+}
+
+declare module "*.css" {
+    const styles: { [key: string]: string };
+    export = styles;
+}
+```
+
+:::tip[Can be improved]
+CSS modules can be typified, see [here](https://habr.com/ru/articles/688844/)
+:::
 
 
 ### CSS Variables and Themes
@@ -203,8 +230,78 @@ useLayoutEffect(() => {
 ```
 
 
+### Layout
+
+Pomodoro is using [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox), which also has a nice documentation [here](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+The typical CSS class then would start with display property and the setting of the flow:
+
+```css
+  .title {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    ...
+  }
+```
+
 
 ## Cosmic
 
+Cosmic is using React and [Vite](https://vite.dev) with pure CSS and [CSS modules](https://github.com/css-modules/css-modules) to style the components.
 
+### Tailwind
+
+Tailwind is installed as a [PostCSS](https://postcss.org) plugin as it is the most seamless way to integrate it with build tools, see [more](https://tailwindcss.com/docs/installation/using-postcss). Vite understands PostCSS config automatically if present:
+
+```json title="package.json"
+devDependencies: {
+    ...
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    ...
+}
+```
+Added to [PostCSS](https://postcss.org) configuration:
+
+```typescript title="postcss.config.js"
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+Template paths are configured for Tailwind CSS:
+
+```typescript title="tailwind.config.js"
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+And finally, directives are included into the main CSS file for the project:
+
+```css title="src/index.css"
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
  
+### CSS Modules
+
+Again automatically, Vite understands any CSS file ending with `.module.css` as a [CSS modules](https://github.com/css-modules/css-modules) file.
+
+
+### Layout
+
+Although CSS Flexbox is also configured for this application, it makes a much heavier use of Tailwind CSS [classes for layout](https://tailwindcss.com/docs/aspect-ratio). In fact, Tailwind also offers CSS Flexbox [grid classes](https://tailwindcss.com/docs/flex-basis) which are also can used in isolation for every component. 
