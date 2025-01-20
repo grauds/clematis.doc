@@ -81,7 +81,7 @@ The Material Indigo theme is included in `project.json` with other CSS files, fo
 
 By default, Angular uses emulated encapsulation so that a component's styles only apply to elements defined in that component's template. 
 
-More information: [Angular Styling Components] (https://angular.dev/guide/components/styling#)
+More information: [Angular Styling Components](https://angular.dev/guide/components/styling#)
 
 ### Layout
 
