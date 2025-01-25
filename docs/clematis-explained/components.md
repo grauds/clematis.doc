@@ -1,0 +1,156 @@
+---
+sidebar_position: 4
+---
+
+# Composable Components
+
+The goal is to keep the components reusable and keep the number of dependencies to other components at minimum:
+
+1. Common components are in the `components` directory, module or library, depending on the project. They encapsulate styles, tests and the code itself in the single directory. 
+2. If a component is too specific and can't be used anythere else, it is placed to a nested directory within its parent's.
+
+## Money Tracker
+
+Shared Angular components are in the `shared-components` library:
+
+```json title="libs/shared-components/package.json"
+{
+  "name": "@clematis-shared/shared-components",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^18.1.0",
+    "@angular/core": "^18.1.0"
+  },
+  "sideEffects": false
+}
+```
+
+More information about components themselves and the ways they can be used in the [README](https://github.com/grauds/money.tracker.ui/blob/5146a9d453b4838564b33c5416372581fcc8942c/libs/shared-components/README.md).
+
+### Example
+
+A typical component looks like the following class annotated with `@Component` annotation. Note that the annotation has all required resources' names defined:
+
+```Typescript
+import { Component, Input, OnInit } from '@angular/core';
+import { Entity } from '@clematis-shared/model';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-entity-element',
+  templateUrl: './entity-element.component.html',
+  styleUrls: ['./entity-element.component.sass']
+})
+export class EntityElementComponent<T extends Entity> implements OnInit {
+
+  @Input() entity?: T;
+
+  entityLink: string | undefined;
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    this.entityLink = Entity.getRelativeSelfLinkHref(this.entity)
+  }
+
+  navigate = () => {
+    this.router.navigate([this.entityLink])
+  }
+
+}
+```
+
+Mind the `@Input` annotation which exposes the annotated field to the outer customers and tests. It is also okay to have a service injected in the constructor arguments. In this case it is the instance of `Router`, the component's function `navigate` uses this injected service to open the entity page in the browser.
+
+### Layout
+
+The template referred by name in the `@Component` annotation contains the actual HTML code of the component:
+
+```html
+<div class="row" style="border-bottom: 1px darkgray solid; padding: 5px; ">
+  <div class="col-sm-12">
+    <div style="padding-top: 5px; padding-bottom: 5px;">
+      <div><a routerLink="{{entityLink}}">{{entity ? entity.name : entityLink}}</a></div>
+    </div>
+  </div>
+</div>
+
+```
+Fields of the enclosing class are referred by names: `{{field_name}}`.
+
+
+### Usage
+
+The component can be used to display a table of elements, for instance:
+
+```typescript
+<div *ngFor="let a of entities">
+    <app-entity-element [entity]="a"></app-entity-element>
+</div>
+```
+
+More info in [Angular docs for components](https://angular.dev/guide/components)
+
+## Pomodoro
+
+Components in this React-17-based project are following the same principles, just with a little bit different semantics.
+
+### Example
+
+[Function components](https://react.dev/learn/your-first-component#defining-a-component) are used:
+
+```typescript
+import * as React from 'react';
+import { hot } from 'react-hot-loader/root'
+
+import { Title } from './Title';
+import { Stats } from './Stats';
+
+import styles from './header.less'
+
+export interface IHeaderComponentProps {
+    version: string
+}
+
+function HeaderComponent({
+    version
+}: Readonly<IHeaderComponentProps>): React.JSX.Element {
+    return (
+        <header className={styles.header}>
+            <Title /> 
+            <Stats />
+            {version}
+        </header>
+    )
+}
+
+export const Header = hot(HeaderComponent);
+```
+
+:::note[Can be updated]
+Also, there could be a `hot` wrapper from `react-hot-reloader` is applied to the component before it is exported, it is [<i>hot-exported</i>](https://www.npmjs.com/package/react-hot-loader). However, today this middleware is being replaced by [React Fast Refresh](https://github.com/facebook/react/issues/16604).
+:::
+
+
+### Layout
+
+Two nested components are used in the layout: `Title` and `Stats`, notably, JSX syntax is embedded into the component's code in Typescript. Variables are referred by names: `{variable_name}`.
+
+
+### Usage
+
+It is intended to use components in the similar JSX code of parent components, for example:
+
+```jsx
+ <ParentComponent>
+    <Header version={version} />
+ </ParentComponent>
+```
+
+## Cosmic
+
+The project also uses function components of React 18, however with a little bit upgraded syntax:
+
+```jsx
+
+```
