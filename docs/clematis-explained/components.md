@@ -7,7 +7,7 @@ sidebar_position: 4
 The goal is to keep the components reusable and keep the number of dependencies to other components at minimum:
 
 1. Common components are in the `components` directory, module or library, depending on the project. They encapsulate styles, tests and the code itself in the single directory. 
-2. If a component is too specific and can't be used anythere else, it is placed to a nested directory within its parent's.
+2. If a component is too specific and can't be used anywhere else, it is placed to a nested directory within its parent's.
 
 ## Money Tracker
 
@@ -83,7 +83,7 @@ Fields of the enclosing class are referred by names: `{{field_name}}`.
 
 The component can be used to display a table of elements, for instance:
 
-```typescript
+```angular2html
 <div *ngFor="let a of entities">
     <app-entity-element [entity]="a"></app-entity-element>
 </div>
@@ -97,9 +97,9 @@ Components in this React-17-based project are following the same principles, jus
 
 ### Example
 
-[Function components](https://react.dev/learn/your-first-component#defining-a-component) are used:
+[Function components](https://react.dev/learn/your-first-component#defining-a-component) are used, for example:
 
-```typescript
+```typescript jsx title="src/shared/Header/Header.tsx"
 import * as React from 'react';
 import { hot } from 'react-hot-loader/root'
 
@@ -149,8 +149,100 @@ It is intended to use components in the similar JSX code of parent components, f
 
 ## Cosmic
 
-The project also uses function components of React 18, however with a little bit upgraded syntax:
+The project also uses function components of React 18, components are of course compatible
+with Pomodoro.
 
-```jsx
+### Example
 
+The following class is just using `*.module.css` name convention:
+
+```typescript jsx title="src/components/AlertDialog/AlertDialog.tsx"
+import React from "react";
+import {Dialog} from "@/components/Dialog";
+
+import styles from "./alertdialog.module.css";
+
+export interface IAlertDialogProps {
+    title: string;
+    buttonTitle?: string;
+    onClose: () => void;
+    isOpen: boolean;
+    message: string;
+}
+
+export function AlertDialog({
+    title,
+    buttonTitle,
+    onClose,
+    isOpen,
+    message
+}: Readonly<IAlertDialogProps>): React.JSX.Element {
+    return <Dialog title={title} isOpen={isOpen} onClose={onClose}>
+        <div className="max-w-md w-full justify-items-center">
+            {message}
+        </div>
+        <div className="max-w-md w-full justify-items-center">
+            <button className={styles.cancel} onClick={() => onClose()}>
+                {buttonTitle ?? 'Закрыть'}
+            </button>
+        </div>
+    </Dialog>
+}
 ```
+
+:::note
+Hot reload is done by Vite React plugin
+:::
+
+### Properties
+
+React based projects are following the fine line between 'property drilling' antipattern and context overuse, the latter
+is described in [React documentation](https://react.dev/learn/passing-data-deeply-with-context#before-you-use-context)
+for contexts.
+
+In other words, in cases like below it is okay to leave everything as it is now for clarity:
+
+```typescript jsx title="src/components/InputDataTable/InputDataTable.tsx"
+export interface IInputDataComponentProps  {
+    loading: boolean
+    selectedData?: InputData
+    data: InputData[]
+    onClick: (d: InputData) => void
+    onClone: (d: InputData) => void
+    onCopy: (d: InputData) => void
+    onMove: (d: InputData) => void
+    onEdit: (d: InputData) => void
+    onDelete: (d: InputData) => void
+    onBalloonClick: (d: InputData, balloon: Balloon, reference?: Balloon) => void
+    isCalculating: boolean
+    onCalculate: (inputData: InputData) => void;
+}
+
+export function InputDataTable(props: Readonly<IInputDataComponentProps>): React.JSX.Element {
+
+    return <table className="table-fixed min-w-[800px] w-full border-collapse border border-slate-300">
+         <tbody>
+        { props.data ?
+            props.data.map(d => {
+                return <InputDataRow
+                    key={d._links.self.href}
+                    selected={props.selectedData?._links.self.href === d._links.self.href}
+                    inputData={d}
+                    onClick={props.onClick}
+                    onClone={props.onClone}
+                    onCopy={props.onCopy}
+                    onMove={props.onMove}
+                    onEdit={props.onEdit}
+                    onDelete={props.onDelete}
+                    onBalloonClick={props.onBalloonClick}
+                    isCalculating={props.isCalculating}
+                    onCalculate={props.onCalculate}
+                />
+            }) : ''
+        }
+        </tbody>
+    </table>
+}
+```
+Context should be used for user related information, theming and something as global, however, there could be another option 
+to implement the same with the help of state managers.

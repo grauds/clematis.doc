@@ -1,6 +1,6 @@
 ---
 slug: math-parser-released-post
-title: Math Parser Released
+title: Math Parser is Released
 authors: [anton]
 tags: [schedule]
 ---

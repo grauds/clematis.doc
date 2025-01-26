@@ -1,6 +1,6 @@
 ---
 slug: skos-parser-released-post
-title: Skos Parser Released
+title: Skos Parser is Released
 authors: [anton]
 tags: [schedule]
 ---
