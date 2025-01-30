@@ -1,5 +1,8 @@
 ---
 sidebar_position: 6
+tags:
+  - fetch_api
+  - xml_http_request
 ---
 
 # Data Querying

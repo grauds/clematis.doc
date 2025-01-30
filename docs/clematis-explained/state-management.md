@@ -1,5 +1,12 @@
 ---
 sidebar_position: 5
+tags:
+  - stateless
+  - stateful
+  - redux
+  - persistence
+  - dispatching
+  - RTK
 ---
 
 # State Management

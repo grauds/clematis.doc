@@ -1,5 +1,12 @@
 ---
 sidebar_position: 1
+tags:
+   - fetch_api
+   - xml_http_request
+   - dependency_injection
+   - hateoas
+   - ngx-hateoas-client
+   - observables
 ---
 
 # Money Tracker

@@ -1,5 +1,9 @@
 ---
 sidebar_position: 2
+tags:
+  - axios 
+  - xml_http_request
+  - custom_react_hook
 ---
 
 # Pomodoro / Reddit Poc

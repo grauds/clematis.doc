@@ -1,5 +1,10 @@
 ---
 sidebar_position: 4
+tags:
+  - angular_components
+  - function_components
+  - react_context
+  - hot_reloading
 ---
 
 # Composable Components

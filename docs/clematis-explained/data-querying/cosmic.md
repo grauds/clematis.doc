@@ -1,5 +1,12 @@
 ---
 sidebar_position: 3
+tags:
+  - RTK_query
+  - fetch_API
+  - api_slice
+  - RTK_cache
+  - custom_react_hook
+  - mutation
 ---
 
 # Cosmic

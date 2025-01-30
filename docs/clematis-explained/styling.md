@@ -1,5 +1,16 @@
 ---
 sidebar_position: 3
+tags:
+  - css
+  - sass
+  - scss
+  - less
+  - tailwind_css
+  - material_ui
+  - flexbox
+  - postcss
+  - css_modules
+  - theming
 ---
 
 # Styling
