@@ -37,7 +37,7 @@ The customised settings are:
 ````json title=".prettierrc" 
 {
   "singleQuote": true,
-  "quote-props": "consistent"
+  "quoteProps": "consistent"
 }
 ````
 
@@ -81,8 +81,8 @@ Since it is the newest version installed, a new config system is used. In the ne
 
 ### Plugins For React
 
-ESLint uses plugins for configuration, and it requires a few plugins for React and Prettier,
-for example as below. They are added by eslint config initialization tool:
+ESLint uses plugins for configuration, and it requires a few plugins for React, JavaScript,
+Typescript, Jest and Prettier, for example as below:
 ````json
 {
     "devDependencies": {
@@ -92,7 +92,9 @@ for example as below. They are added by eslint config initialization tool:
         "eslint-plugin-prettier": "^5.2.3",
         "eslint-plugin-react": "^7.37.4",
         "eslint-plugin-react-hooks": "^5.0.0",
-        "eslint-plugin-react-refresh": "^0.4.14"
+        "eslint-plugin-jest": "^28.11.0",
+        "eslint-plugin-react-refresh": "^0.4.14",
+        "typescript-eslint": "^8.22.0"
     }
 }
 ````
@@ -130,6 +132,7 @@ export default [
     pluginReact.configs.flat.recommended,
     pluginReact.configs.flat['jsx-runtime'],
     ...compat.extends('plugin:react-hooks/recommended'),
+    ...compat.extends('plugin:jest/recommended'),
     {
         rules: {
             'react/jsx-uses-react': 'off',
@@ -194,22 +197,21 @@ Where `rules` section contains some custom styles.
 ### Integration With Angular And Nx
 
 Angular and [Nx](https://nx.dev) also are using plugins to extends their functionality,
-so it is required to add plugins 
-[`@angular-eslint/eslint-plugin`](https://github.com/angular-eslint/angular-eslint) and 
-[`@nx/eslint`](https://nx.dev/nx-api/eslint) to support ESLint:
+so it is required to add plugin [`@nx/eslint`](https://nx.dev/nx-api/eslint) for Nx to support ESLint.
+Other plugins for ESLint itself: `@typescript-eslint/eslint-plugin` for Typescript, 
+`eslint-plugin-html` for HTML templates and for Prettier as well `eslint-config-prettier`:
 
 ````json title="package.json"
 {
   "devDependencies": {
-    "@angular-eslint/eslint-plugin": "^18.3.1",
-    "@angular-eslint/eslint-plugin-template": "^18.3.1",
-    "@angular-eslint/template-parser": "^18.3.1",
     "@nx/eslint": "19.5.7",
     "@nx/eslint-plugin": "19.5.7",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
-    "typescript": "~5.6.2",
-    "typescript-eslint": "^8.22.0"
+    "eslint-plugin-html": "^8.1.2",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@typescript-eslint/utils": "^7.18.0"
   }
 }
 ````
@@ -217,3 +219,94 @@ so it is required to add plugins
 Money Tracker uses ESLint version 8, it is planned to migrate it to the version 9, with the changes
 in the configuration files.
 :::
+
+The configuration file in the root of the project then looks like below:
+
+````json title=".eslintrc.json"
+{
+  "root": true,
+  "ignorePatterns": ["!**/*"],
+  "plugins": ["@nx", "html"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {}
+    }
+  ]
+}
+
+````
+
+There is one rule `@nx/enforce-module-boundaries` which is specific for Nx monorepo approach and it should
+be checked for the code to stay within the module borders.
+
+
+Library and application ESLint configurations are inherited from the root, for example:
+
+````json title="apps/money-tracker-ui/.eslintrc.json"
+{
+  "extends": ["../../.eslintrc.json"],
+  "plugins": ["html"]
+}
+````
+
+Nx project configuration file should then contain a `lint` task with files
+masks to process:
+
+````json
+{
+  "name": "money-tracker-ui",
+  "prefix": "app",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/money-tracker-ui/**/*.ts",
+          "apps/money-tracker-ui/**/*.html"
+        ]
+      }
+    }
+  }
+}
+````
+Linting can be run with (to fix add `-- --fix`):
+````bash
+ nx lint
+ nx run shared-components:lint
+ nx run model:lint
+````
