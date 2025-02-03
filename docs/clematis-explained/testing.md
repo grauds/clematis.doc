@@ -1,8 +1,139 @@
 ---
-sidebar_position: 8
+sidebar_position: 5
 ---
 
 # Testing
 
-## Money Tracker 
+Having done [Cucumber](https://cucumber.io/docs) stages, it is now possible to start
+writing tests and create high level components of the solution.
 
+## Money Tracker
+
+By default, Angular uses [Jasmine Testing Framework](https://jasmine.github.io/). This
+is a BDD testing framework with [Karma Tests Runner](https://karma-runner.github.io/latest/index.html).
+However, Money Tracker has replaces this bundle with [Jest](https://jestjs.io/docs/getting-started).
+
+### Jest Installation
+
+Jest needs the following dev dependencies, along with a [plugin to Nx](https://nx.dev/nx-api/jest):
+
+````json title="package.json"
+{
+  "devDependencies": {
+    "@nx/jest": "19.5.7",
+    "@types/jest": "^29.5.13",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-preset-angular": "^14.2.4",
+    "ts-jest": "^29.2.5"
+  }
+}
+````
+
+### Jest And Nx
+
+Jest is configured individually for every application or library within Nx mono repository,
+Nx collides all the configurations into one root configuration.
+
+>Nx 18+ provides a utility function called getJestProjectsAsync which retrieves 
+>a list of paths to all the Jest config files from subprojects 
+(jump to [docs](https://nx.dev/nx-api/jest#jest)):
+
+````typescript title="jest.config.ts"
+import { getJestProjectsAsync } from '@nx/jest';
+
+export default async () => ({
+  projects: await getJestProjectsAsync(),
+});
+````
+Also, Nx provides a default base configuration for Jest:
+
+````typescript title="jest.preset.ts"
+const nxPreset = require('@nx/jest/preset').default;
+
+module.exports = {
+    ...nxPreset,
+    coverageReporters: ['clover', 'json', 'text', 'cobertura', 'html'],
+    coveragePathIgnorePatterns: [
+        'index.js',
+        'index.jsx',
+        'index.ts',
+        '/node_modules/',
+    ],
+};
+````
+... and subproject use this [preset](https://jestjs.io/docs/configuration#preset-string),
+see the line with `preset: '../../jest.preset.js'` in the following 
+paragraph.
+
+### Jest Configuration In Subprojects
+
+This example is for `apps/money-tracker-ui` application. The same configuration 
+is copied to other modules with respect to `displayName`:
+
+````typescript title="apps/money-tracker-ui/jest.config.ts"
+/* eslint-disable */
+export default {
+  displayName: 'money-tracker-ui',
+  preset: '../../jest.preset.js',
+  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+  globals: {
+    'ts-jest': {
+      tsconfig: '<rootDir>/tsconfig.spec.json',
+      stringifyContentPathRegex: '\\.(html|svg)$',
+    },
+  },
+  coverageDirectory: '../../coverage/apps/money-tracker-ui/',
+  transform: {
+    '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
+  },
+  transformIgnorePatterns: [
+    'node_modules/(?!.*\\.mjs$|lodash-es|uri-templates-es)',
+  ],
+  snapshotSerializers: [
+    'jest-preset-angular/build/serializers/no-ng-attributes',
+    'jest-preset-angular/build/serializers/ng-snapshot',
+    'jest-preset-angular/build/serializers/html-comment',
+  ],
+};
+````
+:::info[More info on Jest config]
+Note, this `jest.config.ts` uses
+[jest-preset-angular](https://thymikee.github.io/jest-preset-angular/) for
+Angular components tests. More info on configuration options is in the [docs](https://thymikee.github.io/jest-preset-angular/docs/getting-started/options#brief-explanation-of-config).
+:::
+For every test Jest is repeating Angular
+tests initialization with [TestBed.initTestEnvironment](https://github.com/tinymce/tinymce-angular/blob/main/tinymce-angular-component/src/test/ts/alien/InitTestEnvironment.ts)
+to remove the old dependencies for the new component test:
+
+````typescript title="apps/money-tracker-ui/src/test-setup.ts"
+import 'jest-preset-angular/setup-jest';
+````
+Next important piece of configuration is in the 
+[`ts-jest`](https://github.com/kulshekhar/ts-jest) section. 
+
+:::info
+`ts-jest` is a Jest transformer with source map support that lets use Jest to test projects written in TypeScript.
+:::
+
+This configuration will collect files containing tests and required Typescript declarations and feed them
+back to Jest:
+
+````json title="apps/money-tracker-ui/tsconfig.spec.json"
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "target": "es2016",
+    "types": ["jest", "node"]
+  },
+  "files": ["src/test-setup.ts", "src/polyfills.ts"],
+  "include": [
+    "jest.config.ts",
+    "src/**/*.test.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+  ]
+}
+````
