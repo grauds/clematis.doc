@@ -4,7 +4,7 @@ tags:
   - react
   - state
 ---
-# Update state from props
+# Update State From Props
 
 Initial value for state is only used for the first render of the component, all subsequent renders ignore the initial state value and take the current value from state to render the component. Thus, to re-initialize the state again from the changing props, for example, from the parent component, one should use effect like in the following example:
 
