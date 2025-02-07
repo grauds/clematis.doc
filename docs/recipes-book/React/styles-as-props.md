@@ -5,7 +5,7 @@ tags:
   - styles
   - css
   - sass
-  - lessß
+  - less
 ---
 # Pass Additional Styles As Props
 

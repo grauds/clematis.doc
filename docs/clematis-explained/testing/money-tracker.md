@@ -1,19 +1,19 @@
 ---
-sidebar_position: 5
+sidebar_position: 2
+tags:
+  - jest
+  - angular
+  - nx
+  - jsdom
 ---
 
-# Testing
-
-Having done [Cucumber](https://cucumber.io/docs) stages, it is now possible to start
-writing tests and create high level components of the solution.
-
-## Money Tracker
+# Money Tracker
 
 By default, Angular uses [Jasmine Testing Framework](https://jasmine.github.io/). This
 is a BDD testing framework with [Karma Tests Runner](https://karma-runner.github.io/latest/index.html).
 However, Money Tracker has replaces this bundle with [Jest](https://jestjs.io/docs/getting-started).
 
-### Jest Installation
+## Installation
 
 Jest needs the following dev dependencies, along with a [plugin to Nx](https://nx.dev/nx-api/jest):
 
@@ -30,13 +30,13 @@ Jest needs the following dev dependencies, along with a [plugin to Nx](https://n
 }
 ````
 
-### Jest And Nx
+## Jest And Nx
 
 Jest is configured individually for every application or library within Nx mono repository,
 Nx collides all the configurations into one root configuration.
 
->Nx 18+ provides a utility function called getJestProjectsAsync which retrieves 
->a list of paths to all the Jest config files from subprojects 
+>Nx 18+ provides a utility function called getJestProjectsAsync which retrieves
+>a list of paths to all the Jest config files from subprojects
 (jump to [docs](https://nx.dev/nx-api/jest#jest)):
 
 ````typescript title="jest.config.ts"
@@ -63,12 +63,12 @@ module.exports = {
 };
 ````
 ... and subproject use this [preset](https://jestjs.io/docs/configuration#preset-string),
-see the line with `preset: '../../jest.preset.js'` in the following 
+see the line with `preset: '../../jest.preset.js'` in the following
 paragraph.
 
-### Jest Configuration In Subprojects
+## Configuration In Subprojects
 
-This example is for `apps/money-tracker-ui` application. The same configuration 
+This example is for `apps/money-tracker-ui` application. The same configuration
 is copied to other modules with respect to `displayName`:
 
 ````typescript title="apps/money-tracker-ui/jest.config.ts"
@@ -109,8 +109,11 @@ to remove the old dependencies for the new component test:
 ````typescript title="apps/money-tracker-ui/src/test-setup.ts"
 import 'jest-preset-angular/setup-jest';
 ````
-Next important piece of configuration is in the 
-[`ts-jest`](https://github.com/kulshekhar/ts-jest) section. 
+
+## Jest And Typescript 
+
+Next important piece of configuration is in the
+[`ts-jest`](https://github.com/kulshekhar/ts-jest) section.
 
 :::info
 `ts-jest` is a Jest transformer with source map support that lets use Jest to test projects written in TypeScript.
@@ -137,3 +140,36 @@ back to Jest:
   ]
 }
 ````
+
+## Testing Plain Code
+
+The most straightforward testing is with plain typescript code, as in utility classes:
+
+````typescript title="libs/model/src/utils/utils.spec.ts"
+describe('Utils', () => {
+  it('should create an instance', () => {
+    expect(new Utils()).toBeTruthy();
+  });
+//...
+})
+````
+The data can be imported from the other files, for example:
+````typescript title="libs/model/src/utils/utils.spec.ts"
+import { token, url, url2, url3 } from './utils.data';
+
+describe('Utils', () => {
+    it('should parse a token', () => {
+        const user = Utils.parseJwt(token);
+        expect(user.email).toEqual('some@qa.com');
+        expect(user.userid).toEqual('some');
+    });
+
+})
+````
+
+## Testing With TestBed
+
+Angular tests are thoroughly described in [Angular Testing Guide](https://angular.dev/guide/testing).
+The principal class is [`TestBed`](https://angular.dev/guide/testing)
+which has a vast API and does almost all testing tasks. 
+
