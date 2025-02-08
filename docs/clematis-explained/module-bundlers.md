@@ -5,6 +5,7 @@ tags:
   - vite
   - spa
   - ssr
+  - esbuild
 ---
 
 # Module Bundlers

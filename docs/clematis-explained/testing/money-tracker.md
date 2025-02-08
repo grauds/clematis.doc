@@ -7,7 +7,7 @@ tags:
   - jsdom
 ---
 
-# Money Tracker
+# Money Tracker Testing
 
 By default, Angular uses [Jasmine Testing Framework](https://jasmine.github.io/). This
 is a BDD testing framework with [Karma Tests Runner](https://karma-runner.github.io/latest/index.html).

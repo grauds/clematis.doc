@@ -5,7 +5,7 @@ tags:
   - testing-library
 ---
 
-# Pomodoro
+# Pomodoro Testing
 
 Pomodoro doesn't use [Enzyme](https://enzymejs.github.io/enzyme/), since
 Enzyme library is [discontinued](https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl),

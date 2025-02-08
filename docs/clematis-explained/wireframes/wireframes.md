@@ -34,7 +34,7 @@ are quite good in this.
 
 ## Behaviour-Driven Development
 
-Collaboration over low-fi wireframes and further development are most productive if follow 
+Collaboration over low-fi wireframes and further development are most productive if followed 
 [Behaviour-Driven Development (BDD)](https://cucumber.io/docs/bdd/) principles:
  
 1. Make changes to wireframes, system design and the code itself in small iterations, get feedback from the end-users.
@@ -65,17 +65,10 @@ Feature: Listening to the music
       Then I shouldn't listen to the silence  
 ````
 Then these criteria may be used at the later stage to start making tests with [Cucumber](https://cucumber.io/docs).
-Surely, there are no any working systems to test at this stage, however, there is a sane idea to let tests go
+Surely, there are no any working systems to test at this stage, however, it is a good idea to let tests go
 first, before the implementation, as described in [Test Driven Development](https://cucumber.io/blog/bdd/intro-to-bdd-and-tdd/)
-practice.
-
-## Cucumber Tests
-
-Now it is time to create
-[Cucumber](https://cucumber.io/docs/cucumber/step-definitions) based
-[steps definitions](https://cucumber.io/docs#what-are-step-definitions) which
-connect Gherkin to software code, definitions hard-wire the specification
-to the implementation.
+practice. The result would be the Cucumber based
+[steps definitions](https://cucumber.io/docs#what-are-step-definitions).
 
 
 ## High Fidelity Wireframes
