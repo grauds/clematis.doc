@@ -15,7 +15,7 @@ tags:
 
 # Styling
 
-CSS Post-processors and UI Libraries
+CSS Post-processors and UI Libraries to make components.
 
 ## Money Tracker
 
@@ -26,10 +26,10 @@ This application uses [Nx](https://nx.dev) and [Angular](https://angular.dev) wi
 [Tailwind CSS](https://tailwindcss.com) dependency is included for the whole project:
 
 ```json title="package.json"
-dependencies: {
-    ...
+{
+  "dependencies": {
     "tailwindcss": "^3.4.12"
-    ...
+  }
 }
 ```
 
@@ -57,11 +57,11 @@ module.exports = {
 [Sass aka Syntactically Awesome Style Sheets](https://sass-lang.com) dependency is included for the whole project as well:
 
 ```json title="package.json"
-dependencies: {
-    ...
+{
+  "dependencies": {
     "sass": "^1.79.3",
     "sass-loader": "^13.3.3"
-    ...
+  }
 }
 ```
 
@@ -81,11 +81,13 @@ So the both preprocessors are available in the project and in its components.
 The Material Indigo theme is included in `project.json` with other CSS files, for example with styles.css and styles.sass:
 
 ```json title="apps/money-tracker-ui/project.json"
-"styles": [
+{
+  "styles": [
     "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
     "apps/money-tracker-ui/src/styles.css",
     "apps/money-tracker-ui/src/styles.sass"
-],
+  ]
+}
 ```
 
 ### View Encapsulation
@@ -110,8 +112,9 @@ The application is using [React](https://react.dev) and [Webpack](https://webpac
 
 We have CSS and Less files configured for loading and processing in Webpack, but it would be possible to configure Sass or any other pre-processor in the same manner:
 
-```json title="cfg/webpack.server.config.js"
- module: {
+```javascript title="cfg/webpack.server.config.js"
+{ 
+  module: {
     rules: [
       {
         test: /\.less$/,
@@ -128,17 +131,18 @@ We have CSS and Less files configured for loading and processing in Webpack, but
           },
           "less-loader"
         ]
-      },
-      ...
+      }]
+    }
+}
 ```
 
 The configuration uses `css-loader` library which is enlisted in dev dependencies of `package.json` file:
 
 ```json title="package.json"
-devDependencies: {
-    ...
-    "css-loader": "^3.6.0",
-    ...
+{
+  "devDependencies": {
+    "css-loader": "^3.6.0"
+  }
 }
 ```
 
@@ -146,13 +150,15 @@ devDependencies: {
 
 Components styles encapsulation is done with a help of [CSS modules](https://github.com/css-modules/css-modules) in the Webpack excerpt above, see [Webpack CSS-Loader](https://webpack.js.org/loaders/css-loader/#modules) for more options:
 
-```json title="cfg/webpack.server.config.js"
-options: {
+```javascript title="cfg/webpack.server.config.js"
+{
+  options: {
     modules: {
-        mode: "local",
-        localIdentName: "[name]__[local]--[hash:base64:5]",
-    },
+      mode: "local"
+      localIdentName: "[name]__[local]--[hash:base64:5]"
+    }
     onlyLocals: true
+  }
 }
 ```
 
@@ -181,20 +187,20 @@ Pomodoro extensively uses [CSS Variables](https://www.w3schools.com/css/css3_var
 
 ```css title="src/main.global.css"
 :root {
-  --OFF: ; 
-  --ON: initial;
+    --OFF: ;
+    --ON: initial;
 
-  --black: #333333;
-  --whitelightness: 100%;
-  --white: hsl(0, 0%, var(--whitelightness));
-  --greyF3: #f3f3f3;
-  --grey33: #333;
-  --greyEC: #ececec;
-  --greyCC: #cccccc;
-  --greyF4: hsl(0, 0%, calc(var(--whitelightness) - 4%));
-  --greyDE: #DEDEDE;
-  --greyEE: #EEEEEE;
-  ...
+    --black: #333333;
+    --whitelightness: 100%;
+    --white: hsl(0, 0%, var(--whitelightness));
+    --greyF3: #f3f3f3;
+    --grey33: #333;
+    --greyEC: #ececec;
+    --greyCC: #cccccc;
+    --greyF4: hsl(0, 0%, calc(var(--whitelightness) - 4%));
+    --greyDE: #DEDEDE;
+    --greyEE: #EEEEEE;
+}
 ```
 
 For instance, a theme could be put down like below, note how `var()` works when it chooses a correct colour for the active theme:
@@ -213,9 +219,7 @@ It then can be switched to dark or back to light using Redux store variables:
 
 ```typescript 
 export type RootState = {
-  ...
   theme: ETheme;
-  ...
 }
 ```
 
@@ -240,7 +244,6 @@ useLayoutEffect(() => {
 
 ```
 
-
 ### Layout
 
 Pomodoro is using [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox), which also has a nice documentation [here](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
@@ -252,7 +255,6 @@ The typical CSS class then would start with display property and the setting of 
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    ...
   }
 ```
 
@@ -266,12 +268,12 @@ Cosmic is using React and [Vite](https://vite.dev) with pure CSS and [CSS module
 Tailwind is installed as a [PostCSS](https://postcss.org) plugin as it is the most seamless way to integrate it with build tools, see [more](https://tailwindcss.com/docs/installation/using-postcss). Vite understands PostCSS config automatically if present:
 
 ```json title="package.json"
-devDependencies: {
-    ...
+{
+  "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.16",
-    ...
+    "tailwindcss": "^3.4.16"
+  }
 }
 ```
 Added to [PostCSS](https://postcss.org) configuration:

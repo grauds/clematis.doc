@@ -9,7 +9,7 @@ tags:
   - mutation
 ---
 
-# Cosmic
+# Cosmic And RTK
 
 Cosmic is using [Redux Toolkit Query](https://redux-toolkit.js.org/rtk-query/overview) to get
 data from the Cosmic API Hateoas backend:

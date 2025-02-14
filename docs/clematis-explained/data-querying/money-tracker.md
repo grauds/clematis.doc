@@ -9,7 +9,7 @@ tags:
    - observables
 ---
 
-# Money Tracker
+# Money Tracker Data Exchange
 
 ## Dependency Injection (DI)
 

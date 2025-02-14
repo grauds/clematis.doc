@@ -6,7 +6,7 @@ tags:
   - custom_react_hook
 ---
 
-# Pomodoro / Reddit Poc
+# Pomodoro / Reddit Thunks
 
 Pomodoro Timer doesn't do any server requests, but if it would've needed to make one, it would've used
 [axios](https://axios-http.com/) library to fetch data as the Reddit Poc application does.

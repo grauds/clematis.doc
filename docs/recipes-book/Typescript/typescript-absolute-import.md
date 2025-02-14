@@ -4,6 +4,7 @@ tags:
   - typescript
   - webpack
   - jest
+  - vitest
 ---
 # Absolute Imports Mapping
 
@@ -13,6 +14,8 @@ To have wonderful and concise import like these:
 import { RootState, addTask, toggleInfo } from '@/store/reducer';
 import { ETaskStatus } from "@/types/model";
 ```
+
+## Typescript
 
 Use `tsconfig.json` with the following config lines, where `path`
 specifies a set of entries that re-map imports to additional lookup locations and
@@ -29,6 +32,9 @@ specifies a set of entries that re-map imports to additional lookup locations an
 }
 
 ```
+
+## Module Bundlers
+
 Also, if the project uses [Webpack](https://webpack.js.org/), the module paths must be updated:
 
 ````javascript title="cfg/webpack.server.config.js"
@@ -47,6 +53,9 @@ module.exports = {
     //..
 };
 ````
+
+## Configuration In Tests
+
 For projects using [Jest](https://jestjs.io/), another change has to be made:
 
 ````javascript
@@ -59,4 +68,21 @@ module.exports = {
     }
     //..
 }
+````
+For [Vitest](https://vitest.dev/):
+
+````typescript title="vitest.config.ts"
+import { defineConfig } from 'vitest/config';
+import path from 'path';
+
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
+  test: {
+    globals: true,
+  },
+});
 ````
