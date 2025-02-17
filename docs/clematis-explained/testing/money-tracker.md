@@ -109,33 +109,39 @@ import 'jest-preset-angular/setup-jest';
 
 ## Jest And Typescript 
 
-Next important piece of configuration is in the
-[`ts-jest`](https://github.com/kulshekhar/ts-jest) section.
+Next important piece of configuration is the usage of the
+[`ts-jest`](https://github.com/kulshekhar/ts-jest) library.
 
 :::info
 `ts-jest` is a Jest transformer with source map support that lets use Jest to test projects written in TypeScript.
 :::
 
 This configuration will collect files containing tests and required Typescript declarations and feed them
-back to Jest:
+back to Jest, `ts-jest` configuration follows `jest-preset-angular`:
 
-````json title="apps/money-tracker-ui/tsconfig.spec.json"
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "../../dist/out-tsc",
-    "module": "commonjs",
-    "target": "es2016",
-    "types": ["jest", "node"]
+````typescript title="apps/money-tracker-ui/jest.config.ts"
+/* eslint-disable */
+export default {
+  displayName: 'money-tracker-ui',
+  preset: '../../jest.preset.js',
+  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+  coverageDirectory: '../../coverage/apps/money-tracker-ui/',
+  transform: {
+    '^.+\\.(ts|mjs|js|html)$': ['jest-preset-angular', {
+      tsconfig: '<rootDir>/tsconfig.spec.json',
+      stringifyContentPathRegex: '\\.(html|svg)$',
+    }],
   },
-  "files": ["src/test-setup.ts", "src/polyfills.ts"],
-  "include": [
-    "jest.config.ts",
-    "src/**/*.test.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.d.ts"
-  ]
-}
+  transformIgnorePatterns: [
+    'node_modules/(?!.*\\.mjs$|lodash-es|uri-templates-es)',
+  ],
+  snapshotSerializers: [
+    'jest-preset-angular/build/serializers/no-ng-attributes',
+    'jest-preset-angular/build/serializers/ng-snapshot',
+    'jest-preset-angular/build/serializers/html-comment',
+  ],
+};
+
 ````
 
 ## Testing Plain Code

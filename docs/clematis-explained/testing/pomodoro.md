@@ -5,135 +5,147 @@ tags:
   - testing-library
 ---
 
-# Pomodoro And Vitest
+# Pomodoro And Jest
 
 Pomodoro doesn't use [Enzyme](https://enzymejs.github.io/enzyme/), since
 Enzyme library is [discontinued](https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl),
 the official replacement for it is
-[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) with [Vitest](https://vitest.dev/).
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
 
 ## Installation
 
-There are a few dependencies that need to be installed for Vitest and Testing Library:
+There are a few dependencies which have to be installed for
+Jest and React Testing Library:
 
 ````json title="package.json"
 {
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^16.1.0",
-    "@testing-library/user-event": "^14.5.2",
-    "vitest": "^2.1.8"
+    "@testing-library/dom": "^8.20.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/jest": "^29.5.11",
+    "@types/redux-mock-store": "^1.0.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
+
+````
+Since Pomodoro is Webpack based, it is required to 
+have paths resolving added to its configuration:
+
+````javascript title="cfg/webpack.(server|client).config.js"
+module.exports = {
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+    alias: {
+      'react-dom': IS_DEV
+      ?
+      '@hot-loader/react-dom': 'react-dom',
+      '@/*': path.resolve(__dirname,
+      '../src/*'
+      )
+    }
   }
 }
 ````
-The configuration file for Vitest contains paths resolving and [the choice of 
-environment](https://vitest.dev/guide/environment):
+Also, the same for Jest configuration, along with some 
+mocks for files:
 
-````typescript title="vitest.config.ts"
-import { defineConfig } from 'vitest/config';
-import path from 'path';
-
-export default defineConfig({
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-  },
-});
-
+````javascript title="jest.config.js"
+{ 
+  moduleNameMapper: {
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/src/scripts/fileMock.js',
+    '^@/(.*)$': ['<rootDir>/src/$1']
+  }
+}
 ````
-:::info[Documentation]
-For reference, [jsdom](https://github.com/jsdom/jsdom) documentation.
-:::
 
 ## A Shallow Test
 
-To test a component in isolation it is enough to utilize the following template:
+Pomodoro uses Redux to store much of the application data, however there is a number of plain components using
+properties. Tests are just checking these components can be rendered. The same can be checked for more complex
+components:
 
-````typescript jsx
-import { describe, it, expect } from 'vitest';
+````typescript jsx title="src/shared/Statistics/FocusTotals/FocusTotals.test.tsx"
+import React from 'react';
 import { render } from '@testing-library/react';
-import Component from './Component';
+import '@testing-library/jest-dom';
+import { FocusTotals } from './FocusTotals';
 
-describe('App Component', () => {
-    it('should render without crashing', () => {
-        const {container} = render(<Component />);
-        expect(container).toBeDefined();
+import styles from './focustotals.css';
+
+describe('FocusTotals', () => {
+    it('renders without crashing', () => {
+        const {container} = render(<FocusTotals />);
+        expect(container).toBeInTheDocument();
     });
 })
 ````
-The key function is [`render`](https://testing-library.com/docs/react-testing-library/api/#render)
-which writes the component being tested to virtual DOM returning the object which can be used in the tests.
+The key function is `render` which writes the component being tested to virtual 
+DOM returning the object which can be used in the tests.
 
-## Testing DOM
+## Testing Styles
 
-More complex components tests require more context to be implemented. To explore the rendered 
-DOM and assert various facts one will have to use [`@testing-library/jest-dom`](https://github.com/testing-library/jest-dom). 
-The library is compatible with Vitest.
+Components are being decorated differently, depending on their data, and this can be validated in tests,
+for example:
 
-````typescript jsx title="src/App.test.tsx"
-import { describe, it, expect } from 'vitest';
+````typescript jsx title="src/shared/Statistics/FocusTotals/FocusTotals.test.tsx"
 
-import { Provider } from 'react-redux';
-import { MemoryRouter, Routes, Route } from 'react-router';
+it('applies active class when percent is greater than 0', () => {
+    const { container } = render(<FocusTotals percent={50} />);
+    expect(container.firstChild).toHaveClass(styles.active);
+});
 
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
+it('does not apply active class when percent is 0 or less', () => {
+    const { container } = render(<FocusTotals percent={0} />);
+    expect(container.firstChild).not.toHaveClass(styles.active);
+});
 
-import App from './App';
-import { store } from './lib/store';
+````
 
-const renderWithProviders = (ui: React.ReactElement, { route = '/' } = {}) => {
-  window.history.pushState({}, 'Test page', route);
+## Dynamic Text Correctness
 
-  return render(
-    <Provider store={store}>
-      <MemoryRouter initialEntries={[route]}>
-        <Routes>
-          <Route path="/" element={ui} />
-        </Routes>
-      </MemoryRouter>
-    </Provider>,
-  );
+For text which only visible on runtime it is useful to create a simple test to check some of the cases:
+
+````typescript jsx title="src/shared/Statistics/DayTotals/DayTotals.test.tsx"
+const mockDay: IDayStats = {
+    name: "Monday",
+    date: new Date("2023-10-10"),
+    time: 120,
+    pause: 10,
+    break: 5,
+    stops: 2,
+    short: '1',
 };
-
-describe('App Component', () => {
-    it('should render HeaderContainer', () => {
-        renderWithProviders(<App/>);
-        expect(screen.getByRole('banner')).toBeInTheDocument();
-    });
-})
-
+  
+it("should render the day name and date correctly", () => {
+    const { getByText } = render(<DayTotals day={mockDay} time="120" />);
+    expect(getByText("Monday (10/10/2023)")).toBeInTheDocument();
+});
 ````
-Also, the above example uses Redux provider with a real application store (can be replaced
-with a mock one) and Routes provider from [React Router](https://reactrouter.com/) library.
 
-## Dialogs Testing
+## User Interaction With A Form
 
-Dialogs require an additional element to be inserted into DOM tree, so the tests should
-create one:
+Pomodoro uses `@testing-library/react` to fire user clicks and do some
+typing in the input fields of components being tested:
 
-````typescript jsx title="src/components/Dialog/Dialog.test.tsx"
-import { vi } from 'vitest';
+````typescript jsx title="src/shared/Main/AddTaskForm/AddTaskForm.test.tsx"
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
 
-import { Dialog } from './Dialog';
+test('shows error message if task name is less than 3 characters', () => {
+    render(<AddTaskForm onSubmit={jest.fn()} />);
+    const input = screen.getByPlaceholderText('Название задачи');
+    const button = screen.getByText('Добавить');
 
-describe('Dialog Component', () => {
-    const modalRoot = document.createElement('div');
-    modalRoot.setAttribute('id', 'modal_root');
-    document.body.appendChild(modalRoot);
-    //...
-})
+    fireEvent.change(input, { target: { value: 'ab' } });
+    fireEvent.click(button);
+
+    expect(screen.getByText('Введите не меньше трех символов для новой задачи')).toBeInTheDocument();
+});
 ````
-In this example, `Dialog` uses `<div id='modal_root' />` as a host element, and it is created
-before tests.
 
-## Mocking Redux Toolkit Queries
-
-TBA
+## 

@@ -1,10 +1,14 @@
 ---
-sidebar_position: 5
+sidebar_position: 9
 ---
 
 # Frontend Testing
 
-After having done [Cucumber](https://cucumber.io/docs) stages, chosen a
-module bundler for the project, agreed on code standards, 
-it is possible to start
-writing tests and create high level components of the solution.
+This stage should go at the same time as the new composable components
+are being created, according to the project directories layout and
+accepted code styles in accordance with 
+[Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
+practices.
+
+However, it is never too late to add unit tests
+later to improve coverage.
