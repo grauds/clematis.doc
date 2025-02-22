@@ -3,6 +3,8 @@ sidebar_position: 3
 tags:
   - jest
   - testing-library
+  - coverage
+  - cobertura
 ---
 
 # Pomodoro And Jest
@@ -147,5 +149,139 @@ test('shows error message if task name is less than 3 characters', () => {
     expect(screen.getByText('Введите не меньше трех символов для новой задачи')).toBeInTheDocument();
 });
 ````
+In the case above Jest assumes 'ab' should trigger an error message and validates the form for the
+presence of such message.
 
-## 
+## Testing With Redux Store
+
+Some components are using data from Redux store. To test the components
+along with this data a new [Redux Mock store](https://github.com/reduxjs/redux-mock-store)
+can be created:
+
+````typescript jsx title="src/shared/Statistics/WeekChart/WeekChart.test.tsx"
+
+import configureStore from 'redux-mock-store';
+
+const mockStore = configureStore([]);
+
+describe('WeekChart', () => {
+    let store: ReturnType<typeof mockStore>;
+    let initialState: RootState;
+
+
+})
+````
+
+:::warning[Deprecation Notice]
+Pomodoro project is yet to be upgraded to use the
+recommended Redux Toolkit. So this approach is 
+[deprecated](https://github.com/reduxjs/redux-mock-store?tab=readme-ov-file#deprecation-notice) and will be rewritten.
+:::
+
+Despite the deprecation of the mock store, the main idea
+will work with a real store in RTK tests too. 
+
+First, an initial data for tests is created. Note, that the 
+data should be for the previous week related to tests' date:
+
+````typescript jsx title="src/shared/Statistics/WeekChart/WeekChart.test.tsx"
+beforeEach(() => {
+    const monday = getPreviousMonday(new Date());
+    initialState = {
+        day: {
+            date: new Date('2023-10-01'),
+            short: 'Sun',
+            time: 0,
+            pause: 0,
+            break: 0,
+            stops: 0,
+            name: '',
+        } as IDayStats,
+        week: {
+            start: monday,
+            end: getAnotherDay(monday, 7),
+            id: '1',
+            text: '',
+        } as IWeek,
+        stats: [
+            {
+                date: getAnotherDay(monday, -1),
+                short: 'Sun',
+                time: 120,
+                pause: 0,
+                break: 0,
+                stops: 0,
+                name: 'Воскресенье',
+            },
+            {
+                date: monday,
+                short: 'Пн',
+                time: 150,
+                pause: 0,
+                break: 0,
+                stops: 0,
+                name: 'Понедельник',
+            }
+            //...
+        ]
+    }
+})
+````
+So the next test is to verify the bar chart in the component
+is rendered with correct vertical line tick labels:
+
+````typescript jsx
+  it('renders horizontal lines with correct times', () => {
+    render(
+      <Provider store={store}>
+        <WeekChart />
+      </Provider>,
+    );
+
+    expect(screen.getByText('42 сек')).toBeInTheDocument();
+    expect(screen.getByText('1 мин 24 сек')).toBeInTheDocument();
+    expect(screen.getByText('2 мин 6 сек')).toBeInTheDocument();
+    expect(screen.getByText('2 мин 48 сек')).toBeInTheDocument();
+  });
+````
+Another test is to make sure that if user clicks on a 
+day, the date of the day becomes active:
+
+````typescript jsx
+  it('dispatches setCurrentDay action when a day is clicked', () => {
+    render(
+      <Provider store={store}>
+        <WeekChart />
+      </Provider>,
+    );
+
+    fireEvent.click(screen.getByText('Пн'));
+
+    const actions = store.getActions();
+    expect(actions).toEqual([setCurrentDay(initialState.stats[1])]);
+  });
+````
+In this snippet mock store validates a synchronous
+action and the payload of the expected action. More
+details on the method is [here](https://github.com/reduxjs/redux-mock-store?tab=readme-ov-file#synchronous-actions).
+
+## Coverage
+
+Jest is configured to run with `cobertura` coverage:
+
+````js title="jest.config.js"
+/** @type {import('ts-jest').JestConfigWithTsJest} */
+// eslint-disable-next-line
+module.exports = {
+//...
+  collectCoverage: true,
+  collectCoverageFrom: ['./src/**'],
+  coverageReporters: ['text', 'cobertura'],
+  coveragePathIgnorePatterns: [
+    'index.js',
+    'index.jsx',
+    'index.ts',
+    '/node_modules/',
+  ],
+};
+````

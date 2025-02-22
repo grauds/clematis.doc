@@ -3,13 +3,17 @@ sidebar_position: 4
 tags:
   - vitest
   - testing-library
+  - mock-service-worker
+  - coverage
+  - istanbul
+  - jsdom
 ---
 
 # Cosmic And Vitest
 
 Cosmic doesn't use [Enzyme](https://enzymejs.github.io/enzyme/), since
 Enzyme library is [discontinued](https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl),
-the official replacement for it is
+the official replacement is
 [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) with [Vitest](https://vitest.dev/).
 
 
@@ -48,7 +52,9 @@ export default defineConfig({
 
 ````
 :::info[Documentation]
-For reference, [jsdom](https://github.com/jsdom/jsdom) documentation.
+The [jsdom](https://github.com/jsdom/jsdom) environment is the same as for 
+Jest tests, meaning there will be no real browsers running these tests.
+jsdom package simulates a DOM environment as if you were in the browser.
 :::
 
 ## A Shallow Test
@@ -73,47 +79,38 @@ which writes the component being tested to virtual DOM returning the object whic
 ## Testing DOM
 
 More complex components tests require more context to be implemented. To explore the rendered
-DOM and assert various facts one will have to use [`@testing-library/jest-dom`](https://github.com/testing-library/jest-dom).
-The library is compatible with Vitest.
+DOM and assert various facts one will have to use [`@testing-library/jest-dom`](https://github.com/testing-library/jest-dom),
+for example, to make sure the element found by a `screen` query exists
+in the virtual DOM:
 
 ````typescript jsx title="src/App.test.tsx"
 import { describe, it, expect } from 'vitest';
-
-import { Provider } from 'react-redux';
-import { MemoryRouter, Routes, Route } from 'react-router';
-
+//...
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-
+//...
 import App from './App';
-import { store } from './lib/store';
-
-const renderWithProviders = (ui: React.ReactElement, { route = '/' } = {}) => {
-  window.history.pushState({}, 'Test page', route);
-
-  return render(
-    <Provider store={store}>
-      <MemoryRouter initialEntries={[route]}>
-        <Routes>
-          <Route path="/" element={ui} />
-        </Routes>
-      </MemoryRouter>
-    </Provider>,
-  );
-};
-
+//...
 describe('App Component', () => {
     it('should render HeaderContainer', () => {
-        renderWithProviders(<App/>);
+        render(<App/>);
         expect(screen.getByRole('banner')).toBeInTheDocument();
     });
 })
 
 ````
-Also, the above example uses Redux provider with a real application store (can be replaced
-with a mock one) and Routes provider from [React Router](https://reactrouter.com/) library.
 
-## Dialogs Testing
+### Accessibility Tree
+The preferred way to find the element in the DOM according to testing library documentation is 
+to use [`getByRole`](https://testing-library.com/docs/queries/byrole) query. This
+query uses [Accessibility Tree](https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree)
+which is computed automatically by browsers, so 
+developers don't have to care about setting up any additional attributes. In some real 
+cases though such explicit ARIA attributes are required, for instance, if `<button />` element can't
+be used in place of `<div />` element but some user interaction is happening.
+
+
+##  Testing Dialogs
 
 Dialogs require an additional element to be inserted into DOM tree, so the tests should
 create one:
@@ -135,6 +132,189 @@ describe('Dialog Component', () => {
 In this example, `Dialog` uses `<div id='modal_root' />` as a host element, and it is created
 before tests.
 
-## Mocking Redux Toolkit Queries
+## Using Redux Store
 
-TBA
+Since Cosmic application uses Redux Toolkit 
+it also uses [the recommended way](https://redux.js.org/usage/writing-tests) of 
+testing components with Redux store.
+
+### Mock Server Communication
+
+The idea is to have the same store as in production, not a mocked one, and to only mock communication 
+with the server with a help of [Mock Service Worker](https://mswjs.io). It needs to be installed first:
+
+````bash
+npm install msw@latest --save-dev
+````
+
+Some server responses can be fetched from a real backend too and saved to separate
+files in `__test__` directory, for example:
+
+````typescript title="src/containers/ProjectsContainer/__test__/projectsResponse.ts"
+export const projectsResponse = {
+  _embedded: {
+    data: [
+      {
+        id: '47ef2eb2-4fd3-47bf-9b9d-3724e8218850',
+        name: '/01/Тестовый проект',
+        description: 'Тестовый новый проект',
+        _links: {
+          self: {
+            href: 'http://192.168.1.118:18089/api/projects/47ef2eb2-4fd3-47bf-9b9d-3724e8218850',
+          },
+          project: {
+            href: 'http://192.168.1.118:18089/api/projects/47ef2eb2-4fd3-47bf-9b9d-3724e8218850',
+          },
+          runs: {
+            href: 'http://192.168.1.118:18089/api/projects/47ef2eb2-4fd3-47bf-9b9d-3724e8218850/runs',
+          },
+        },
+      }
+      //...
+    ],
+  },
+  _links: {
+    first: {
+      href: 'http://192.168.1.118:18089/api/projects/search/filter?searchText=&page=0&size=7&sort=name,asc',
+    },
+    self: {
+      href: 'http://192.168.1.118:18089/api/projects/search/filter?searchText=&page=0&size=7&sort=name,asc',
+    },
+    next: {
+      href: 'http://192.168.1.118:18089/api/projects/search/filter?searchText=&page=1&size=7&sort=name,asc',
+    },
+    last: {
+      href: 'http://192.168.1.118:18089/api/projects/search/filter?searchText=&page=217&size=7&sort=name,asc',
+    },
+  },
+  page: {
+    size: 7,
+    totalElements: 1524,
+    totalPages: 218,
+    number: 0,
+  },
+};
+````
+Next, this file can be used to return a response to a proper query.
+Note that backend domain name should also be taken into account while mocking via some
+high order function:
+
+````typescript title=""
+const qa = (path: string) => {
+  return new URL(path, 'http://192.168.1.118:18089').toString();
+};
+````
+The following code can be put to some shared place for all the tests to reach it:
+
+````typescript
+import {
+  projectsResponse,
+} from './__test__/projectsResponse';
+
+export const handlers = [
+  http.get(qa('api/projects/search/filter'), async () => {
+    await delay(150);
+    return HttpResponse.json(projectsResponse);
+  })
+  //...  
+];
+
+const server = setupServer(...handlers);
+// Enable API mocking before tests.
+beforeAll(() => server.listen());
+// Reset any runtime request handlers we may add during the tests.
+afterEach(() => server.resetHandlers());
+// Disable API mocking after the tests are done.
+afterAll(() => server.close());
+````
+The line `afterEach(() => server.resetHandlers());` is needed if tests want any additional
+handlers to be installed or some existing ones modified locally and forgotten after 
+particular test:
+
+````typescript title="src/containers/ProjectsContainer/ProjectsContainer.test.tsx"
+server.use(
+  http.get(qa('api/projects/search/filter'), async () => {
+    await delay(150);
+    return HttpResponse.json({});
+  }),
+);
+````
+
+:::tip[Switching parameters]
+There is no need to make placeholders for switching parameters in handlers,
+see https://mswjs.io/docs/recipes/query-parameters
+:::
+
+### Test Example
+
+This example works with a <i>connected</i> component. 
+1. First, mocking returns
+an empty list of projects to allow `ProjectsContainer` to display controls
+to display a dialog for a new project.
+2. After the button which calls up the dialog
+is clicked in the test, a dialog is displayed.
+3. Test searches for new
+project name text field and provides a name for the new project
+4. After the name is filled in, test clicks the Save button and validates
+that `onSelectProject` callback which selects the newly created project is called.
+
+````typescript jsx title="src/containers/ProjectsContainer/ProjectsContainer.test.tsx"
+it('calls onSelectProject when NewProjectDialog is confirmed', async () => {
+    server.use(
+      http.get(qa('api/projects/search/filter'), async () => {
+        await delay(150);
+        return HttpResponse.json({});
+      }),
+    );
+    const props: IProjectsContainerProps = {
+      onSelectProject: vi.fn(),
+    };
+    renderComponent(props);
+    fireEvent.click(
+      await waitFor(
+        () => {
+          return screen.getByText('Новый проект');
+        },
+        { timeout: 3000 },
+      ),
+    );
+    const input = screen.getByRole('textbox', { name: 'Имя*' });
+    fireEvent.change(input, { target: { value: 'test' } });
+    fireEvent.click(screen.getByRole('button', { name: 'Сохранить' }));
+
+    await waitFor(() => {
+      expect(props.onSelectProject).toHaveBeenCalled();
+    });
+  });
+````
+
+## Coverage
+
+Vitest is configured to report coverage in the same format as the other projects:
+
+````typescript
+import { defineConfig } from 'vitest/config';
+import path from 'path';
+
+export default defineConfig({
+//...
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    coverage: {
+      reporter: ['cobertura'],
+      provider: 'istanbul', // or 'v8'
+    },
+  },
+});
+
+````
+Note, that this setup requires another dependency to be added:
+
+````json title="package.json"
+{
+  "devDependencies": {
+    "@vitest/coverage-istanbul": "^3.0.6"
+  }
+}
+````

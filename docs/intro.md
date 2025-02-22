@@ -4,44 +4,41 @@ sidebar_position: 1
 
 # Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+This documentation is not supposed to be something for 
+self-education, or full info about frameworks mentioned in the text
+or a manual to the projects. It is a rather brief 
+description of the projects' tech stack, often with tips for
+improvement and links to the third-party documentation,
+which can help understand the tech scope of the projects
+themselves.
 
-## Getting Started
+But before that, a few lines about fullstack developers.
 
-Get started by **creating a new site**.
+## What is a fullstack developer?
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+A fullstack developer is a person who can develop both client and server software. Everyone starts a professional developer career picking up one narrow direction, but as the time goes, there could be other challenges and adjacent topics popping up. Fullstack path is inevitable at some stage of career, expecially for a developer who is interested in making prototypes or products by him/herself.
 
-### What you'll need
+### The main pitfalls
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+There are some well-known pitfalls, I'll name them:
 
-## Generate a new site
+1. Jack-of-all trades but master of none: the amount of skills required nowadays to build a product is huge, it is impossible to expect to be on top in every field. One can do anything, but not everything!
 
-Generate a new Docusaurus site using the **classic template**.
+3. Time is an issue: even if a fullstack developer is confident on being able to build the product from tip to toe, the work time span may render the project useless if it loses the competition. Apart from MVPs, it is most probably required to delegate some work to others to release the product in reasonable time.
 
-The classic template will automatically be added to your project after you run the command:
+4. Time needed to study and to keep abreast of the technological progress is significant which may upset work-life balance.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+### The advantages
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+But there are also pros:
 
-## Start your site
+1. System designer or system architect with a holistic view: there is only one step toward this position from the fullstack developer as he/she understands all the moving parts from user facing ones to CI/CD pipelines and also capable of validating ideas in proof-of-concept projects.
 
-Run the development server:
+2. Agility and versatility: many companies now, if not all, are organizing work around Agile development approach which often implies switching back and forth to tasks between backend and frontend and where an experienced fullstack developer's assistance comes close to hand. Also, there can be areas between frontend and backend which nobody wants to cover, like [Best Friends Forever](https://bff-patterns.com/). 
 
-```bash
-cd my-website
-npm run start
-```
+3. Fast learning and not technologically biased: the work style of a fullstack developer consumes much time but pays back by ability to learn quickly what is needed to get things done.
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+4. A chance to start own business or become a successful indie developer. It may seem rare, but  many examples are known in the real world.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
