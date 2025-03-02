@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Clematis Docs',
-  tagline: 'Clematis Explained',
+  title: 'Clematis Explained',
+  tagline: 'Clematis Documentation, Recipes and Blog',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -99,8 +99,49 @@ const config: Config = {
           title: 'Documentation',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Web Applications',
+              to: '/docs/clematis-explained/overview',
+            },
+            {
+              label: 'Recipes Book',
+              to: '/docs/recipes-book/react/props-and-state',
+            },
+          ],
+        },
+        {
+          title: 'Projects',
+          items: [
+            {
+              label: 'Money Tracker UI',
+              href: 'https://github.com/grauds/money.tracker.ui',
+            },
+            {
+              label: 'Money Tracker Backend',
+              href: 'https://github.com/grauds/money.tracker.api',
+            },
+            {
+              label: 'Pomodoro',
+              href: 'https://github.com/grauds/clematis.poc.pomodoro',
+            },
+            {
+              label: 'Cosmic UI',
+              href: 'https://github.com/grauds/clematis.cosmic.ui',
+            },
+            {
+              label: 'Cosmic Backend',
+              href: 'https://github.com/grauds/clematis.cosmic',
+            },
+            {
+              label: 'Clematis Storage API',
+              href: 'https://github.com/grauds/clematis.storage.api',
+            },
+            {
+              label: 'Clematis Weather API',
+              href: 'https://github.com/grauds/clematis.weather.api',
+            },
+            {
+              label: 'Clematis Auth API',
+              href: 'https://github.com/grauds/clematis.auth.api',
             },
           ],
         },
@@ -115,6 +156,10 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/grauds',
             },
+            {
+              label: 'Java Workspace',
+              href: 'https://github.com/grauds/clematis.desktop',
+            },
           ],
         },
       ],
@@ -123,6 +168,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['groovy', 'java'],
     },
   } satisfies Preset.ThemeConfig,
 };
