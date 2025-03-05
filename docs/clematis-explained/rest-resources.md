@@ -5,9 +5,11 @@ tags:
   - openapi
   - hateoas
   - rest
+  - restdocs
+  - rest-assured
 ---
 
-# Server Side Resources
+# Backend API
 
 ## REST And Hateoas Implementation
 
@@ -184,7 +186,7 @@ however there is an update to it, see below:
 
 ````groovy title="build.gradle"
 plugins { 
-	id "org.asciidoctor.jvm.convert" version "3.3.2"
+    id "org.asciidoctor.jvm.convert" version "4.0.4"
 }
 
 configurations {
@@ -203,15 +205,85 @@ ext {
 test { 
 	outputs.dir snippetsDir
 }
+````
+The plugin [`org.asciidoctor.jvm.convert`](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
+homepage also contains some useful information.
 
-asciidoctor { 
-	sourceDir snippetsDir 
-	configurations 'asciidoctorExt' 
-	dependsOn test 
+### Configuration
+
+For `asciidoc` itself it is feasible to use a more sophisticated configuration to 
+create a html book with queries examples:
+
+````groovy title="build.gradle"
+asciidoctor {
+    dependsOn test
+    options doctype: 'book'
+
+    attributes = [
+            'source-highlighter': 'highlightjs',
+            'imagesdir'         : './images',
+            'toc'               : 'left',
+            'toclevels'         : 3,
+            'numbered'          : '',
+            'icons'             : 'font',
+            'setanchors'        : '',
+            'idprefix'          : '',
+            'idseparator'       : '-',
+            'docinfo1'          : '',
+            'safe-mode-unsafe'  : '',
+            'allow-uri-read'    : '',
+            'snippets'          : snippetsDir,
+            linkattrs           : true,
+            encoding            : 'utf-8'
+    ]
+
+    inputs.dir snippetsDir
+    outputDir "build/asciidoc"
+    sourceDir 'src/docs/asciidocs'
+
+// important since otherwise relative include files will be resolved 
+// using gradle working directory
+    baseDir sourceDir 
+    
+    sources {
+        include 'api.adoc'
+    }
 }
 ````
-The difference here is `sourceDir` configuration parameter for `asciidoctor` it wouldn't have
-found input sources if it was `inputs.dir`.
+The file `api.doc` mentioned in this configuration is an index
+file which will be processed by asciidoc and all the snippets 
+will be added to it. For example:
+
+````adoc title="src/docs/asciidocs/api.adoc"
+== Clematis Storage API
+=== Endpoints
+
+==== Get file by ID
+===== Curl example
+include::{snippets}/index/curl-request.adoc[]
+===== HTTP Request
+include::{snippets}/index/http-request.adoc[]
+===== HTTP IE Request
+include::{snippets}/index/httpie-request.adoc[]
+===== HTTP Response
+====== Success HTTP response
+include::{snippets}/index/http-response.adoc[]
+====== Response body
+include::{snippets}/index/response-body.adoc[]
+
+//...
+
+== REST convention
+include::rest_conv.adoc[]
+````
+The signs `=` are the nested headers, the result content tree will have these indents.
+File `rest_conv.adoc` can be found in the same directory as `api.adoc` file. 
+
+:::info
+Unlike Swagger UI and Postman, the documentation here is focusing on completeness and 
+tries to be as user-friendly as possible, therefore more human authored text is required
+and snippets are to be included manually.
+:::
 
 ### Testing And Documenting A Feature
 
@@ -221,12 +293,12 @@ REST-assured offers BDD's given-when-then syntax, for example:
 
 ````java title="src/test/java/org/clematis/storage/controller/StorageControllerTests.java"
 @Test
-public void testFileDownloadFilesystem() throws IOException {
+public void testFileUpload() throws IOException {
 
     RequestResponse responseEntity =
         given(this.spec)
             .multiPart(mockMultipartFile().getFile())
-            .filter(document("index"))
+            .filter(document("upload"))
         .when()
             .post("/api/files/upload")
         .andReturn().as(RequestResponse.class);
@@ -237,8 +309,14 @@ public void testFileDownloadFilesystem() throws IOException {
 ````
 With Spring REST docs library, these tests also can generate snippets which in turn 
 can be included into API documentation and updated on every project build. If API 
-changes, tests possibly fail and documentation will be updated with fixed tests
-automatically. The following code fragments are responsible for intercepting 
-the test requests: `.filter(document("index"))`.
+changes, tests will possibly fail and documentation will be updated once
+tests are fixed automatically. The code fragments like below are responsible for intercepting 
+the test requests `.filter(document("upload"))` and chained to REST-assured 
+calls.
+
+After deployment, the documentation is available at `server:port/docs/api.html`.
 
 
+:::tip[Instead of Postman]
+Spring REST docs library also provides methods for [HTTPie](https://httpie.io/) tool.
+:::
