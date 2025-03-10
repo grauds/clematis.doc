@@ -7,6 +7,8 @@ tags:
   - rest
   - restdocs
   - rest-assured
+  - postman
+  - httpie
 ---
 
 # Backend API
@@ -254,7 +256,7 @@ The file `api.doc` mentioned in this configuration is an index
 file which will be processed by asciidoc and all the snippets 
 will be added to it. For example:
 
-````adoc title="src/docs/asciidocs/api.adoc"
+````asciidoc title="src/docs/asciidocs/api.adoc"
 == Clematis Storage API
 === Endpoints
 
