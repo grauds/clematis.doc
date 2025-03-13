@@ -116,7 +116,7 @@ const config: Config = {
               href: 'https://github.com/grauds/money.tracker.ui',
             },
             {
-              label: 'Money Tracker Backend',
+              label: 'Money Tracker API',
               href: 'https://github.com/grauds/money.tracker.api',
             },
             {
@@ -128,7 +128,7 @@ const config: Config = {
               href: 'https://github.com/grauds/clematis.cosmic.ui',
             },
             {
-              label: 'Cosmic Backend',
+              label: 'Cosmic API',
               href: 'https://github.com/grauds/clematis.cosmic',
             },
             {
