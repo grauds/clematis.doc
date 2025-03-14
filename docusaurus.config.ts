@@ -109,8 +109,20 @@ const config: Config = {
           ],
         },
         {
-          title: 'Projects',
+          title: 'All Projects',
           items: [
+            {
+              label: 'Clematis Auth API',
+              href: 'https://github.com/grauds/clematis.auth.api',
+            },
+            {
+              label: 'Clematis Storage API',
+              href: 'https://github.com/grauds/clematis.storage.api',
+            },
+            {
+              label: 'Clematis Weather API',
+              href: 'https://github.com/grauds/clematis.weather.api',
+            },
             {
               label: 'Money Tracker UI',
               href: 'https://github.com/grauds/money.tracker.ui',
@@ -130,18 +142,6 @@ const config: Config = {
             {
               label: 'Cosmic API',
               href: 'https://github.com/grauds/clematis.cosmic',
-            },
-            {
-              label: 'Clematis Storage API',
-              href: 'https://github.com/grauds/clematis.storage.api',
-            },
-            {
-              label: 'Clematis Weather API',
-              href: 'https://github.com/grauds/clematis.weather.api',
-            },
-            {
-              label: 'Clematis Auth API',
-              href: 'https://github.com/grauds/clematis.auth.api',
             },
           ],
         },
