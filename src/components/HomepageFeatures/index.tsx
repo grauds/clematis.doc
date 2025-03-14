@@ -15,7 +15,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         <a href={'https://www.dominsoft.ru'}>Money Tracker </a>
-        and Clematis Money Tracker reporting tool work together to
+        and Clematis Money Tracker reporting application work together to
           better plan and control home budgets and money flow.
       </>
     ),
@@ -27,7 +27,7 @@ const FeatureList: FeatureItem[] = [
       <>
         A well-known <a href={'https://en.wikipedia.org/wiki/Pomodoro_Technique'}>
           time management technique </a> invented by Francesco Cirillo takes care of
-          time budgets in daily tasks.
+          time budgets in daily tasks in Pomodoro application.
       </>
     ),
   },
@@ -36,8 +36,8 @@ const FeatureList: FeatureItem[] = [
     img: require('@site/static/img/cosmic.png').default,
     description: (
       <>
-        Migrate scientific calculations implemented with Fortran from command line to
-        web where they can be done with grace.
+        Migrate scientific calculations in Fortran from command line to
+        web where they can be done with grace in Clematis Cosmic.
       </>
     ),
   },
