@@ -103,7 +103,7 @@ const config: Config = {
               to: '/docs/clematis-explained/overview',
             },
             {
-              label: 'Recipes Book',
+              label: 'Recipe Book',
               to: '/docs/recipes-book/react/props-and-state',
             },
           ],

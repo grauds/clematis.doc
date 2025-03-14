@@ -4,41 +4,15 @@ sidebar_position: 1
 
 # Intro
 
-This documentation is not supposed to be something for 
-self-education, or full info about frameworks mentioned in the text
-or a manual to the projects. It is a rather brief 
+This documentation is not supposed to be complete, to be used for 
+self-education, contain full info about frameworks mentioned in the text
+or to be a user manual to the projects. It is a rather brief 
 description of the projects' tech stack, often with tips for
-improvement and links to the third-party documentation,
-which can help understand the tech scope of the projects
-themselves.
+improvement, alternative solutions and some links to the third-party documentation,
+which can help understand the tech scope of the projects.
 
-But before that, a few lines about fullstack developers.
+1. Web Applications section describes Clematis Money Tracker, Clematis Storage,
+Clematis Weather, Clematis Cosmic and Pomodoro web applications tech stack.
+2. Recipe Book has short problems related to Clematis stack described and solved.
 
-## What is a fullstack developer?
-
-A fullstack developer is a person who can develop both client and server software. Everyone starts a professional developer career picking up one narrow direction, but as the time goes, there could be other challenges and adjacent topics popping up. Fullstack path is inevitable at some stage of career, expecially for a developer who is interested in making prototypes or products by him/herself.
-
-### The main pitfalls
-
-There are some well-known pitfalls, I'll name them:
-
-1. Jack-of-all trades but master of none: the amount of skills required nowadays to build a product is huge, it is impossible to expect to be on top in every field. One can do anything, but not everything!
-
-3. Time is an issue: even if a fullstack developer is confident on being able to build the product from tip to toe, the work time span may render the project useless if it loses the competition. Apart from MVPs, it is most probably required to delegate some work to others to release the product in reasonable time.
-
-4. Time needed to study and to keep abreast of the technological progress is significant which may upset work-life balance.
-
-
-### The advantages
-
-But there are also pros:
-
-1. System designer or system architect with a holistic view: there is only one step toward this position from the fullstack developer as he/she understands all the moving parts from user facing ones to CI/CD pipelines and also capable of validating ideas in proof-of-concept projects.
-
-2. Agility and versatility: many companies now, if not all, are organizing work around Agile development approach which often implies switching back and forth to tasks between backend and frontend and where an experienced fullstack developer's assistance comes close to hand. Also, there can be areas between frontend and backend which nobody wants to cover, like [Best Friends Forever](https://bff-patterns.com/). 
-
-3. Fast learning and not technologically biased: the work style of a fullstack developer consumes much time but pays back by ability to learn quickly what is needed to get things done.
-
-4. A chance to start own business or become a successful indie developer. It may seem rare, but  many examples are known in the real world.
-
-
+Also, [tags](./tags) are available.

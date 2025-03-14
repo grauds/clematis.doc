@@ -57,8 +57,6 @@ DTO is a value-object which hides the implementation of the server-side
 and allows to decouple the domain data access layer from 
 the representational logic of client applications.
 
-### Money Tracker 
-
 Being a financial reporting tool, Money Tracker uses different DTO quite
 extensively to deliver the data to charts and tables. The classes are kept in
 `org.clematis.mt.dto` package.
@@ -87,15 +85,22 @@ public class ExpenseController {
     }
 }
 ````
+DTO can also be used to request parameters like below:
+
+````java title="org/clematis/cosmic/web/RuntimeController.java"
+@PostMapping("/copy")
+public InputDataDTO copy(@RequestBody CalculationDTO calculationDTO) {
+    return this.calculator.copy(calculationDTO.getProject(), calculationDTO.getInputData());
+}
+````
+DTO often have their [almost identical counterparts](./data-querying/cosmic#typed-responses) in the TypeScript world on the other end of the
+communication line.
 
 :::info[Read on]
 An interesting [article](https://blog.scottlogic.com/2020/01/03/rethinking-the-java-dto.html)
 on DTO practice with a follow-up on [Domain-Driven Design](https://blog.scottlogic.com/2018/03/28/domain-driven-design.html).
 :::
 
-### Cosmic
-
-In applications like 
 
 
 
