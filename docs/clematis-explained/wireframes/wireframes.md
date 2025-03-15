@@ -12,12 +12,12 @@ tags:
 
 ## Agile User Stories
 
-The first and the most important part of the development process is requirements definition:  
+The first and the most important part of the development process is requirement definition:  
 collecting information from stakeholders, analyzing and validating it to define what 
 users can do with the software and how the software should behave. 
 
-The goal of any development is to have a product that allow
-users to accomplish their tasks. But obviously, there is no straight line between the plain
+The goal of any development is to have a product that allows
+users to achieve their tasks. But there is no straight line between the plain
 language [user stories](https://en.wikipedia.org/wiki/User_story) and the final product's specification. 
 [Agile User Stories](https://www.atlassian.com/agile/project-management/user-stories#) make this gap
 less wide, they focus on user needs and are short by definition, 
@@ -38,11 +38,11 @@ Collaboration over low-fi wireframes and further development are most productive
 [Behaviour-Driven Development (BDD)](https://cucumber.io/docs/bdd/) principles:
  
 1. Make changes to wireframes, system design and the code itself in small iterations, get feedback from the end-users.
-2. Produce acceptance criteria for every user story and make it automatically validatable every build.
+2. Produce acceptance criteria for every user story and make it automatically validatable for every build.
 
 :::tip[]
 It is implied that end-users are making new feature requests during the whole software system life cycle,
-way beyond it release date, until it reached EOL. The BDD process doesn't stop once the first design is ready
+way beyond its release date, until it reached EOL. The BDD process doesn't stop once the first design is ready
 and the development is started.
 :::
 
@@ -65,7 +65,7 @@ Feature: Listening to the music
       Then I shouldn't listen to the silence  
 ````
 Then these criteria may be used at the later stage to start making tests with [Cucumber](https://cucumber.io/docs).
-Surely, there are no any working systems to test at this stage, however, it is a good idea to let tests go
+Surely, there are no any working systems to test at this stage, however; it is a good idea to let tests go
 first, before the implementation, as described in [Test Driven Development](https://cucumber.io/blog/bdd/intro-to-bdd-and-tdd/)
 practice. The result would be the Cucumber based
 [steps definitions](https://cucumber.io/docs#what-are-step-definitions).
@@ -82,8 +82,13 @@ pixel-perfect wireframes, which also should be approved by the stakeholders. The
 4. SVG icons
 5. Data formatting
 
+The styles are exported during development, and the look-and-feel of the final product closely follows these
+hi-fi wireframes.
+
 ## Snapshot Testing
 
-The styles are exported during development and the look-and-feel of the final product closely follows these
-hi-fi wireframes. Automated tests, validating the appearance, are called [snapshot tests](https://jestjs.io/docs/snapshot-testing).
+Automated tests, validating the appearance, are called 
+[snapshot tests](https://jestjs.io/docs/snapshot-testing) but they do not test the appearance of the final 
+product pixel-by-pixel. For the latter, 
+[visual regression](https://jestjs.io/docs/snapshot-testing#whats-the-difference-between-snapshot-testing-and-visual-regression-testing) is used.
 

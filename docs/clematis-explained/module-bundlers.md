@@ -12,8 +12,8 @@ tags:
 
 ## Money Tracker
 
-Angular or Nx both use
-[esbuild](https://esbuild.github.io) by default now. For Money Tracker application,
+Nowadays, Angular or Nx both use
+[esbuild](https://esbuild.github.io) by default. For Money Tracker application,
 however, build is done with [`@angular-devkit/build-angular:browser`](https://www.npmjs.com/package/@angular-devkit/build-angular)
 which uses [Webpack](https://webpack.js.org/). 
 
@@ -126,7 +126,7 @@ const webpackServerConfig = require('./cfg/webpack.server.config');
 
 module.exports = [webpackClientConfig, webpackServerConfig];
 ````
-It just includes two more webpack configuration files, one for client and another for server
+It just includes two more webpack configuration files, one for a client and another for a server 
 and returns joint configuration in a tuple.
 
 ### Express Web Framework
@@ -166,14 +166,14 @@ app.listen(PORT, () => {
 
 ````
 `Express` server uses [`ReactDOM.renderToString(App())`](https://react.dev/reference/react-dom/server/renderToString)
-to get HTML to send (to be hydrated later on the client side), also
+to get HTML to be sent and to be hydrated later on the client side, also
 it uses [`compression`](https://expressjs.com/en/resources/middleware/compression.html)
 middleware to gzip the response and [`helmet`](https://github.com/helmetjs/helmet)
 middleware to disable `Content-Security-Policy` in our case.  
 
 ### Server HTML Index Template
 
-It's a JavaScript file which export a basic HTML file with placeholder for 
+It's a JavaScript file that exports a basic HTML file with placeholder for 
 React rendered content, see line ` res.send(indexTemplate(ReactDOM.renderToString(App())))`
 above:
 
@@ -203,7 +203,7 @@ mentioned above. Is uses [`webpack-node-externals`](https://www.npmjs.com/packag
 to exclude node modules from the output, obviously, they are included on the client side
 to be downloaded once, not with every page request from the server:
 
-````javascript title="cfg/webpack.server.config.js"
+```javascript title="cfg/webpack.server.config.js"
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path');
 const { DefinePlugin } = require('webpack');
@@ -286,13 +286,13 @@ module.exports = {
     },
     plugins: COMMON_PLUGINS,
 };
-````
+```
 
 ### Client Rendering Configuration
 
-Client code is contained in one file below and only does one thing, 
+Client code is contained in one file below and only does one thing; 
 it is [hydrating](https://18.react.dev/reference/react-dom/hydrate#hydrating-server-rendered-html)
-HTML which has been produced by server-side React environment:
+HTML that has been produced by server-side React environment:
 
 ````typescript jsx title="src/client/index.jsx"
 import * as React from 'react';
@@ -406,7 +406,7 @@ module.exports = {
 This is a short version of the full layout:
 1. `client` folder contains code only for client side.
 2. `server` folder is for server side.
-3. `shared` folder contains code for both, this is where components are put.
+3. `shared` folder contains code for both; this is where components are put.
 
 ````
 src
@@ -434,7 +434,7 @@ src
 
 :::info[Single Page Application]
 In addition to this SSR configuration, there is a typical
-Clematis Webpack SPA configuration in [The Recipes Book](../recipes-book/webpack/spa.md)
+Clematis Webpack SPA configuration in [The Recipe Book](../recipes-book/webpack/spa.md)
 :::
 
 ## Cosmic
@@ -444,7 +444,7 @@ a React/Vite sandbox.
 
 ### Vite Configuration 
 
-Vite requires the following set of dependencies to be included into a project:
+Vite requires the following set of dependencies to be included in a project:
 
 ````json title="package.json"
 {

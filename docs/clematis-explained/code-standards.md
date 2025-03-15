@@ -12,11 +12,11 @@ tags:
 
 [Prettier](https://prettier.io/docs/) is an opinionated code formatter, and it
 is installed the same way and acts the same for all the projects, it requires
-zero configuration if dev team is happy with the default style. 
+zero configuration if a dev team is happy with the default style. 
 
 The goal of prettier is to make code <i>look</i> the same way across the projects, 
 not to catch errors, which is a task for [linters](https://en.wikipedia.org/wiki/Lint_%28software%29).
-Dev team of Prettier decides which code style is optimal,
+The Dev team of Prettier decides which code style is optimal,
 and it changes from one version of the tool
 to another. So it is advisable to have a specific version in `package.json` file.
 
@@ -24,8 +24,8 @@ Prettier claims to guarantee that the code will not be broken after the formatti
 
 ### Customized Settings
 
-For Clematis projects it is a common thing to have it installed with some defaults changed
-and additional library to turn off conflicting settings with [ESlint](https://eslint.org/) linter:
+For Clematis projects, it is a common thing to have it installed with some defaults changed
+and an additional library to turn off conflicting settings with [ESlint](https://eslint.org/) linter:
 
 ````bash
 npm install --save-dev --save-exact prettier
@@ -41,7 +41,7 @@ The customised settings are:
 }
 ````
 
-And the ignore files configuration:
+And the ignored files configuration:
 
 ````prettier title=".prettierignore" 
 # Ignore artifacts:
@@ -82,7 +82,7 @@ Since it is the newest version installed, a new config system is used. In the ne
 ### Plugins For React
 
 ESLint uses plugins for configuration, and it requires a few plugins for React, JavaScript,
-Typescript, Jest and Prettier, for example as below:
+TypeScript, Jest, and Prettier, for example, as below:
 ````json
 {
     "devDependencies": {
@@ -166,7 +166,7 @@ in particular `vite-plugin-eslint2`, not `vite-plugin-eslint` (it is discontinue
  npm install vite-plugin-eslint2 --save-dev
 ````
 
-Then plugin should go to Vite configuration file:
+Then the plugin should go to a Vite configuration file:
 
 ````typescript title="vite.config.js"
 /** @type {import('vite').UserConfig} */
@@ -196,9 +196,9 @@ Where `rules` section contains some custom styles.
 
 ### Integration With Angular And Nx
 
-Angular and [Nx](https://nx.dev) also are using plugins to extends their functionality,
+Angular and [Nx](https://nx.dev) also are using plugins to extend their functionality,
 so it is required to add plugin [`@nx/eslint`](https://nx.dev/nx-api/eslint) for Nx to support ESLint.
-Other plugins for ESLint itself: `@typescript-eslint/eslint-plugin` for Typescript, 
+Other plugins for ESLint itself: `@typescript-eslint/eslint-plugin` for TypeScript, 
 `eslint-plugin-html` for HTML templates and for Prettier as well `eslint-config-prettier`:
 
 ````json title="package.json"
@@ -216,7 +216,7 @@ Other plugins for ESLint itself: `@typescript-eslint/eslint-plugin` for Typescri
 }
 ````
 :::tip[Migration]
-Money Tracker uses ESLint version 8, it is planned to migrate it to the version 9, with the changes
+Money Tracker uses ESLint version 8, it is planned to migrate it to version 9, with the changes
 in the configuration files.
 :::
 
@@ -268,8 +268,8 @@ The configuration file in the root of the project then looks like below:
 
 ````
 
-There is one rule `@nx/enforce-module-boundaries` which is specific for Nx monorepo approach and it should
-be checked for the code to stay within the module borders.
+There is one rule `@nx/enforce-module-boundaries` which is specific for Nx monorepo approach, 
+and it should be checked for the code to stay within the module borders.
 
 
 Library and application ESLint configurations are inherited from the root, for example:

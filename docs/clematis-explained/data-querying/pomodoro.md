@@ -8,7 +8,7 @@ tags:
 
 # Pomodoro / Reddit Thunks
 
-Pomodoro Timer doesn't do any server requests, but if it would've needed to make one, it would've used
+Pomodoro Timer doesn't do any server requests, but if it had needed to make one, it would've used
 [axios](https://axios-http.com/) library to fetch data as the Reddit Poc application does.
 
 ## Axios Library
@@ -29,7 +29,7 @@ Axios makes [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/X
 
 ## Request And Response Actions
 
-In the example above the response has type:
+In the example above, the response has type:
 
 ````typescript
 export interface IUserData {
@@ -38,7 +38,7 @@ export interface IUserData {
 }
 ````
 This type is used to collect data from the successful response and also to deliver
-the data to Redux reducer. In order to do that, Redux actions are needed:
+the data to Redux reducer. To do that, Redux actions are needed:
 
 ````typescript
 export const ME_REQUEST = "ME_REQUEST";
@@ -78,7 +78,7 @@ export const meRequestError: ActionCreator<MeRequestErrorAction> = (
 ````
 ## The Service Layer
 
-The next step is to use it in Redux store, for instance to authenticate
+The next step is to use it in Redux store, for instance, to authenticate
 a user via Reddit API:
 
 ````typescript title="src/store/actions.ts"
@@ -173,7 +173,7 @@ export const rootReducer: Reducer<RootState> = (
     }
 }
 ````
-Where the root state is something like:
+Where the root state contains `MeState`:
 
 ````typescript
 export type RootState = {

@@ -12,7 +12,7 @@ tags:
 # Cosmic And Vitest
 
 Cosmic doesn't use [Enzyme](https://enzymejs.github.io/enzyme/), since
-Enzyme library is [discontinued](https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl),
+the Enzyme library is [discontinued](https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl);
 the official replacement is
 [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) with [Vitest](https://vitest.dev/).
 
@@ -59,7 +59,7 @@ jsdom package simulates a DOM environment as if you were in the browser.
 
 ## A Shallow Test
 
-To test a component in isolation it is enough to utilize the following template:
+To test a component in isolation, it is enough to utilize the following template:
 
 ````typescript jsx
 import { describe, it, expect } from 'vitest';
@@ -79,7 +79,7 @@ which writes the component being tested to virtual DOM returning the object whic
 ## Testing DOM
 
 More complex components tests require more context to be implemented. To explore the rendered
-DOM and assert various facts one will have to use [`@testing-library/jest-dom`](https://github.com/testing-library/jest-dom),
+DOM and assert various facts, one will have to use [`@testing-library/jest-dom`](https://github.com/testing-library/jest-dom),
 for example, to make sure the element found by a `screen` query exists
 in the virtual DOM:
 
@@ -101,6 +101,7 @@ describe('App Component', () => {
 ````
 
 ### Accessibility Tree
+
 The preferred way to find the element in the DOM according to testing library documentation is 
 to use [`getByRole`](https://testing-library.com/docs/queries/byrole) query. This
 query uses [Accessibility Tree](https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree)
@@ -112,7 +113,7 @@ be used in place of `<div />` element but some user interaction is happening.
 
 ##  Testing Dialogs
 
-Dialogs require an additional element to be inserted into DOM tree, so the tests should
+Dialogs require an additional element to be inserted into the DOM tree, so the tests should
 create one:
 
 ````typescript jsx title="src/components/Dialog/Dialog.test.tsx"
@@ -134,14 +135,14 @@ before tests.
 
 ## Using Redux Store
 
-Since Cosmic application uses Redux Toolkit 
+Since Cosmic application uses Redux Toolkit, 
 it also uses [the recommended way](https://redux.js.org/usage/writing-tests) of 
 testing components with Redux store.
 
 ### Mock Server Communication
 
 The idea is to have the same store as in production, not a mocked one, and to only mock communication 
-with the server with a help of [Mock Service Worker](https://mswjs.io). It needs to be installed first:
+with the server with the help of [Mock Service Worker](https://mswjs.io). It needs to be installed first:
 
 ````bash
 npm install msw@latest --save-dev
@@ -309,7 +310,7 @@ export default defineConfig({
 });
 
 ````
-Note, that this setup requires another dependency to be added:
+Note that this setup requires another dependency to be added:
 
 ````json title="package.json"
 {

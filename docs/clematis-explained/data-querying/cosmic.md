@@ -71,7 +71,7 @@ getProjectByUrl: builder.query<Project, string>({
 })
 ````
 In fact, the whole conversation with Hypermedia backend is built on this principle, which
-is a main feature of Hateoas and allows UI to be decoupled from the resources' URLs implementation.
+is a main feature of Hateoas and allows the UI to be decoupled from the resources' URLs implementation.
 
 ## Fetch API
 
@@ -81,7 +81,7 @@ which is a thin wrapper around [fetch API](https://www.w3schools.com/js/js_api_f
 ## Typed Responses
 
 As usually, for JSON to be parsed in a typed manner, there are a number of classes, including
-the ones which cater for Hateoas responses with links, not just whose which describe
+the ones that cater for Hateoas responses with links, not just whose which describe
 the business domain of the application:
 
 ````typescript title="src/lib/model.ts"
@@ -104,7 +104,7 @@ export type HateoasResponse<K extends string, T> = {
 
 ## Cache Tags And Re-fetching
 
-In Cosmic API layer, get and search queries usually create cache tags, post and delete mutations
+In the Cosmic API layer, get and search queries usually create cache tags, post and delete mutations
 remove cache tags. This triggers [data re-fetching](https://redux-toolkit.js.org/rtk-query/usage/automated-refetching) for the queries with affected tags.
 
 For example, when a list of projects is retrieved from the backend as a result of a
@@ -117,7 +117,7 @@ filterProjects: builder.query<HateoasResponse<'data', Project>, IFilteringPageab
 })
 ````
 
-If then a project is created, edited or removed, this tag is also removed:
+If a project is created, edited or removed, this tag is also removed:
 
 ````typescript  title="src/lib/features/cosmic/cosmicSlice.ts"
 createProject: builder.mutation<Project, INewProjectProps>({

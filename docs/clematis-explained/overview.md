@@ -12,13 +12,14 @@ tags:
 
 This is a collection of some home projects and prototypes, 
 web applications mostly, in different life-cycle stages 
-and with different degree of maturity. 
-The purpose of this documentation is to give an overview 
-of the tech stack used in a form of portfolio:
+and with different degrees of maturity:
 
-1. [Money Tracker](https://github.com/grauds/money.tracker.ui) - application for home budget reports.
-2. [Pomodoro](https://github.com/grauds/clematis.poc.pomodoro) - implementation of Pomodoro technique for time management.
-3. Cosmic - application for scientific calculation, not an open source project at the moment.
+1. [Money Tracker](https://github.com/grauds/money.tracker.ui): application for home budget reports.
+2. [Pomodoro](https://github.com/grauds/clematis.poc.pomodoro): implementation of Pomodoro technique for time management.
+3. Cosmic: application for scientific calculation, not an open source project at the moment.
+4. Clematis Storage: application to store files either in a database or in the file system.
+5. Clematis Weather: application to store weather archive and to present a relevant picture for 
+a day depending on the weather on that day.
 
 
 ## Special thanks

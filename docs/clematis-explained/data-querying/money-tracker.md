@@ -74,7 +74,7 @@ instead.
 ## Typed Responses
 
 Fetching data from the backend requires classes to get JSON parsed in a typed manner, and there are
-two kind of such classes in the project's `model` library.
+two kinds of such classes in the project's `model` library.
 
 1. Data Transfer Objects for generic responses like in report endpoints and others,
    not obeying [REST Hateoas](https://en.wikipedia.org/wiki/HATEOAS) contract in `libs/model/src/dto` directory.
@@ -118,11 +118,11 @@ export class Entity extends Resource {
 
 ````
 The base class is responsible for dealing with other resources and collection of
-resources relations during data exchange behind the scenes.
+resource relations during data exchange behind the scenes.
 
 ## The Service Layer
 
-It is enough to have a special decorator for a class to become a service, the main
+It is enough to have a special decorator for a class to become a service; the main
 condition is that the future service has to be injectable:
 
 ````typescript title="apps/money-tracker-ui/src/app/about/about.component.ts"
@@ -146,7 +146,7 @@ export class StatsService {
 ````
 
 Also, it has to have `HttpClient` injected to make HTTP calls to backend. That's all.
-Then such service in turn is injected into a stateful component:
+Then the service in turn is injected into a stateful component:
 
 ````typescript title="apps/money-tracker-ui/src/app/about/about.component.ts"
 @Component({
@@ -179,10 +179,11 @@ see [Angular Components Lifecycle](https://angular.dev/guide/components/lifecycl
 
 ## The Hypermedia Service
 
-There is a special service `HateoasResourceService` for Hateoas resource which understands `Resource` decorators of
+There is a special service `HateoasResourceService` for Hateoas resource which understands 
+`Resource` decorators of
 entity classes and provides a wide range of related functions for
-handling Hypermedia links. Application services described above have just inject and
-use it in a typesafe manner as the class is generic. For example:
+handling Hypermedia links. Application injects service described above and
+uses it in a typesafe manner as the class is generic. For example:
 
 ````typescript title="libs/shared-components/src/lib/service/accounts.service.ts"
 import { 

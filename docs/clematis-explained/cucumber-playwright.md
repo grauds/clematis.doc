@@ -20,7 +20,7 @@ The first step is to have Cucumber and [Playwright](https://playwright.dev/) ins
 }
 ````
 
-The next step is to install/update Playwright collection of browsers:
+The next step is to install/update a Playwright collection of browsers:
 
 ````bash
 npx playwright install
@@ -73,8 +73,9 @@ Also, a basic command is added to `package.json` to launch the testing:
 
 ## Testing A Feature
 
-A feature (example for Pomodoro) is described used Gherkin notation during collection of requirements from 
-a customer/stakeholder. Next, the file is put into the `features` folder:
+A feature (example for Pomodoro) is described used Gherkin notation during the process of
+collection of requirements from a customer/stakeholder. The resulting file is put into 
+the `features` folder:
 
 ````gherkin title="tests/features/create-new-task.feature"
 Feature: Create new task

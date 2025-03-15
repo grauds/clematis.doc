@@ -10,13 +10,13 @@ tags:
 # Pomodoro And Jest
 
 Pomodoro doesn't use [Enzyme](https://enzymejs.github.io/enzyme/), since
-Enzyme library is [discontinued](https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl),
+the Enzyme library is [discontinued](https://dev.to/wojtekmaj/enzyme-is-dead-now-what-ekl);
 the official replacement for it is
 [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/).
 
 ## Installation
 
-There are a few dependencies which have to be installed for
+There are a few dependencies that have to be installed for
 Jest and React Testing Library:
 
 ````json title="package.json"
@@ -34,7 +34,7 @@ Jest and React Testing Library:
 }
 
 ````
-Since Pomodoro is Webpack based, it is required to 
+Since Pomodoro is Webpack-based, it is required to 
 have paths resolving added to its configuration:
 
 ````javascript title="cfg/webpack.(server|client).config.js"
@@ -68,7 +68,7 @@ mocks for files:
 
 ## A Shallow Test
 
-Pomodoro uses Redux to store much of the application data, however there is a number of plain components using
+Pomodoro uses Redux to store much of the application data; however, there are a number of plain components using
 properties. Tests are just checking these components can be rendered. The same can be checked for more complex
 components:
 
@@ -111,7 +111,7 @@ it('does not apply active class when percent is 0 or less', () => {
 
 ## Dynamic Text Correctness
 
-For text which only visible on runtime it is useful to create a simple test to check some of the cases:
+For text which is only visible on runtime, it is useful to create a simple test to check some cases:
 
 ````typescript jsx title="src/shared/Statistics/DayTotals/DayTotals.test.tsx"
 const mockDay: IDayStats = {
@@ -149,13 +149,13 @@ test('shows error message if task name is less than 3 characters', () => {
     expect(screen.getByText('Введите не меньше трех символов для новой задачи')).toBeInTheDocument();
 });
 ````
-In the case above Jest assumes 'ab' should trigger an error message and validates the form for the
-presence of such message.
+In the case, the above Jest assumes 'ab' should trigger an error message and validates the form for the
+presence of the message.
 
 ## Testing With Redux Store
 
 Some components are using data from Redux store. To test the components
-along with this data a new [Redux Mock store](https://github.com/reduxjs/redux-mock-store)
+along with this data, a new [Redux Mock store](https://github.com/reduxjs/redux-mock-store)
 can be created:
 
 ````typescript jsx title="src/shared/Statistics/WeekChart/WeekChart.test.tsx"
@@ -181,7 +181,7 @@ recommended Redux Toolkit. So this approach is
 Despite the deprecation of the mock store, the main idea
 will work with a real store in RTK tests too. 
 
-First, an initial data for tests is created. Note, that the 
+First, initial data for tests is created. Note that the 
 data should be for the previous week related to tests' date:
 
 ````typescript jsx title="src/shared/Statistics/WeekChart/WeekChart.test.tsx"
@@ -244,7 +244,7 @@ is rendered with correct vertical line tick labels:
     expect(screen.getByText('2 мин 48 сек')).toBeInTheDocument();
   });
 ````
-Another test is to make sure that if user clicks on a 
+Another test is to make sure that if a user clicks on a 
 day, the date of the day becomes active:
 
 ````typescript jsx
@@ -261,7 +261,7 @@ day, the date of the day becomes active:
     expect(actions).toEqual([setCurrentDay(initialState.stats[1])]);
   });
 ````
-In this snippet mock store validates a synchronous
+In this snippet, mock store validates a synchronous
 action and the payload of the expected action. More
 details on the method is [here](https://github.com/reduxjs/redux-mock-store?tab=readme-ov-file#synchronous-actions).
 

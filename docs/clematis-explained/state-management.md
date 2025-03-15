@@ -13,7 +13,7 @@ tags:
 
 ## Money Tracker 
 
-To separate Angular components using statefulness criteria one should use the folowing:
+To separate Angular components using state criteria, one should use the following:
 
 1. <i>Stateless</i> components only have `@Input` and `@Output` fields
 for data exchange with the parent components
@@ -88,7 +88,7 @@ Pomodoro uses `Provider` class directly:
 
 ### Using `useDispatch` hook
 
-To update the Redux state it is required to have action creators ready and the reducers properly 
+To update the Redux state, it is required to have action creators ready and the reducers properly 
 written in `src/store/reducer.ts`. Then functions are imported and components are able 
 to use the hook to send data to Redux store:
 

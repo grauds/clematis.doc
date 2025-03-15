@@ -19,7 +19,8 @@ CSS Post-processors and UI Libraries to make components.
 
 ## Money Tracker
 
-This application uses [Nx](https://nx.dev) and [Angular](https://angular.dev) with [Tailwind CSS](https://tailwindcss.com) and [Sass](https://sass-lang.com) to style components, although Angular works with any tool that outputs [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS). 
+This application uses [Nx](https://nx.dev) and [Angular](https://angular.dev) with [Tailwind CSS](https://tailwindcss.com) and [Sass](https://sass-lang.com) to style components,
+although Angular works with any tool that outputs [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS). 
 
 ### Tailwind
 
@@ -33,7 +34,8 @@ This application uses [Nx](https://nx.dev) and [Angular](https://angular.dev) wi
 }
 ```
 
-The main configuration file is in the main web application source directory in it's default form, see [Nx docs](https://nx.dev/recipes/angular/using-tailwind-css-with-angular-projects):
+The main configuration file is in the main web application source directory in its default form, 
+see [Nx docs](https://nx.dev/recipes/angular/using-tailwind-css-with-angular-projects):
 
 ```typescript title="apps/money-tracker-ui/tailwind.config.js"
 const { createGlobPatternsForDependencies } = require('@nrwl/angular/tailwind');
@@ -73,12 +75,13 @@ Tailwind CSS is imported in `styles.sass`:
 @tailwind utilities
 ```
 
-So the both preprocessors are available in the project and in its components.
+So both preprocessors are available in the project and in its components.
 
 
 ### Material UI Theme
 
-The Material Indigo theme is included in `project.json` with other CSS files, for example with styles.css and styles.sass:
+The Material Indigo theme is included in `project.json` with other CSS files, 
+for example, with `styles.css` and `styles.sass`:
 
 ```json title="apps/money-tracker-ui/project.json"
 {
@@ -92,25 +95,29 @@ The Material Indigo theme is included in `project.json` with other CSS files, fo
 
 ### View Encapsulation
 
-By default, Angular uses emulated encapsulation so that a component's styles only apply to elements defined in that component's template. 
+By default, Angular uses emulated encapsulation so that a component's styles only apply to elements 
+defined in that component's template. 
 
 More information: [Angular Styling Components](https://angular.dev/guide/components/styling#)
 
 ### Layout
 
-Since it is an Angular based application, it uses [Angular Material](https://material.angular.io) for layouts, themes and ready-to-use components.
+Since it is an Angular-based application, it uses [Angular Material](https://material.angular.io) for layouts, 
+themes and ready-to-use components.
 
 For the layout in particular see [mat-grid-system](https://material.angular.io/components/grid-list/overview).
 
-
-
 ## Pomodoro
 
-The application is using [React](https://react.dev) and [Webpack](https://webpack.js.org), therefore the latter takes care of the [Leaner Style Sheets aka Less](https://lesscss.org) configuration. Less allows variables, mixins, nested classes, operations, functions and many more if compared to convensional CSS. 
+The application is using [React](https://react.dev) and [Webpack](https://webpack.js.org); therefore, 
+the latter takes care of the [Leaner Style Sheets aka Less](https://lesscss.org) configuration. 
+Less allows variables, mixins, nested classes, operations, functions and many more if compared 
+to conventional CSS. 
 
 ### Less
 
-We have CSS and Less files configured for loading and processing in Webpack, but it would be possible to configure Sass or any other pre-processor in the same manner:
+We have CSS and Less files configured for loading and processing in Webpack, 
+but it would be possible to configure Sass or any other pre-processor in the same manner:
 
 ```javascript title="cfg/webpack.server.config.js"
 { 
@@ -148,7 +155,8 @@ The configuration uses `css-loader` library which is enlisted in dev dependencie
 
 ### CSS Modules
 
-Components styles encapsulation is done with a help of [CSS modules](https://github.com/css-modules/css-modules) in the Webpack excerpt above, see [Webpack CSS-Loader](https://webpack.js.org/loaders/css-loader/#modules) for more options:
+Components styles encapsulation is done with the help of [CSS modules](https://github.com/css-modules/css-modules) in the Webpack excerpt above, 
+see [Webpack CSS-Loader](https://webpack.js.org/loaders/css-loader/#modules) for more options:
 
 ```javascript title="cfg/webpack.server.config.js"
 {
@@ -162,7 +170,8 @@ Components styles encapsulation is done with a help of [CSS modules](https://git
 }
 ```
 
-It is necessary to declare modules to Typescript as well since it doesn't know what to do with *.css (or *.less) files out of the box:
+It is necessary to declare modules to TypeScript as well since it doesn't know what to do with *.css 
+(or *.less) files out of the box:
 
 ```typescript title="src/types/global.d.ts"
 declare module '*.less' {
@@ -183,7 +192,8 @@ CSS modules can be typified, see [here](https://habr.com/ru/articles/688844/)
 
 ### CSS Variables and Themes
 
-Pomodoro extensively uses [CSS Variables](https://www.w3schools.com/css/css3_variables.asp) in the global CSS file, using them to create switchable themes, which override the variables with values from the theme pallettes:
+Pomodoro extensively uses [CSS Variables](https://www.w3schools.com/css/css3_variables.asp) in the global CSS file, using them to create switchable themes, 
+which override the variables with values from the theme palettes:
 
 ```css title="src/main.global.css"
 :root {
@@ -203,7 +213,8 @@ Pomodoro extensively uses [CSS Variables](https://www.w3schools.com/css/css3_var
 }
 ```
 
-For instance, a theme could be put down like below, note how `var()` works when it chooses a correct colour for the active theme:
+For instance, a theme could be put down like below, note how `var()` works when it chooses a correct 
+colour for the active theme:
 
 ```css
 @media (prefers-color-scheme: light) {
@@ -246,7 +257,7 @@ useLayoutEffect(() => {
 
 ### Layout
 
-Pomodoro is using [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox), which also has a nice documentation [here](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+Pomodoro is using [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox), which also has nice documentation [here](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 The typical CSS class then would start with display property and the setting of the flow:
 
@@ -265,7 +276,8 @@ Cosmic is using React and [Vite](https://vite.dev) with pure CSS and [CSS module
 
 ### Tailwind
 
-Tailwind is installed as a [PostCSS](https://postcss.org) plugin as it is the most seamless way to integrate it with build tools, see [more](https://tailwindcss.com/docs/installation/using-postcss). Vite understands PostCSS config automatically if present:
+Tailwind is installed as a [PostCSS](https://postcss.org) plugin as it is the most seamless way to integrate it 
+with build tools, see [more](https://tailwindcss.com/docs/installation/using-postcss). Vite understands PostCSS config automatically if present:
 
 ```json title="package.json"
 {
@@ -317,4 +329,6 @@ Again automatically, Vite understands any CSS file ending with `.module.css` as 
 
 ### Layout
 
-Although CSS Flexbox is also configured for this application, it makes a much heavier use of Tailwind CSS [classes for layout](https://tailwindcss.com/docs/aspect-ratio). In fact, Tailwind also offers CSS Flexbox [grid classes](https://tailwindcss.com/docs/flex-basis) which are also can used in isolation for every component. 
+Although CSS Flexbox is also configured for this application, it makes a much heavier use of Tailwind CSS 
+[classes for layout](https://tailwindcss.com/docs/aspect-ratio). In fact, Tailwind also offers CSS Flexbox [grid classes](https://tailwindcss.com/docs/flex-basis) which 
+also can be used in isolation for every component. 

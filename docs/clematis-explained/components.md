@@ -11,8 +11,9 @@ tags:
 
 The goal is to keep the components reusable and keep the number of dependencies to other components at minimum:
 
-1. Common components are in the `components` directory, module or library, depending on the project. They encapsulate styles, tests and the code itself in the single directory. 
-2. If a component is too specific and can't be used anywhere else, it is placed to a nested directory within its parent's.
+1. Common components are in the `components` directory, module or library, depending on the project. They encapsulate styles, 
+ tests, and the code itself in the single directory. 
+2. If a component is too specific and can't be used anywhere else, it is placed to a nested directory within its parent.
 
 ## Money Tracker
 
@@ -34,7 +35,8 @@ More information about components themselves and the ways they can be used in th
 
 ### Example
 
-A typical component looks like the following class annotated with `@Component` annotation. Note that the annotation has all required resources' names defined:
+A typical component looks like the following class annotated with `@Component` annotation. 
+Note that the annotation has all required resources' names defined:
 
 ```Typescript
 import { Component, Input, OnInit } from '@angular/core';
@@ -65,7 +67,10 @@ export class EntityElementComponent<T extends Entity> implements OnInit {
 }
 ```
 
-Mind the `@Input` annotation which exposes the annotated field to the outer customers and tests. It is also okay to have a service injected in the constructor arguments. In this case it is the instance of `Router`, the component's function `navigate` uses this injected service to open the entity page in the browser.
+Mind the `@Input` annotation which exposes the annotated field to the outer customers and tests. 
+It is also okay to have a service injected in the constructor arguments. In this case it is the 
+instance of `Router`, the component's function `navigate` uses this injected service to open the 
+entity page in the browser.
 
 ### Layout
 
@@ -81,8 +86,7 @@ The template referred by name in the `@Component` annotation contains the actual
 </div>
 
 ```
-Fields of the enclosing class are referred by names: `{{field_name}}`.
-
+Names refer fields of the enclosing class: `{{field_name}}`.
 
 ### Usage
 
@@ -98,7 +102,8 @@ More info in [Angular docs for components](https://angular.dev/guide/components)
 
 ## Pomodoro
 
-Components in this React-17-based project are following the same principles, just with a little bit different semantics.
+Components in this React-17-based project are following the same principles, 
+just with a little bit of different semantics.
 
 ### Example
 
@@ -133,13 +138,16 @@ export const Header = hot(HeaderComponent);
 ```
 
 :::note[Can be updated]
-Also, there could be a `hot` wrapper from `react-hot-reloader` is applied to the component before it is exported, it is [<i>hot-exported</i>](https://www.npmjs.com/package/react-hot-loader). However, today this middleware is being replaced by [React Fast Refresh](https://github.com/facebook/react/issues/16604).
+Also, there could be a `hot` wrapper from `react-hot-reloader` is applied to the 
+component before it is exported, it is [<i>hot-exported</i>](https://www.npmjs.com/package/react-hot-loader). However, 
+today this middleware is being replaced by [React Fast Refresh](https://github.com/facebook/react/issues/16604).
 :::
 
 
 ### Layout
 
-Two nested components are used in the layout: `Title` and `Stats`, notably, JSX syntax is embedded into the component's code in Typescript. Variables are referred by names: `{variable_name}`.
+Two nested parts are used in the layout: `Title` and `Stats`, notably, JSX syntax 
+is embedded into the component's code in TypeScript. Variables are referred by their names: `{variable_name}`.
 
 
 ### Usage
@@ -154,7 +162,7 @@ It is intended to use components in the similar JSX code of parent components, f
 
 ## Cosmic
 
-The project also uses function components of React 18, components are of course compatible
+The project also uses function components of React 18; components are, of course, compatible
 with Pomodoro.
 
 ### Example
@@ -201,11 +209,10 @@ Hot reload is done by Vite React plugin
 
 ### Properties
 
-React based projects are following the fine line between 'property drilling' antipattern and context overuse, the latter
-is described in [React documentation](https://react.dev/learn/passing-data-deeply-with-context#before-you-use-context)
-for contexts.
+React-based projects are following the fine line between 'property drilling' antipattern and context overuse, 
+the latter is described in [React documentation](https://react.dev/learn/passing-data-deeply-with-context#before-you-use-context) for contexts.
 
-In other words, in cases like below it is okay to leave everything as it is now for clarity:
+In other words, in cases like below, it is okay to leave everything as it is now for clarity:
 
 ```typescript jsx title="src/components/InputDataTable/InputDataTable.tsx"
 export interface IInputDataComponentProps  {
@@ -249,5 +256,5 @@ export function InputDataTable(props: Readonly<IInputDataComponentProps>): React
     </table>
 }
 ```
-Context should be used for user related information, theming and something as global, however, there could be another option 
-to implement the same with the help of state managers.
+Context should be used for user related information, theming and something as global; 
+but there could be another option to implement the same with the help of state managers.

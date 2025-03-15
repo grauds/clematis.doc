@@ -11,6 +11,22 @@ tags:
 All server applications use the latest versions of [Gradle](https://gradle.org/)
 build tool and [Spring Boot](https://spring.io/projects/spring-boot).
 
+## Microservices Architecture
+
+Each backend application has only one data source for it and has its own,
+pretty limited functionality. This is done to make the applications comply
+with microservices criteria:
+
+1. Backend applications are small, manageable, self-contained
+2. Can be deployed independently of others
+
+:::info
+More documentation on microservices themselves is available at canonical
+[https://microservices.io/](https://microservices.io/). Also supported
+by [Spring Cloud](https://spring.io/cloud).
+:::
+
+
 ## Gradle Build File
 
 The basic zero setup for a typical project is as follows:

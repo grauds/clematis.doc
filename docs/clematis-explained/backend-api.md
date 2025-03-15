@@ -11,21 +11,21 @@ tags:
   - httpie
 ---
 
-# Backend API
+# Documenting Backend API
 
 ## REST And Hateoas Implementation
 
 With HATEOAS clients need to know only the 
 entrypoint of the API, and then the information
 about the resources is received via [hypermedia](https://en.wikipedia.org/wiki/Hypermedia)
-follow-up links. All the Clematis API are using Hateoas specification.
+follow-up links. All the Clematis APIs are using Hateoas specification.
 
 ## SpringDoc OpenAPI
 
 ### Money Tracker 
 
 This API is documented with [SpringDoc Open API](https://springdoc.org/v1/)
-version 1.8.0 which is the last compatible with the Spring Boot 2.
+version 1.8.0, which is the last compatible with the Spring Boot 2.
 
 The support for Spring Data Rest and Hateoas is available with the 
 following dependencies:
@@ -60,7 +60,7 @@ by itself. In the case of Money Tracker API, the environment variables have to b
 
 ### Swagger Authentication
 
-Since Money Tracker API is not open for non-registered users, each request should have
+Since the Money Tracker API is not open for non-registered users, each request should have
 a JWT token provided. Money Tracker UI takes that token from Keycloak API. Here, for 
 OpenAPI documentation, a simple option to provide such JWT token is configured. 
 
@@ -99,7 +99,7 @@ curl --location 'http://[__keycloak_server__]:[__port__]/auth/realms/clematis/pr
 --data-urlencode 'password=[__password__]'
 ````
 
-### Cosmic, Weather, Storage etc.
+### Cosmic, Weather, Storage, etc.
 
 These backend APIs are using Spring Boot 3.4 and above, and they need another branch of [`springdoc-openapi`](https://springdoc.org/#Introduction)
 java library:
@@ -111,7 +111,7 @@ dependencies {
 }
 ````
 
-The plugin configuration is the same as for the version 1:
+The plugin configuration is the same as for version 1:
 
 ````groovy title="build.gradle"
 plugins {
@@ -127,8 +127,10 @@ openApi {
 However, the Spring configuration bean differs in terms of imported paths:
 
 :::info[Migration guide]
-Migration guide from the version 1 is [available here](https://springdoc.org/#migrating-from-springdoc-v1).
+Migration guide from version 1 is [available here](https://springdoc.org/#migrating-from-springdoc-v1).
 :::
+
+For example:
 
 ````java 
 import static org.springdoc.core.utils.Constants.ALL_PATTERN;
@@ -183,8 +185,8 @@ All Clematis API are being migrated to REST-assured from [TestRestTemplate](http
 
 ### Installation
 
-It is enough to follow the documentation for [configuration](https://docs.spring.io/spring-restdocs/docs/current/reference/htmlsingle/#getting-started-build-configuration)
-however there is an update to it, see below:
+It is enough to follow the documentation for [configuration](https://docs.spring.io/spring-restdocs/docs/current/reference/htmlsingle/#getting-started-build-configuration); 
+however, there is an update to it, see below:
 
 ````groovy title="build.gradle"
 plugins { 
@@ -208,13 +210,13 @@ test {
 	outputs.dir snippetsDir
 }
 ````
-The plugin [`org.asciidoctor.jvm.convert`](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
-homepage also contains some useful information.
+The plugin `org.asciidoctor.jvm.convert` [homepage](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
+also contains some useful information about available configuration options.
 
 ### Configuration
 
-For `asciidoc` itself it is feasible to use a more sophisticated configuration to 
-create a html book with queries examples:
+For `asciidoc` itself it is possible to use a more sophisticated configuration to 
+create an HTML book with examples of queries:
 
 ````groovy title="build.gradle"
 asciidoctor {
@@ -253,7 +255,7 @@ asciidoctor {
 }
 ````
 The file `api.doc` mentioned in this configuration is an index
-file which will be processed by asciidoc and all the snippets 
+file which AsciiDoc will process, and all the snippets 
 will be added to it. For example:
 
 ````asciidoc title="src/docs/asciidocs/api.adoc"
@@ -283,7 +285,7 @@ File `rest_conv.adoc` can be found in the same directory as `api.adoc` file.
 
 :::info
 Unlike Swagger UI and Postman, the documentation here is focusing on completeness and 
-tries to be as user-friendly as possible, therefore more human authored text is required
+tries to be as user-friendly as possible, therefore, more human-authored text is required
 and snippets are to be included manually.
 :::
 
@@ -310,7 +312,7 @@ public void testFileUpload() throws IOException {
 }
 ````
 With Spring REST docs library, these tests also can generate snippets which in turn 
-can be included into API documentation and updated on every project build. If API 
+can be included in API documentation and updated on every project build. If the API  
 changes, tests will possibly fail and documentation will be updated once
 tests are fixed automatically. The code fragments like below are responsible for intercepting 
 the test requests `.filter(document("upload"))` and chained to REST-assured 
