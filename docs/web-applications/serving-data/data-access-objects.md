@@ -9,34 +9,27 @@ tags:
 # Data Access Objects
 
 The [Data Access Objects](https://en.wikipedia.org/wiki/Data_Access_Object)
-is the pattern to provide access to the underlying persistent storage. 
+is the pattern to provide access to the underlying persistent storage. Spring Data JPA
+(built on Hibernate) is responsible for this layer. 
 
-:::info[Shortcut]
-Spring Data REST is designed to [automatically create](https://docs.spring.io/spring-data/rest/reference/representations.html)
-Data Access Objects representations for the Web. 
-Due to specifics of the client applications 
-requirements, the majority of work to deliver the data from the storage
-to the clients is done with Spring Data REST.
-:::
+## JPA Configuration
 
-## Configuration 
+Spring Data JPA can be tuned up in regard to JPA and
+Hibernate specific [settings](https://docs.spring.io/spring-boot/appendix/application-properties/index.html#appendix.application-properties.data):
 
-A simple configuration is done in a Spring main configuration file, like:
-
-````yaml title="src/main/resources/application.yml"
+````yaml
 spring:
-  data:
-    rest:
-      basePath: /api
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 ````
-:::info[More customization]
-There are several tips on how to customize repository exposure and supported HTTP methods
-in the [documentation](https://docs.spring.io/spring-data/rest/reference/customizing-sdr.html).
-:::
 
 ## Repository Resources
 
-The core functionality of Spring Data REST is to export the [repositories](https://docs.spring.io/spring-data/rest/reference/repository-resources.html).
 All repositories are kept in the packages like `org.clematis.*.repository` and are
 annotated classes themselves:
 
@@ -91,67 +84,39 @@ An entity class with JPA annotations only is an [antipattern](https://martinfowl
 Clematis domain classes often have some business logic in the classes.
 :::
 
-:::info[Can be done differently]
-Another approach is to keep Data Access Objects simple, without any
-business logic and to have a separate package with POJO classes following
-Domain Driven Design pattern. This, however, would need exchanging Spring Data REST
-for a set Spring Web controllers.
+## Data REST Configuration
+
+The core functionality of Spring Data REST is to export the [repositories](https://docs.spring.io/spring-data/rest/reference/repository-resources.html).
+
+:::info[Shortcut]
+Spring Data REST is designed to [automatically create](https://docs.spring.io/spring-data/rest/reference/representations.html)
+DTOs for the Web. Due to specifics of the client applications
+requirements, the majority of work to deliver the data from the storage
+to the clients is done with Spring Data REST.
 :::
 
-## Model Mapper
+A simple configuration is done in a Spring main configuration file, for example:
 
-Mapping data between DTO and DAO layers is a common task due to separation of 
-concerns. In many cases in Clematis applications, this task is straightforward.
-
-A helper library [Model Mapper](https://modelmapper.org/) is used to map data in such cases.
-Dependency is like the following:
-
-````gradle title="build.gradle"
-dependencies {
-   implementation "org.modelmapper:modelmapper:3.2.0"
-}
-````
-Often mapping needs to be customized. For that purpose a type map can be created with
-`modelMapper.createTypeMap` method, like below:
-
-````
-public Calculator(ModelMapper modelMapper,
-                  //...
-) {
-    this.modelMapper = modelMapper;
-    
-    this.createNewProjectTypeMap = this.modelMapper.createTypeMap(
-            ProjectDTO.class, Project.class, "createNewProjectTypeMap"
-        ).addMappings(mapper -> mapper.skip(Project::setId));
-        
-    this.createNewInputDataTypeMap = this.modelMapper.createTypeMap(
-            InputDataDTO.class, InputData.class, "createNewInputDataTypeMap"
-        ).addMappings(mapper -> {
-            mapper.skip(InputData::setId);
-            mapper.skip(InputData::setStatus);
-            mapper.skip(InputData::setFailed);
-        });
-        
-    // ...    
-}
-````
-In this cases `Project` and `InputData` entities will not get some fields during mapping.
-
-## JPA Configuration
-
-Spring Data JPA can be tuned up in regard to JPA and 
-Hibernate specific [settings](https://docs.spring.io/spring-boot/appendix/application-properties/index.html#appendix.application-properties.data):
-
-````yaml
+````yaml title="src/main/resources/application.yml"
 spring:
-  jpa:
-    show-sql: true
-    generate-ddl: true
-    hibernate:
-      ddl-auto: create-drop
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  data:
+    rest:
+      basePath: /api
 ````
+:::info[More customization]
+There are several tips on how to customize repository exposure and supported HTTP methods
+in the [documentation](https://docs.spring.io/spring-data/rest/reference/customizing-sdr.html).
+:::
+
+:::tip[Can be done differently]
+As discussed before, another approach is to keep Data Access Objects only with data related annotations,
+without any business logic and to have a separate package with POJO classes following
+Domain Driven Design. 
+
+This, however, would mean adding
+Spring Web controllers capabilities to project to process business use cases.
+In Clematis applications the mixed approach is used.
+:::
 
 
 ## Database Connections Pool

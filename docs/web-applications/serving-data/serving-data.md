@@ -12,12 +12,16 @@ tags:
 # Serving Data
 
 Server-side data access is covered by Spring and configured by Spring Boot in a few quite simple
-steps.
+steps. Spring Data uses [repository abstraction](https://docs.spring.io/spring-data/relational/reference/jdbc/domain-driven-design.html)
+to implement Domain Driven Design approach and to
+minimize the boilerplate code required for Data Access Objects layer.
+
+More documentation on this is available at [official Spring Data
+resource](https://docs.spring.io/spring-data/relational/reference/repositories/introduction.html).
 
 ## Spring Configuration
 
-It is typical for all backend applications in Clematis to use Spring
-means of data management. Hence, the configuration:
+The configuration for Spring Data is as follows:
 
 ````gradle title="build.gradle"
 dependencies {
@@ -31,8 +35,8 @@ Namely, there are two parts of a larger Spring Data family are configured above,
 they are [Spring Data JPA](https://spring.io/projects/spring-data-jpa) and
 [Spring Data REST](https://spring.io/projects/spring-data-rest). Also, the 
 third starter is responsible for [Spring Web Application](https://docs.spring.io/spring-boot/reference/web/servlet.html)
-with embedded servlet container and additional REST capabilities. This layer is used to 
-work with DTO.
+with embedded servlet container and additional REST capabilities. The latter is used for
+the cases then business domain logic with several repositories has to be implemented.
 
 ## Configuring CORS
 

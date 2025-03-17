@@ -31,6 +31,12 @@ const config: Config = {
     locales: ['en'],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   presets: [
     [
       'classic',
@@ -104,7 +110,7 @@ const config: Config = {
             },
             {
               label: 'Recipe Book',
-              to: '/docs/recipes-book/react/props-and-state',
+              to: '/docs/recipe-book/react/props-and-state',
             },
           ],
         },

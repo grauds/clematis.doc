@@ -434,7 +434,7 @@ src
 
 :::info[Single Page Application]
 In addition to this SSR configuration, there is a typical
-Clematis Webpack SPA configuration in [The Recipe Book](../recipes-book/webpack/spa.md)
+Clematis Webpack SPA configuration in [The Recipe Book](../recipe-book/webpack/spa.md)
 :::
 
 ## Cosmic

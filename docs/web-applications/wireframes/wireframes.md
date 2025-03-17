@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 tags:
+  - collection-of-requirements
   - wireframes
   - gherkin
   - balsamiq
