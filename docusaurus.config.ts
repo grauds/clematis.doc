@@ -100,7 +100,7 @@ const config: Config = {
           items: [
             {
               label: 'Web Applications',
-              to: '/docs/clematis-explained/overview',
+              to: '/docs/web-applications/overview',
             },
             {
               label: 'Recipe Book',
