@@ -155,7 +155,7 @@ public class OpenAPIConfig {
 }
 ````
 
-Cosmic API, Weather API and Storage API don't have any authentication, so Swagger UI doesn't use
+Clematis Cosmic API, Clematis Weather API and Storage API don't have any authentication, so Swagger UI doesn't use
 authentication token configuration.
 
 ### Postman Collections

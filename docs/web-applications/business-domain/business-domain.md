@@ -105,7 +105,7 @@ Pros:
 Cons:
 + Native queries are harder to write and debug.
 + Stored procedures steal some business logic and hide it under wraps.
-+ Database vendor lock-up.
++ Legacy database vendor lock-up.
 + Fragile DDD, since any change of presentation requirements will lead to changes in the 
 business domain.
 + The combination of Data Access Objects and business domain classes imposes limitations on.
@@ -170,6 +170,60 @@ Pros:
 Cons:
 + The combination of Data Access Objects and business domain classes imposes limitations on 
 business domain modification during software maintenance.
++ Lock-up on relational databases.
+
+## Clematis Weather 
+
+The requirements for the project are quite simple:
+
+1. Import and periodically update the series of weather observations
+2. Import and periodically update the photos of the same place in different weather conditions.
+3. Be able to select a proper photo for a given date even if there is no photo for that date, judging only
+by weather observations. A photo can be selected from the photos of the similar weather conditions.
+
+Import and update are done by a Groovy script which uses manually downloaded 
+CSV files from a weather station.
+
+### Solution Estimation
+
+
+
+````mermaid
+block-beta
+    columns 3    
+       
+    m("Groovy Code"):2
+    space:2
+    
+    db[("Web Database")]:3   
+    space:2
+        
+    block:DDD:2
+        columns 2
+        DAO Domain
+    end
+    
+    dto("Web DTO")
+    
+    m --> DAO
+    
+    dto space DAO
+    db --> DAO
+    DAO --> db
+    DDD --> dto
+````
+
+Groovy importer works directly with DAO to store information in the database.
+
+Pros:
++ DDD principles are satisfied, the solution has a Presentation Layer and a Domain Layer.
++ The combination of Data Access Objects and business domain classes saved from some boilerplate code.
+
+Cons:
++ Database schema and DAO are defined by the CVS format of observations. Different
+observations standard from another weather station may not be compatible with this application.
++ The combination of Data Access Objects and business domain classes imposes limitations on business domain modification during software maintenance.
++ Lock-up on relational databases.
 
 ## Conclusion
 

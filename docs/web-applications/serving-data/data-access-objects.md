@@ -15,18 +15,11 @@ is the pattern to provide access to the underlying persistent storage. Spring Da
 ## JPA Configuration
 
 Spring Data JPA can be tuned up in regard to JPA and
-Hibernate specific [settings](https://docs.spring.io/spring-boot/appendix/application-properties/index.html#appendix.application-properties.data):
+Hibernate specific [settings](https://docs.spring.io/spring-boot/appendix/application-properties/index.html#appendix.application-properties.data).
 
-````yaml
-spring:
-  jpa:
-    show-sql: true
-    generate-ddl: true
-    hibernate:
-      ddl-auto: create-drop
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-````
+:::info[Link to documentation]
+Spring Data JPA [documentation](https://docs.spring.io/spring-data/jpa/reference/jpa.html).
+:::
 
 ## Repository Resources
 
@@ -90,9 +83,7 @@ The core functionality of Spring Data REST is to export the [repositories](https
 
 :::info[Shortcut]
 Spring Data REST is designed to [automatically create](https://docs.spring.io/spring-data/rest/reference/representations.html)
-DTOs for the Web. Due to specifics of the client applications
-requirements, the majority of work to deliver the data from the storage
-to the clients is done with Spring Data REST.
+DTOs for the Web. 
 :::
 
 A simple configuration is done in a Spring main configuration file, for example:
@@ -115,7 +106,7 @@ Domain Driven Design.
 
 This, however, would mean adding
 Spring Web controllers capabilities to project to process business use cases.
-In Clematis applications the mixed approach is used.
+In Clematis applications, the mixed approach is used.
 :::
 
 

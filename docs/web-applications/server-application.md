@@ -101,3 +101,27 @@ Using Gradle’s [native bom support](https://docs.spring.io/spring-boot/gradle-
 security patching.
 :::
 
+## Groovy Spring Boot Application
+
+For some applications with [Groovy](https://groovy-lang.org/) code mixed up with Java code, it may 
+turn out to be more sensible to continue the development of the whole
+application using Groovy, as in case with Clematis Weather:
+
+````groovy
+@SpringBootApplication
+@EntityScan(basePackages = ["jworkspace", "org.clematis.weather"])
+@SuppressWarnings(["PMD", "checkstyle:hideutilityclassconstructor"])
+@SuppressFBWarnings("EI_EXPOSE_REP")
+class WeatherApplication {
+
+    static void main(String[] args) {
+        SpringApplication.run(WeatherApplication.class, args)
+    }
+
+    @Bean
+    ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+}
+````
+There are no significant differences with Java variant, apart from Groovy syntax.
