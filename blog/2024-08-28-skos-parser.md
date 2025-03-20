@@ -7,5 +7,3 @@ tags: [schedule]
 
 Rewriting a short Groovy project to parse and trim SKOS 
 files containing taxonomies.
-
-{/* truncate */}

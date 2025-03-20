@@ -5,7 +5,7 @@ authors: [anton]
 tags: [schedule]
 ---
 
-Math Parser is now deployed to Github packages:
+Math Parser is now deployed to GitHub packages:
 
 ```xml
 <dependency>

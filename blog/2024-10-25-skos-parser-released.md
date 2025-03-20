@@ -5,7 +5,7 @@ authors: [anton]
 tags: [schedule]
 ---
 
-Skos Parser is now deployed to Github packages:
+Skos Parser is now deployed to GitHub packages:
 
 ```xml
 <dependency>

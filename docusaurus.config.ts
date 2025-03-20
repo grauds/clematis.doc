@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Clematis Explained',
   tagline: 'Documentation, Recipe Book and Blog',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/clematis_small.svg',
 
   // Set the production url of your site here
   url: 'https://github.com',
