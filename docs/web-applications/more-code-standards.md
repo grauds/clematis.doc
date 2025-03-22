@@ -113,3 +113,7 @@ spotbugs {
 ````
 Gradle can ignore SpotBugs failures if `ignoreFailures` flag is set to true.
 
+## Code Smells
+
+Use the following site to surface check the code for most common errors 
+and bad patterns: [Code Smells](https://code-smells.com).
