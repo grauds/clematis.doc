@@ -2,13 +2,11 @@
 sidebar_position: 4
 ---
 
-# About
-
-## What is a fullstack developer?
+# What is a fullstack developer?
 
 A fullstack developer is a person who can develop both client and server software. Everyone starts a professional developer career picking up one narrow direction, but as the time goes, there could be other challenges and adjacent topics popping up. Fullstack path is inevitable at some stage of career, expecially for a developer who is interested in making prototypes or products by him/herself.
 
-### The main pitfalls
+## The main pitfalls
 
 There are some well-known pitfalls, I'll name them:
 
@@ -19,7 +17,7 @@ There are some well-known pitfalls, I'll name them:
 4. Time needed to study and to keep abreast of the technological progress is significant which may upset work-life balance.
 
 
-### The advantages
+## The advantages
 
 But there are also pros:
 

@@ -9,6 +9,8 @@ tags:
   - rest-assured
   - postman
   - httpie
+  - spring-rest-docs
+  - spring-doc-open-api
 ---
 
 # Documenting Backend API
@@ -212,6 +214,10 @@ test {
 ````
 The plugin `org.asciidoctor.jvm.convert` [homepage](https://github.com/asciidoctor/asciidoctor-gradle-plugin)
 also contains some useful information about available configuration options.
+
+:::info
+The Spring configuration for REST-assured is described [later](backend-testing.md#spring-rest-tests).
+:::
 
 ### Configuration
 
