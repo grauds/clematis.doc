@@ -34,4 +34,4 @@ export function DialogButtons({
 
 ```
 
-Thanks to [CSS modules support](../clematis-explained/styling#css-modules-1)
+Thanks to [CSS modules support](../../web-applications/styling.md#css-modules-1)

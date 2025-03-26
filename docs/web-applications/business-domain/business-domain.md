@@ -12,7 +12,7 @@ tags:
 # Business Domain
 
 This paragraph is a part of the <i>collection of requirements</i> process,
-which also includes [wireframing](../wireframes) and modeling 
+which also includes [wireframes](../wireframes/wireframes.md) and modeling 
 with UML. 
 
 :::info

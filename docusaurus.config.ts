@@ -10,10 +10,10 @@ const config: Config = {
   favicon: 'img/clematis_small.svg',
 
   // Set the production url of your site here
-  url: 'https://clematis.github.com',
+  url: 'https://grauds.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/clematis.doc/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -37,8 +37,7 @@ const config: Config = {
   },
 
   themes: [
-    '@docusaurus/theme-mermaid',
-    '@docusaurus/theme-search-algolia'
+    '@docusaurus/theme-mermaid'
   ],
 
   presets: [
@@ -101,7 +100,7 @@ const config: Config = {
           items: [
             {
               label: 'Web Applications',
-              to: '/docs/web-applications/overview',
+              to: '/docs/web-applications',
             },
             {
               label: 'Recipe Book',
