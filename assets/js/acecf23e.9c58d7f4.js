@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclematis_doc=self.webpackChunkclematis_doc||[]).push([[1903],{1912:s=>{s.exports=JSON.parse('{"blogBasePath":"/clematis.doc/blog","blogTitle":"Blog","authorsListPath":"/clematis.doc/blog/authors"}')}}]);

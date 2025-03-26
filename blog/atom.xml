@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://clematis.github.com/blog</id>
+    <id>https://clematis.github.com/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
     <updated>2025-03-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://clematis.github.com/blog"/>
+    <link rel="alternate" href="https://clematis.github.com/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
-    <icon>https://clematis.github.com/img/clematis_small.svg</icon>
+    <icon>https://clematis.github.com/clematis.doc/img/clematis_small.svg</icon>
     <entry>
         <title type="html"><![CDATA[New Pet Projects Ideas]]></title>
-        <id>https://clematis.github.com/blog/new-ideas-post</id>
-        <link href="https://clematis.github.com/blog/new-ideas-post"/>
+        <id>https://clematis.github.com/clematis.doc/blog/new-ideas-post</id>
+        <link href="https://clematis.github.com/clematis.doc/blog/new-ideas-post"/>
         <updated>2025-03-20T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Throwing in some stuff to experiment with:]]></summary>
         <content type="html"><![CDATA[<p>Throwing in some stuff to experiment with:</p>
@@ -33,8 +33,8 @@ get a feeling of how to be ready for any UIKit.</li>
     </entry>
     <entry>
         <title type="html"><![CDATA[Cosmic is Released]]></title>
-        <id>https://clematis.github.com/blog/cosmic-released-post</id>
-        <link href="https://clematis.github.com/blog/cosmic-released-post"/>
+        <id>https://clematis.github.com/clematis.doc/blog/cosmic-released-post</id>
+        <link href="https://clematis.github.com/clematis.doc/blog/cosmic-released-post"/>
         <updated>2025-01-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Cosmic 1.0.0 is now released and shipped to its end users.]]></summary>
         <content type="html"><![CDATA[<p>Cosmic 1.0.0 is now released and shipped to its end users.</p>]]></content>
@@ -46,14 +46,14 @@ get a feeling of how to be ready for any UIKit.</li>
     </entry>
     <entry>
         <title type="html"><![CDATA[Cosmic Web Application]]></title>
-        <id>https://clematis.github.com/blog/cosmic-post</id>
-        <link href="https://clematis.github.com/blog/cosmic-post"/>
+        <id>https://clematis.github.com/clematis.doc/blog/cosmic-post</id>
+        <link href="https://clematis.github.com/clematis.doc/blog/cosmic-post"/>
         <updated>2024-11-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Working on the FORTRAN based legacy project, trying to bring it closer]]></summary>
         <content type="html"><![CDATA[<p>Working on the FORTRAN based legacy project, trying to bring it closer
 to the modern web applications workflow. The idea is to make
 a web user interface backed up by a database to store the FORTRAN output.</p>
-<p><img decoding="async" loading="lazy" alt="Overview" src="https://clematis.github.com/assets/images/overview-4291aa86eb2804e6438203359919af90.png" width="1074" height="466" class="img_ev3q"></p>]]></content>
+<p><img decoding="async" loading="lazy" alt="Overview" src="https://clematis.github.com/clematis.doc/assets/images/overview-4291aa86eb2804e6438203359919af90.png" width="1074" height="466" class="img_ev3q"></p>]]></content>
         <author>
             <name>Anton Troshin</name>
             <uri>https://github.com/grauds</uri>
@@ -62,8 +62,8 @@ a web user interface backed up by a database to store the FORTRAN output.</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Math Parser is Released]]></title>
-        <id>https://clematis.github.com/blog/math-parser-released-post</id>
-        <link href="https://clematis.github.com/blog/math-parser-released-post"/>
+        <id>https://clematis.github.com/clematis.doc/blog/math-parser-released-post</id>
+        <link href="https://clematis.github.com/clematis.doc/blog/math-parser-released-post"/>
         <updated>2024-10-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Math Parser is now deployed to GitHub packages:]]></summary>
         <content type="html"><![CDATA[<p>Math Parser is now deployed to GitHub packages:</p>
@@ -77,8 +77,8 @@ a web user interface backed up by a database to store the FORTRAN output.</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Skos Parser is Released]]></title>
-        <id>https://clematis.github.com/blog/skos-parser-released-post</id>
-        <link href="https://clematis.github.com/blog/skos-parser-released-post"/>
+        <id>https://clematis.github.com/clematis.doc/blog/skos-parser-released-post</id>
+        <link href="https://clematis.github.com/clematis.doc/blog/skos-parser-released-post"/>
         <updated>2024-10-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Skos Parser is now deployed to GitHub packages:]]></summary>
         <content type="html"><![CDATA[<p>Skos Parser is now deployed to GitHub packages:</p>
@@ -92,8 +92,8 @@ a web user interface backed up by a database to store the FORTRAN output.</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Skos Parser]]></title>
-        <id>https://clematis.github.com/blog/skos-parser-post</id>
-        <link href="https://clematis.github.com/blog/skos-parser-post"/>
+        <id>https://clematis.github.com/clematis.doc/blog/skos-parser-post</id>
+        <link href="https://clematis.github.com/clematis.doc/blog/skos-parser-post"/>
         <updated>2024-08-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Rewriting a short Groovy project to parse and trim SKOS]]></summary>
         <content type="html"><![CDATA[<p>Rewriting a short Groovy project to parse and trim SKOS
@@ -106,8 +106,8 @@ files containing taxonomies.</p>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Math Parser]]></title>
-        <id>https://clematis.github.com/blog/math-parser-post</id>
-        <link href="https://clematis.github.com/blog/math-parser-post"/>
+        <id>https://clematis.github.com/clematis.doc/blog/math-parser-post</id>
+        <link href="https://clematis.github.com/clematis.doc/blog/math-parser-post"/>
         <updated>2024-07-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Starting renovation of the old legacy project about maths]]></summary>
         <content type="html"><![CDATA[<p>Starting renovation of the old legacy project about maths
