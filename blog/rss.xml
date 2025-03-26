@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Clematis Explained Blog</title>
+        <link>https://clematis.github.com/blog</link>
+        <description>Clematis Explained Blog</description>
+        <lastBuildDate>Thu, 20 Mar 2025 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[New Pet Projects Ideas]]></title>
+            <link>https://clematis.github.com/blog/new-ideas-post</link>
+            <guid>https://clematis.github.com/blog/new-ideas-post</guid>
+            <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Throwing in some stuff to experiment with:]]></description>
+            <content:encoded><![CDATA[<p>Throwing in some stuff to experiment with:</p>
+<ol>
+<li>Backends for Frontends (BFF): we need some aggregation to
+build the next web application, Clematis Day.
+Will probably be using <a href="https://bff-patterns.com/" target="_blank" rel="noopener noreferrer">https://bff-patterns.com</a>.</li>
+<li>Use <a href="https://storybook.js.org/" target="_blank" rel="noopener noreferrer">Storybook</a> to build the next
+web application.</li>
+<li>Use <a href="https://headlessui.com/" target="_blank" rel="noopener noreferrer">Headless UI</a> in the next web application to
+get a feeling of how to be ready for any UIKit.</li>
+<li>Deploy Clematis Auth API to the Cloud.</li>
+<li>Add ML to Clematis Weather API to select a weather picture.</li>
+</ol>]]></content:encoded>
+            <category>Idea</category>
+        </item>
+        <item>
+            <title><![CDATA[Cosmic is Released]]></title>
+            <link>https://clematis.github.com/blog/cosmic-released-post</link>
+            <guid>https://clematis.github.com/blog/cosmic-released-post</guid>
+            <pubDate>Sat, 25 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cosmic 1.0.0 is now released and shipped to its end users.]]></description>
+            <content:encoded><![CDATA[<p>Cosmic 1.0.0 is now released and shipped to its end users.</p>]]></content:encoded>
+            <category>Schedule</category>
+        </item>
+        <item>
+            <title><![CDATA[Cosmic Web Application]]></title>
+            <link>https://clematis.github.com/blog/cosmic-post</link>
+            <guid>https://clematis.github.com/blog/cosmic-post</guid>
+            <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Working on the FORTRAN based legacy project, trying to bring it closer]]></description>
+            <content:encoded><![CDATA[<p>Working on the FORTRAN based legacy project, trying to bring it closer
+to the modern web applications workflow. The idea is to make
+a web user interface backed up by a database to store the FORTRAN output.</p>
+<p><img decoding="async" loading="lazy" alt="Overview" src="https://clematis.github.com/assets/images/overview-4291aa86eb2804e6438203359919af90.png" width="1074" height="466" class="img_ev3q"></p>]]></content:encoded>
+            <category>Schedule</category>
+        </item>
+        <item>
+            <title><![CDATA[Math Parser is Released]]></title>
+            <link>https://clematis.github.com/blog/math-parser-released-post</link>
+            <guid>https://clematis.github.com/blog/math-parser-released-post</guid>
+            <pubDate>Fri, 25 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Math Parser is now deployed to GitHub packages:]]></description>
+            <content:encoded><![CDATA[<p>Math Parser is now deployed to GitHub packages:</p>
+<div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.clematis</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">math-parser</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">1.0-SNAPSHOT</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+]]></content:encoded>
+            <category>Schedule</category>
+        </item>
+        <item>
+            <title><![CDATA[Skos Parser is Released]]></title>
+            <link>https://clematis.github.com/blog/skos-parser-released-post</link>
+            <guid>https://clematis.github.com/blog/skos-parser-released-post</guid>
+            <pubDate>Fri, 25 Oct 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Skos Parser is now deployed to GitHub packages:]]></description>
+            <content:encoded><![CDATA[<p>Skos Parser is now deployed to GitHub packages:</p>
+<div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.clematis</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">skos-parser</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">1.0-SNAPSHOT</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+]]></content:encoded>
+            <category>Schedule</category>
+        </item>
+        <item>
+            <title><![CDATA[Skos Parser]]></title>
+            <link>https://clematis.github.com/blog/skos-parser-post</link>
+            <guid>https://clematis.github.com/blog/skos-parser-post</guid>
+            <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Rewriting a short Groovy project to parse and trim SKOS]]></description>
+            <content:encoded><![CDATA[<p>Rewriting a short Groovy project to parse and trim SKOS
+files containing taxonomies.</p>]]></content:encoded>
+            <category>Schedule</category>
+        </item>
+        <item>
+            <title><![CDATA[Math Parser]]></title>
+            <link>https://clematis.github.com/blog/math-parser-post</link>
+            <guid>https://clematis.github.com/blog/math-parser-post</guid>
+            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Starting renovation of the old legacy project about maths]]></description>
+            <content:encoded><![CDATA[<p>Starting renovation of the old legacy project about maths
+and its usage in the Java code for dynamic calculation of
+algorithmic values - <a href="https://github.com/grauds/clematis.math.parser" target="_blank" rel="noopener noreferrer">Clematis Math Parser</a>.</p>]]></content:encoded>
+            <category>Schedule</category>
+        </item>
+    </channel>
+</rss>

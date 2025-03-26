@@ -1,9 +1,0 @@
-schedule:
-  label: Schedule
-  permalink: /schedule
-  description: Current working schedule
-
-idea:
-  label: Idea
-  permalink: /idea
-  description: A new project feature or idea

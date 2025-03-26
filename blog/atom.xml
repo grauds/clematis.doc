@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://clematis.github.com/blog</id>
+    <title>Clematis Explained Blog</title>
+    <updated>2025-03-20T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://clematis.github.com/blog"/>
+    <subtitle>Clematis Explained Blog</subtitle>
+    <icon>https://clematis.github.com/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[New Pet Projects Ideas]]></title>
+        <id>https://clematis.github.com/blog/new-ideas-post</id>
+        <link href="https://clematis.github.com/blog/new-ideas-post"/>
+        <updated>2025-03-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Throwing in some stuff to experiment with:]]></summary>
+        <content type="html"><![CDATA[<p>Throwing in some stuff to experiment with:</p>
+<ol>
+<li>Backends for Frontends (BFF): we need some aggregation to
+build the next web application, Clematis Day.
+Will probably be using <a href="https://bff-patterns.com/" target="_blank" rel="noopener noreferrer">https://bff-patterns.com</a>.</li>
+<li>Use <a href="https://storybook.js.org/" target="_blank" rel="noopener noreferrer">Storybook</a> to build the next
+web application.</li>
+<li>Use <a href="https://headlessui.com/" target="_blank" rel="noopener noreferrer">Headless UI</a> in the next web application to
+get a feeling of how to be ready for any UIKit.</li>
+<li>Deploy Clematis Auth API to the Cloud.</li>
+<li>Add ML to Clematis Weather API to select a weather picture.</li>
+</ol>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="Idea" term="Idea"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Cosmic is Released]]></title>
+        <id>https://clematis.github.com/blog/cosmic-released-post</id>
+        <link href="https://clematis.github.com/blog/cosmic-released-post"/>
+        <updated>2025-01-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Cosmic 1.0.0 is now released and shipped to its end users.]]></summary>
+        <content type="html"><![CDATA[<p>Cosmic 1.0.0 is now released and shipped to its end users.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="Schedule" term="Schedule"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Cosmic Web Application]]></title>
+        <id>https://clematis.github.com/blog/cosmic-post</id>
+        <link href="https://clematis.github.com/blog/cosmic-post"/>
+        <updated>2024-11-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Working on the FORTRAN based legacy project, trying to bring it closer]]></summary>
+        <content type="html"><![CDATA[<p>Working on the FORTRAN based legacy project, trying to bring it closer
+to the modern web applications workflow. The idea is to make
+a web user interface backed up by a database to store the FORTRAN output.</p>
+<p><img decoding="async" loading="lazy" alt="Overview" src="https://clematis.github.com/assets/images/overview-4291aa86eb2804e6438203359919af90.png" width="1074" height="466" class="img_ev3q"></p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="Schedule" term="Schedule"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Math Parser is Released]]></title>
+        <id>https://clematis.github.com/blog/math-parser-released-post</id>
+        <link href="https://clematis.github.com/blog/math-parser-released-post"/>
+        <updated>2024-10-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Math Parser is now deployed to GitHub packages:]]></summary>
+        <content type="html"><![CDATA[<p>Math Parser is now deployed to GitHub packages:</p>
+<div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.clematis</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">math-parser</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">1.0-SNAPSHOT</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="Schedule" term="Schedule"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Skos Parser is Released]]></title>
+        <id>https://clematis.github.com/blog/skos-parser-released-post</id>
+        <link href="https://clematis.github.com/blog/skos-parser-released-post"/>
+        <updated>2024-10-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Skos Parser is now deployed to GitHub packages:]]></summary>
+        <content type="html"><![CDATA[<p>Skos Parser is now deployed to GitHub packages:</p>
+<div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.clematis</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">skos-parser</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">1.0-SNAPSHOT</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="Schedule" term="Schedule"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Skos Parser]]></title>
+        <id>https://clematis.github.com/blog/skos-parser-post</id>
+        <link href="https://clematis.github.com/blog/skos-parser-post"/>
+        <updated>2024-08-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Rewriting a short Groovy project to parse and trim SKOS]]></summary>
+        <content type="html"><![CDATA[<p>Rewriting a short Groovy project to parse and trim SKOS
+files containing taxonomies.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="Schedule" term="Schedule"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Math Parser]]></title>
+        <id>https://clematis.github.com/blog/math-parser-post</id>
+        <link href="https://clematis.github.com/blog/math-parser-post"/>
+        <updated>2024-07-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Starting renovation of the old legacy project about maths]]></summary>
+        <content type="html"><![CDATA[<p>Starting renovation of the old legacy project about maths
+and its usage in the Java code for dynamic calculation of
+algorithmic values - <a href="https://github.com/grauds/clematis.math.parser" target="_blank" rel="noopener noreferrer">Clematis Math Parser</a>.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="Schedule" term="Schedule"/>
+    </entry>
+</feed>

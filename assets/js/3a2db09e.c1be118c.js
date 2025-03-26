@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkclematis_doc=self.webpackChunkclematis_doc||[]).push([[8121],{68070:e=>{e.exports=JSON.parse('{"tags":[{"label":"Idea","permalink":"/blog/tags/idea","description":"A new project feature or idea","count":1},{"label":"Schedule","permalink":"/blog/tags/schedule","description":"Current working schedule","count":6}]}')}}]);
