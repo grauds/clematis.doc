@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Clematis Explained Blog</title>
-        <link>https://clematis.github.com/clematis.doc/blog</link>
+        <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
         <lastBuildDate>Thu, 20 Mar 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>en</language>
         <item>
             <title><![CDATA[New Pet Projects Ideas]]></title>
-            <link>https://clematis.github.com/clematis.doc/blog/new-ideas-post</link>
-            <guid>https://clematis.github.com/clematis.doc/blog/new-ideas-post</guid>
+            <link>https://grauds.github.io/clematis.doc/blog/new-ideas-post</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/new-ideas-post</guid>
             <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Throwing in some stuff to experiment with:]]></description>
             <content:encoded><![CDATA[<p>Throwing in some stuff to experiment with:</p>
@@ -30,8 +30,8 @@ get a feeling of how to be ready for any UIKit.</li>
         </item>
         <item>
             <title><![CDATA[Cosmic is Released]]></title>
-            <link>https://clematis.github.com/clematis.doc/blog/cosmic-released-post</link>
-            <guid>https://clematis.github.com/clematis.doc/blog/cosmic-released-post</guid>
+            <link>https://grauds.github.io/clematis.doc/blog/cosmic-released-post</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/cosmic-released-post</guid>
             <pubDate>Sat, 25 Jan 2025 00:00:00 GMT</pubDate>
             <description><![CDATA[Cosmic 1.0.0 is now released and shipped to its end users.]]></description>
             <content:encoded><![CDATA[<p>Cosmic 1.0.0 is now released and shipped to its end users.</p>]]></content:encoded>
@@ -39,20 +39,20 @@ get a feeling of how to be ready for any UIKit.</li>
         </item>
         <item>
             <title><![CDATA[Cosmic Web Application]]></title>
-            <link>https://clematis.github.com/clematis.doc/blog/cosmic-post</link>
-            <guid>https://clematis.github.com/clematis.doc/blog/cosmic-post</guid>
+            <link>https://grauds.github.io/clematis.doc/blog/cosmic-post</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/cosmic-post</guid>
             <pubDate>Fri, 15 Nov 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Working on the FORTRAN based legacy project, trying to bring it closer]]></description>
             <content:encoded><![CDATA[<p>Working on the FORTRAN based legacy project, trying to bring it closer
 to the modern web applications workflow. The idea is to make
 a web user interface backed up by a database to store the FORTRAN output.</p>
-<p><img decoding="async" loading="lazy" alt="Overview" src="https://clematis.github.com/clematis.doc/assets/images/overview-4291aa86eb2804e6438203359919af90.png" width="1074" height="466" class="img_ev3q"></p>]]></content:encoded>
+<p><img decoding="async" loading="lazy" alt="Overview" src="https://grauds.github.io/clematis.doc/assets/images/overview-4291aa86eb2804e6438203359919af90.png" width="1074" height="466" class="img_ev3q"></p>]]></content:encoded>
             <category>Schedule</category>
         </item>
         <item>
             <title><![CDATA[Math Parser is Released]]></title>
-            <link>https://clematis.github.com/clematis.doc/blog/math-parser-released-post</link>
-            <guid>https://clematis.github.com/clematis.doc/blog/math-parser-released-post</guid>
+            <link>https://grauds.github.io/clematis.doc/blog/math-parser-released-post</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/math-parser-released-post</guid>
             <pubDate>Fri, 25 Oct 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Math Parser is now deployed to GitHub packages:]]></description>
             <content:encoded><![CDATA[<p>Math Parser is now deployed to GitHub packages:</p>
@@ -62,8 +62,8 @@ a web user interface backed up by a database to store the FORTRAN output.</p>
         </item>
         <item>
             <title><![CDATA[Skos Parser is Released]]></title>
-            <link>https://clematis.github.com/clematis.doc/blog/skos-parser-released-post</link>
-            <guid>https://clematis.github.com/clematis.doc/blog/skos-parser-released-post</guid>
+            <link>https://grauds.github.io/clematis.doc/blog/skos-parser-released-post</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/skos-parser-released-post</guid>
             <pubDate>Fri, 25 Oct 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Skos Parser is now deployed to GitHub packages:]]></description>
             <content:encoded><![CDATA[<p>Skos Parser is now deployed to GitHub packages:</p>
@@ -73,8 +73,8 @@ a web user interface backed up by a database to store the FORTRAN output.</p>
         </item>
         <item>
             <title><![CDATA[Skos Parser]]></title>
-            <link>https://clematis.github.com/clematis.doc/blog/skos-parser-post</link>
-            <guid>https://clematis.github.com/clematis.doc/blog/skos-parser-post</guid>
+            <link>https://grauds.github.io/clematis.doc/blog/skos-parser-post</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/skos-parser-post</guid>
             <pubDate>Wed, 28 Aug 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Rewriting a short Groovy project to parse and trim SKOS]]></description>
             <content:encoded><![CDATA[<p>Rewriting a short Groovy project to parse and trim SKOS
@@ -83,8 +83,8 @@ files containing taxonomies.</p>]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[Math Parser]]></title>
-            <link>https://clematis.github.com/clematis.doc/blog/math-parser-post</link>
-            <guid>https://clematis.github.com/clematis.doc/blog/math-parser-post</guid>
+            <link>https://grauds.github.io/clematis.doc/blog/math-parser-post</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/math-parser-post</guid>
             <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Starting renovation of the old legacy project about maths]]></description>
             <content:encoded><![CDATA[<p>Starting renovation of the old legacy project about maths
