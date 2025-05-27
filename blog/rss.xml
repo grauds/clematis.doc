@@ -4,10 +4,32 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Thu, 20 Mar 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 25 May 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Decommission of Clematis Auth API]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/auth-decom</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/auth-decom</guid>
+            <pubDate>Sun, 25 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[The embedded Keycloak project is decommissioned in favor of a standalone Proxmox virtual machine.]]></description>
+            <content:encoded><![CDATA[<p>The embedded Keycloak project is decommissioned in favor of a standalone Proxmox virtual machine.
+The documentation is updated.</p>]]></content:encoded>
+            <category>maintenance</category>
+        </item>
+        <item>
+            <title><![CDATA[Gradle and Palantir Docker Plugin]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/gradle-update-post</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/gradle-update-post</guid>
+            <pubDate>Sat, 24 May 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[The Palantir Docker Plugin is now EOL, which probably is the old news,]]></description>
+            <content:encoded><![CDATA[<p>The <a href="https://github.com/palantir/gradle-docker" target="_blank" rel="noopener noreferrer">Palantir Docker Plugin</a> is now EOL, which probably is the old news,
+however, the worse part is that it is waiting to be updated for Gradle 8.12 and up:
+<a href="https://github.com/palantir/gradle-docker/issues/801" target="_blank" rel="noopener noreferrer">https://github.com/palantir/gradle-docker/issues/801</a>.</p>
+<p>Some Clematis APIs are dependent on the plugin, so looking for workarounds or removal.</p>]]></content:encoded>
+            <category>maintenance</category>
+        </item>
         <item>
             <title><![CDATA[New Pet Projects Ideas]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/new-ideas-post</link>
@@ -23,8 +45,7 @@ Will probably be using <a href="https://bff-patterns.com/" target="_blank" rel="
 web application.</li>
 <li>Use <a href="https://headlessui.com/" target="_blank" rel="noopener noreferrer">Headless UI</a> in the next web application to
 get a feeling of how to be ready for any UIKit.</li>
-<li>Deploy Clematis Auth API to the Cloud.</li>
-<li>Add ML to Clematis Weather API to select a weather picture.</li>
+<li>Add ML/Deep Learning to Clematis Weather API to select a weather picture.</li>
 </ol>]]></content:encoded>
             <category>Idea</category>
         </item>
