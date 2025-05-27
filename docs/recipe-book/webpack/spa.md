@@ -23,7 +23,7 @@ This type of projects requires the following list of dependencies:
 }
 ````
 
-Single page application has only one Webpack configuration file:
+A single-page application has only one Webpack configuration file:
 
 ````javascript title="webpack.config.js"
 const path = require('path');

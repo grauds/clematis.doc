@@ -45,7 +45,8 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: './sidebars.ts'
+          sidebarPath: './sidebars.ts',
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,

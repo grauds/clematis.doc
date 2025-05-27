@@ -20,12 +20,3 @@ and with different degrees of maturity:
 4. Clematis Storage: application to store files either in a database or in the file system.
 5. Clematis Weather: application to store weather archive and to present a relevant picture for 
 a day depending on the weather on that day.
-
-
-## Special thanks
-
-This work would not be possible if not for a number of awesome open-source projects:
-
-1. [NgxHateoasClient](https://github.com/lagoshny/ngx-hateoas-client) for Money Tracker
-2. TBA
-

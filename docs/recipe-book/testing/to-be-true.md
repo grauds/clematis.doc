@@ -6,7 +6,7 @@ tags:
 
 # The Difference Between toBe, toBeTruthy and toBeTrue
 
-These methods are coming from [Jasmine](https://jasmine.github.io) testing framework.
+These methods are coming from the [Jasmine](https://jasmine.github.io) testing framework.
 
 ## toBe
 

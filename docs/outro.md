@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # What is a fullstack developer?
@@ -10,11 +10,11 @@ A fullstack developer is a person who can develop both client and server softwar
 
 There are some well-known pitfalls, I'll name them:
 
-1. Jack-of-all trades but master of none: the amount of skills required nowadays to build a product is huge, it is impossible to expect to be on top in every field. One can do anything, but not everything!
+1. Jack-of-all trades but master of none: the number of skills required nowadays to build a product is huge, it is impossible to expect to be on top in every field. One can do anything, but not everything!
 
-3. Time is an issue: even if a fullstack developer is confident on being able to build the product from tip to toe, the work time span may render the project useless if it loses the competition. Apart from MVPs, it is most probably required to delegate some work to others to release the product in reasonable time.
+2. Time is an issue: even if a fullstack developer is confident of being able to build the product from tip to toe, the work time span may render the project useless if it loses the competition. Apart from MVPs, it is most probably required to delegate some work to others to release the product in a reasonable time.
 
-4. Time needed to study and to keep abreast of the technological progress is significant which may upset work-life balance.
+3. Time needed to study and to keep abreast of the technological progress is significant which may upset work-life balance.
 
 
 ## The advantages

@@ -8,7 +8,8 @@ tags:
 ---
 # Pass Additional Styles As Props
 
-It is often required to change colours, borders and other elements in the descendant components if compared to the base version of the component used. It's a rather simple task with object spread syntax with `CSSModuleClasses` type:
+It is often required to change colours, borders and other elements in the descendant components if compared 
+to the base version of the component used. It's a rather simple task with object spread syntax with `CSSModuleClasses` type:
 
 ```typescript jsx
 import styles from './styles.module.css'
