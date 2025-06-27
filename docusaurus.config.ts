@@ -113,10 +113,6 @@ const config: Config = {
           title: 'All Projects',
           items: [
             {
-              label: 'Clematis Auth API',
-              href: 'https://github.com/grauds/clematis.auth.api',
-            },
-            {
               label: 'Clematis Storage API',
               href: 'https://github.com/grauds/clematis.storage.api',
             },

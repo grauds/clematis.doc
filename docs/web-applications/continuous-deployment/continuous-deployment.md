@@ -37,7 +37,7 @@ to serve the static minified code files.
 
 ## GitHub Actions
 
-If either PR is merged to GitHub repository's master or main branch
+If either PR is merged to the GitHub repository's master or main branch
 or code directly pushed to it, an automatic rebuild to renew the project
 status badge will be triggered. The latter, of course, should not happen if
 the number of developers in the project is greater than one.
@@ -48,7 +48,7 @@ a build procedure if the Docker file doesn't have a build stage.
 ## Jenkins Pipeline
 
 At the same time, [Jenkins](https://www.jenkins.io) is building projects
-on the premise, using configured triggers or schedule. 
+on the premises, using configured triggers or schedule. 
 
 <img src={require('@site/static/img/jenkins.png').default} style={{width: '500px'}} alt={''}/>
 
@@ -127,7 +127,7 @@ pipeline {
 
 ````
 
-1. **Verify tooling**: a special preparation task to verify server build environment has everything installed
+1. **Verify tooling**: a special preparation task to verify the server build environment has everything installed
 2. **Build docker image**: a command to build the artifact locally. It usually contains an `environment` block to inject
 build variables declared in Jenkins, like secrets, passwords, etc. 
 

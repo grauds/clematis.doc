@@ -105,7 +105,7 @@ security patching.
 
 For some applications with [Groovy](https://groovy-lang.org/) code mixed up with Java code, it may 
 turn out to be more sensible to continue the development of the whole
-application using Groovy, as in case with Clematis Weather:
+application using Groovy, as with Clematis Weather:
 
 ````groovy
 @SpringBootApplication
