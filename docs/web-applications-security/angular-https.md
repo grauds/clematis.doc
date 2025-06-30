@@ -7,15 +7,12 @@ tags:
 
 # Frontend Switch to HTTPS
 
-
-## Local Network Connection Encryption
-
 Keycloak checks storage access during authentication to know if it is able to work with the local storage of the client's
 browser. If the connection is not secured, development console will show a message ```Access to storage is not allowed from this context```.
 There is also a definitive bias towards excluding non-secure connections from support in Keycloak, for example in the
 following thread:
 [enforce security on Keycloak users](https://github.com/keycloak/keycloak/discussions/32087).
-Having said that, it is a good practice to enable HTTPS for Keycloak and the applications which use it even
+Having said that, it is a good practice to enable HTTPS for the applications which use Keycloak even
 if the server and the applications are on the local network.
 
 ### Generating A Certificate
@@ -91,12 +88,10 @@ server {
         proxy_set_header Host $host;
     }
 
+    # API is still HTTP 
     location ~* ^/api/ {
         proxy_http_version 1.1;
         proxy_pass http://192.168.1.118:18085;
-        proxy_set_header X-Forwarded-Proto https;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $host;
     }
    
     # ... 

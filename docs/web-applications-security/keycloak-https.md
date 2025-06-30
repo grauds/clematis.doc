@@ -85,13 +85,18 @@ server {
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarder-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
-            add_header Access-Control-Allow-Origin *;
     }
 
 }
 ````
 Nginx is using HTTP headers to communicate with Keycloak, and the next step is to 
 tune Keycloak up to understand these headers.
+
+:::tip
+A few words about CORS configuration. It should not be done in nginx, Keycloak handles it 
+internally, and it is configured for every client separately. Nginx CORS will conflict with 
+one from Keycloak.
+:::
 
 ## Configuring Keycloak
 
@@ -141,7 +146,7 @@ Current Configuration:
 
 ## How To Trust A Certificate
 
-The goal is to have the Keycloak console loaded with a valid certificate:
+The goal is to have the Keycloak Web UI loaded with a valid certificate in your browser:
 
  <img src={require('@site/static/img/valid_keycloak_certificate.png').default} width="730px"></img>
 
