@@ -15,7 +15,7 @@ following thread:
 Having said that, it is a good practice to enable HTTPS for the applications which use Keycloak even
 if the server and the applications are on the local network.
 
-### Generating A Certificate
+### Generate An OpenSSL Certificate (Not Recommended)
 
 To create a self-signed certificate for our local network using [OpenSSL](https://www.openssl.org)
 and a private key in the ```nginx/ssl``` directory:
@@ -32,6 +32,33 @@ openssl req -x509 -newkey rsa:2048 \
   identifying information, and a digital signature.
 * -newkey rsa:2048: Generates a new private key using the RSA algorithm with a 2048-bit length
   :::
+
+<img src={require('@site/static/img/openssl_certificate.png').default} width="330px"></img>
+
+:::warn
+Browsers will still show a warning if this certificate is used in lower environments. 
+:::
+
+### Generate Mkcert Certificates
+
+It is recommended to generate ```mkcert``` certificates as for [Keycloak earlier](keycloak-https.md#generate-mkcert-certificates-).
+Install ```mkcert``` tool via Debian package manager on the same 
+*host VM* with Clematis Money Tracker Docker container:
+
+````bash
+sudo apt install mkcert
+````
+
+Run the following commands to install a local certificate authority and to generate
+the certificate for Nginx (note, it is required to provide IP-address of the *host VM*,
+not the Docker container):
+````bash
+mkcert -install
+mkcert 192.168.1.118 clematis.money.tracker
+````
+
+It will create two files with default names in the current directory, which should be installed
+to Jenkins in the next step, which will copy then to Nginx inside the Docker image during the build.
 
 ### Jenkins Configuration
 
@@ -247,3 +274,11 @@ To recap:
 * Prepare an SSL volume and copy the certificate to it.
 * Deploy the applications to the Docker containers
 * Remove the directory with certificates from the workspace
+
+## How To Trust A Certificate
+
+The same procedure as [before](keycloak-https.md#how-to-trust-a-certificate) should be done on
+the client side to add the certificate to the trusted store to get the clean result:
+
+<img src={require('@site/static/img/trusted_certificate.png').default} width="330px"></img>
+

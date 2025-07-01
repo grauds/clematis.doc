@@ -18,7 +18,7 @@ maintenance.
 
 ## Install Nginx In The Keycloak LXC
 
-Given Keycloak LXC is running in the Proxmox environment, it is easy to install nginx from 
+Given Keycloak LXC is running in the Proxmox environment, it is easy to install Nginx from 
 Debian repositories:
 
 ````bash
@@ -29,7 +29,7 @@ self-signed certificate generated with OpenSSL or a certificate with
 locally trusted certificate authorities. For the latter, which is preferred,
 [mkcert](https://github.com/FiloSottile/mkcert) tool is used.
 
-## Generate Certificates 
+## Generate Mkcert Certificates 
 
 Install ```mkcert``` tool via Debian package manager on the same VM with Proxmox and Nginx:
 
