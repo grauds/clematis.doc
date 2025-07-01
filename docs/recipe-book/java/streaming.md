@@ -19,3 +19,12 @@ Some streaming tricks for routine tasks:
         .filter(w -> !w.isEmpty())
         .toArray(String[]::new);
 ```
+
+## Reading a line and turning it to numbers
+
+```java
+    int[] numbers = Arrays.stream(reader.readLine().split("\\s+"))
+                     .mapToInt(Integer::parseInt)
+                     .toArray();
+```
+
