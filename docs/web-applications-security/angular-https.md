@@ -35,7 +35,7 @@ openssl req -x509 -newkey rsa:2048 \
 
 <img src={require('@site/static/img/openssl_certificate.png').default} width="330px"></img>
 
-:::warn
+:::warning
 Browsers will still show a warning if this certificate is used in lower environments. 
 :::
 

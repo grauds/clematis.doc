@@ -1,7 +1,7 @@
 ---
 tags:
-  - algorithms
   - search
+  - algorithms
 ---
 
 # Binary Search
