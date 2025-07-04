@@ -1,7 +1,8 @@
 ---
 tags:
-  - prefix_sum
+  - prefix sum
   - algorithms
+  - difference array
 ---
 
 # Prefix Sum
@@ -14,7 +15,7 @@ The uniform modification of values in an array of counters:
 int[] a = new int[n]; // arrays of values to work with
 for (int i = 0; i < q; i++) { 
     int l = queries[i][0] - 1; // the left border of the interval
-    int r = queries[i][1] - 1; // th
+    int r = queries[i][1] - 1; // the right border of the interval
     a[l]++; // the first index of the range is gaining 1
     if (r + 1 < n) { // the last + 1 index of the range is losing 1
         a[r + 1]--;
@@ -31,10 +32,10 @@ Example:
 
 * Given the array: \[0, 0, 0, 0, 0, 0\]
 * Need to add 1 to numbers from 2 to 4
-* Add 1 to l: \[0, 0, 1, 0, 0, 0\]
+* Add 1 to l + 1: \[0, 0, 1, 0, 0, 0\]
 * Subtract 1 from the next index to r: \[0, 0, 1, 0, 0, -1\]
 * Need to add 1 to numbers from 1 to 3
-* Add 1 to l: \[0, 1, 1, 0, 0, -1\]
+* Add 1 to l + 1: \[0, 1, 1, 0, 0, -1\]
 * Subtract 1 from the next index to r: \[0, 1, 1, 0, -1, -1\]
 
 Always the last step after all operations are done
