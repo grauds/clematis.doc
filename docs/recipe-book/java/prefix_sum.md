@@ -7,6 +7,20 @@ tags:
 
 # Prefix Sum
 
+## Definition 
+
+:::info The source of confusion
+Given ```int[] sum;``` is a prefix sum for an array, the sum between ```l``` 
+and ```r``` indexes of the array would be ```sum[r] - sum[l]```.
+
+Example:
+* n = \[1 2 3 4 2 5\] -> prefix sum \[0 1 3 6 10 12 17\]
+* l = 1 and r = 4 -> sum\[l\] = 1, sum\[r\] = 10
+* sum\[r\] - sum\[l\] = 9
+* Counting naively, the sum including r index is 12, the sum including l index is 3, 
+* 12 - 3 \= 9.
+:::
+
 ## Effective Modification of Counters' Interval 
 
 The uniform modification of values in an array of counters: 

@@ -6,7 +6,10 @@ tags:
 
 # Binary Search
 
+:::info
 Binary search includes both limits of an interval.
+:::
+
 
 ## Left Binary Search
 
@@ -40,7 +43,7 @@ in other words \{ L, R \} again.
 
 ## Right Binary Search
 
-The last value which makes ```check``` procedure return true.
+The last value which makes ```check``` procedure return true or ```n - 1```.
 
 ```java
 
@@ -51,6 +54,9 @@ The last value which makes ```check``` procedure return true.
    
    while (l < r) {
        int m = (l + r + 1) / 2; // rounding up
+       if (m >= n) {
+          break;
+       }
        if (check(m, params)) {
            l = m;
        } else {
