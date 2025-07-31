@@ -4,12 +4,22 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Mon, 30 Jun 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 31 Jul 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Migration to latest Keycloak, Angular and HTTPS.]]></title>
+            <title><![CDATA[Migration to Jenkins Proxmox LXC]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/jenkins-migrated</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/jenkins-migrated</guid>
+            <pubDate>Thu, 31 Jul 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Documentation is ready]]></description>
+            <content:encoded><![CDATA[<p>Documentation is <a href="https://grauds.github.io/clematis.doc/docs/recipe-book/jenkins/migration_to_lxc">ready</a>
+for the migration of the Jenkins build server to a dedicated location.</p>]]></content:encoded>
+            <category>maintenance</category>
+        </item>
+        <item>
+            <title><![CDATA[Migration to latest Keycloak, Angular and HTTPS]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/security-chapter</link>
             <guid>https://grauds.github.io/clematis.doc/blog/security-chapter</guid>
             <pubDate>Mon, 30 Jun 2025 00:00:00 GMT</pubDate>
