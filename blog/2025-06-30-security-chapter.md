@@ -1,6 +1,6 @@
 ---
 slug: security-chapter
-title: Migration to latest Keycloak, Angular and HTTPS.
+title: Migration to latest Keycloak, Angular and HTTPS
 authors: [anton]
 tags: [maintenance]
 ---

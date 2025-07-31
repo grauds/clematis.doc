@@ -47,6 +47,12 @@ a build procedure if the Docker file doesn't have a build stage.
 
 ## Jenkins Pipeline
 
+:::warning
+This stage is now outdated since it is replaced with an 
+[improved version](../../recipe-book/jenkins/migration_to_lxc.md) of 
+the pipeline.
+:::
+
 At the same time, [Jenkins](https://www.jenkins.io) is building projects
 on the premises, using configured triggers or schedule. 
 
