@@ -21,6 +21,7 @@ a restart, which is perfect for the above goals.
 ## Install From a Community Template
 
 
+
 ## Install Docker 
 
 The best option for Debian is to use the short command from Docker.com:

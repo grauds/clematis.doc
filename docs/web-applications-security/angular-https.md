@@ -110,6 +110,8 @@ server {
     location ~* ^/auth/(.*) {
         proxy_http_version 1.1;
         proxy_pass https://192.168.1.157:443/$1; # connection to Proxmox Keycloak to fix later
+        
+        # required for Proxmox Keycloak to know it is behind the proxy
         proxy_set_header X-Forwarded-Proto https;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $host;
@@ -119,6 +121,14 @@ server {
     location ~* ^/api/ {
         proxy_http_version 1.1;
         proxy_pass http://192.168.1.118:18085;
+        
+        # required for Spring Boot backend application to know it is behind the proxy 
+        proxy_set_header   Host $host;
+        proxy_set_header   X-Forwarded-Host $host;
+        proxy_set_header   X-Forwarded-Server $host;
+        proxy_set_header   X-Forwarded-Proto https;
+        proxy_set_header   X-Forwarded-Port 18443;
+        proxy_set_header   X-Real-IP $remote_addr;
     }
    
     # ... 
@@ -157,7 +167,7 @@ services:
       - '18081:80'
       - '18443:443'
     volumes:
-      - "/home/jenkins/workspace/Money Tracker UI Deployment/apps/money-tracker-ui/jenkins/nginx-default.conf:/etc/nginx/conf.d/default.conf"
+      - ./nginx-default.conf:/etc/nginx/conf.d/default.conf
       - ssl_certs:/usr/local/openresty/nginx/ssl:ro
     networks:
       - clematis
@@ -241,20 +251,8 @@ pipeline {
                 }
             }
         }
-
-        stage("Build and start docker compose services") {
-          steps {
-            sh '''
-               cd ./apps/money-tracker-ui/jenkins
-               docker compose stop
-               docker stop clematis-money-tracker-ui || true && docker rm clematis-money-tracker-ui || true
-               docker stop clematis-money-tracker-ui-demo || true && docker rm clematis-money-tracker-ui-demo || true
-               docker compose build
-               docker compose up -d
-            '''
-          }
-        }
-
+        
+        // ...
     }
     
     post {

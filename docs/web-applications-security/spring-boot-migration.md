@@ -94,6 +94,15 @@ where the Docker build process can find it, for example:
             }
         }
     }
+    
+    // clean up the pem file 
+    post {
+        always {
+            sh '''
+               rm -rf "${WORKSPACE}/jenkins/keycloak.pem"
+            '''
+        }
+    }
 
 ````
 
@@ -115,3 +124,46 @@ After build and redeployment, the application is able to connect to Keycloak sec
 the tokens sent to its REST API.
 
 Note that the REST API itself is still served over HTTP.
+
+## Letting Spring Know It Is Behind A Proxy
+
+The last but not the least is for Spring to be able to generate HATEOAS links with a correct address
+and protocol. However, java backend doesn't know anything about the frontend load balancer or proxy. In 
+our case we have an Openresty proxy working for Angular and serving content in HTTPS. Links generated 
+for Spring HATEOAS will be the direct ones, like in the example below:
+
+````json title="https://192.168.1.118:18443/api/commodities/5"
+{
+  "_links": {
+    "self": {
+      "href": "http://192.168.1.119:8080/api/commodities/52"
+    },
+    "commodity": {
+      "href": "http://192.168.1.119:8080/api/commodities/52{?projection}",
+      "templated": true
+    }
+  }
+}
+````
+
+To fix this, one should add the following configuration to Spring Boot:
+
+````yaml title="application.yml"
+server:
+  forward-headers-strategy: framework
+````
+
+and the following bean to the Spring Boot application:
+
+````java 
+@Bean
+public ForwardedHeaderFilter forwardedHeaderFilter() {
+   return new ForwardedHeaderFilter();
+}
+````
+
+To check if the `X-forwarded-*` are actually being sent by Openresty:
+
+````bash
+sudo tcpdump -A -i any port 18085 | grep -i forwarded
+````
