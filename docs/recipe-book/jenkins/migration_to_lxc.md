@@ -18,9 +18,9 @@ a dedicated server is needed for Jenkins.
 Proxmox Linux Containers combine proper isolation with a dynamic resources allocation without
 a restart, which is perfect for the above goals.
 
-## Install From a Community Template
+## Install From a LXC Template
 
-
+I use [Turnkey Jenkins](https://www.turnkeylinux.org/jenkins) to install a preconfigured Debian with Jenkins.
 
 ## Install Docker 
 
