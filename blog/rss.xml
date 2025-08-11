@@ -4,10 +4,25 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Thu, 31 Jul 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 11 Aug 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Zabbix Installed and Configured]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/zabbix-setup</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/zabbix-setup</guid>
+            <pubDate>Mon, 11 Aug 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[The goal is to cut the time spent on maintenance of Java applications and network resources and spare time]]></description>
+            <content:encoded><![CDATA[<p>The goal is to cut the time spent on maintenance of Java applications and network resources and spare time
+for work and creativity. So Zabbix comes at handy again:</p>
+<ol>
+<li>Java Applications Monitoring, the documentation is <a href="https://grauds.github.io/clematis.doc/docs/recipe-book/zabbix/jmxmp_setup">ready</a></li>
+<li>TrueNAS Monitoring, the documentation is <a href="https://grauds.github.io/clematis.doc/docs/recipe-book/zabbix/truenas_setup">ready</a></li>
+</ol>]]></content:encoded>
+            <category>maintenance</category>
+            <category>monitoring</category>
+        </item>
         <item>
             <title><![CDATA[Migration to Jenkins Proxmox LXC]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/jenkins-migrated</link>
