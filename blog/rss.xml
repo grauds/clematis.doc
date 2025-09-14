@@ -4,10 +4,23 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Mon, 11 Aug 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 14 Sep 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Deep Learning for Weather API]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/clematis-weather-api</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/clematis-weather-api</guid>
+            <pubDate>Sun, 14 Sep 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[One of the previously planned features to add to the Clematis Weather API, it is now a new]]></description>
+            <content:encoded><![CDATA[<p>One of the <a href="https://grauds.github.io/clematis.doc/blog/new-ideas-post">previously planned</a> features to add to the Clematis Weather API, it is now a new
+repository on GitHub: <a href="https://github.com/grauds/clematis.weather" target="_blank" rel="noopener noreferrer">https://github.com/grauds/clematis.weather</a>. This is a work in progress,
+the results are yet to be improved, no releases yet, but the basic functionality is there. Used CLIP to match
+a weather image to a weather description.</p>]]></content:encoded>
+            <category>deep learning</category>
+            <category>weather</category>
+        </item>
         <item>
             <title><![CDATA[Zabbix Installed and Configured]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/zabbix-setup</link>

@@ -2,11 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2025-08-11T00:00:00.000Z</updated>
+    <updated>2025-09-14T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Deep Learning for Weather API]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-weather-api</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-weather-api"/>
+        <updated>2025-09-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[One of the previously planned features to add to the Clematis Weather API, it is now a new]]></summary>
+        <content type="html"><![CDATA[<p>One of the <a href="https://grauds.github.io/clematis.doc/blog/new-ideas-post">previously planned</a> features to add to the Clematis Weather API, it is now a new
+repository on GitHub: <a href="https://github.com/grauds/clematis.weather" target="_blank" rel="noopener noreferrer">https://github.com/grauds/clematis.weather</a>. This is a work in progress,
+the results are yet to be improved, no releases yet, but the basic functionality is there. Used CLIP to match
+a weather image to a weather description.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="deep learning" term="deep learning"/>
+        <category label="weather" term="weather"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Zabbix Installed and Configured]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/zabbix-setup</id>
