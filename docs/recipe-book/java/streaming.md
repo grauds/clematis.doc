@@ -74,3 +74,23 @@ missing, so they are missing from the result too:
 Example:
 
 * \[1 4 5 6 2 3 4 2 6 9\] -> \[\[1, 1\],\[2, 2\], \[3, 1\], \[4, 2\], \[5, 1\], \[6, 2\], \[9, 1\]\]
+
+## Removing duplicates
+
+```java
+  int[] n = Arrays.stream(reader.readLine().split("\\s+"))
+    .mapToInt(Integer::parseInt)
+    .boxed()
+    .collect(Collectors.toSet())
+    .toArray();
+```
+
+or with an explicit collection declaration:
+
+```java
+  Set<Integer> seen = new HashSet<>();
+  int[] n = Arrays.stream(reader.readLine().split("\\s+"))
+    .mapToInt(Integer::parseInt)
+    .filter(seen::add)
+    .toArray();
+```

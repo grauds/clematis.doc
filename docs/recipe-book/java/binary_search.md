@@ -9,7 +9,17 @@ tags:
 :::info
 Binary search includes both limits of an interval.
 :::
+:::warning
+Binary search works with arrays of more than one element.
+:::
 
+## Edge Cases
+
+* It is reasonable to check if the element we search for is less or equal than the first element of the array.
+* It is also reasonable to check if the element we search for is greater or equal than the last element of the array.
+* The search returns `0` index if the element is not found. In this case, an additional check is required: `check(m, params)`.
+For instance, in array `[2, 4, 6, 8]`, if we search for elements `< 2`, the pointers will end up at 0. 
+* The same with the last element, the condition should be validated once again.
 
 ## Left Binary Search
 
