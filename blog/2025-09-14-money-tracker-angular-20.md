@@ -1,5 +1,5 @@
 ---
-slug: clematis-money-tracker-ui
+slug: clematis-money-tracker-ui-20
 title: Money Tracker UI Migrated to Angular v20
 authors: [anton]
 tags: [angular, typescript, maintenance]
