@@ -2,11 +2,55 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2025-09-14T00:00:00.000Z</updated>
+    <updated>2025-09-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Clematis Desktop Java 21 & Refactoring]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-ui-update</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-desktop-ui-update"/>
+        <updated>2025-09-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Clematis Desktop]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://github.com/grauds/clematis.desktop" target="_blank" rel="noopener noreferrer">Clematis Desktop</a>
+is updated to work with Java version 21. There were a few steps were made:</p>
+<ul>
+<li>Gradle is updated to 9.1.0</li>
+<li>Changes in build files syntax to support Gradle 9.1.0</li>
+</ul>
+<img src="https://grauds.github.io/clematis.doc/assets/images/desktop-2024a03d7aba98f8df161f66ff18c10a.png" width="530px">
+<p>The project gradually accepts new language features as much of the old code is being
+refactored, for example, to remove the lengthy Desktop class and break down
+its functionality into smaller classes, organized in a more Java Swing way. More details are
+available in the <a href="https://github.com/grauds/clematis.desktop/tree/master/modules/ui" target="_blank" rel="noopener noreferrer">README</a>.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="desktop" term="desktop"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Some Links from Google Angular Event Tonight]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/angular-event-links</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/angular-event-links"/>
+        <updated>2025-09-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Leaving the links here to come back later:]]></summary>
+        <content type="html"><![CDATA[<p>Leaving the links here to come back later:</p>
+<ul>
+<li>Web Codegen Scorer →  <a href="https://goo.gle/web-codegen-scorer" target="_blank" rel="noopener noreferrer">goo.gle/web-codegen-scorer</a></li>
+<li>Web Codegen Scorer Blog →  <a href="https://goo.gle/meet-web-codegen-scorer-blog" target="_blank" rel="noopener noreferrer">goo.gle/meet-web-codegen-scorer-blog</a></li>
+<li>Angular AI Tutor →  <a href="https://goo.gle/ng-ai-tutor" target="_blank" rel="noopener noreferrer">goo.gle/ng-ai-tutor</a></li>
+<li>Gemini CLI →  <a href="https://goo.gle/try-gemini-cli" target="_blank" rel="noopener noreferrer">goo.gle/try-gemini-cli</a></li>
+<li>Angular.dev MCP Server  →  <a href="https://goo.gle/angular-mcp-server" target="_blank" rel="noopener noreferrer">goo.gle/angular-mcp-server</a></li>
+<li>Firebase Studio Angular Template → <a href="https://goo.gle/firebase-studio-angular-template" target="_blank" rel="noopener noreferrer">goo.gle/firebase-studio-angular-template</a></li>
+</ul>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="angular" term="angular"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Deep Learning for Weather API]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-weather-api</id>
@@ -23,6 +67,22 @@ a weather image to a weather description.</p>]]></content>
         </author>
         <category label="deep learning" term="deep learning"/>
         <category label="weather" term="weather"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Money Tracker UI Migrated to Angular v20]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-money-tracker-ui-20</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-money-tracker-ui-20"/>
+        <updated>2025-09-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Upgraded to Angular v20 using Nx migration tool and some manual fixes,]]></summary>
+        <content type="html"><![CDATA[<p>Upgraded to Angular v20 using Nx migration tool and some manual fixes,
+according to the official <a href="https://angular.dev/update-guide?v=19.0-20.0&amp;l=3" target="_blank" rel="noopener noreferrer">migration guide</a>.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="angular" term="angular"/>
+        <category label="typescript" term="typescript"/>
+        <category label="maintenance" term="maintenance"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Zabbix Installed and Configured]]></title>
