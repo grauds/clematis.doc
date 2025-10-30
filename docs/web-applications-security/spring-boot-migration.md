@@ -1,11 +1,11 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 tags:
   - spring-boot
   - keycloak
 ---
 
-# Update Spring Boot 2 Backend
+# Updating Spring Boot 2 Backend
 
 After a new instance of Keycloak is up and running, 
 Spring Boot 2 backend can work with the HTTPS version of the new instance after
@@ -14,7 +14,7 @@ the Keycloak certificate has to be imported into the Docker container of Spring 
 
 ## Updating Keycloak Endpoint
 
-As a reminder, the following dependency is being used:
+The following dependency is being used (the migration to Spring Security is in [the next chapter](./keycloak-adapter-decommission.md)):
 
 ````groovy title="build.gradle"
 dependencies {
@@ -43,11 +43,6 @@ KEYCLOAK_CLIENT=clematis-money-tracker-api
 
 And I also had to update Jenkins secret named ```MT_API_KEYCLOAK_SECRET``` which is being copied 
 into the ```KEYCLOAK_SECRET``` during the build.
-
-:::tip[Can Be Done Better]
-Keycloak adapter won't support Spring Boot 3, so migration off this dependency is planned, also improving
-maintainability of the security layer.
-:::
 
 ## Importing Keycloak Certificate
 
