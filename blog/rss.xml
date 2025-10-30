@@ -4,10 +4,20 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Tue, 23 Sep 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 30 Oct 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Decommission of Keycloak Spring Adapter]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/keycloak-adapter-decom</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/keycloak-adapter-decom</guid>
+            <pubDate>Thu, 30 Oct 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Keycloak adapter and Spring Boot starter are replaced with Spring Security OAuth2 configuration, the steps]]></description>
+            <content:encoded><![CDATA[<p>Keycloak adapter and Spring Boot starter are replaced with Spring Security OAuth2 configuration, the steps
+taken are already in <a href="https://grauds.github.io/clematis.doc/docs/web-applications-security/keycloak-adapter-decommission">the documentation</a></p>]]></content:encoded>
+            <category>maintenance</category>
+        </item>
         <item>
             <title><![CDATA[Clematis Desktop Java 21 & Refactoring]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/clematis-desktop-ui-update</link>

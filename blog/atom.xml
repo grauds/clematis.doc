@@ -2,11 +2,25 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2025-09-23T00:00:00.000Z</updated>
+    <updated>2025-10-30T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Decommission of Keycloak Spring Adapter]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/keycloak-adapter-decom</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/keycloak-adapter-decom"/>
+        <updated>2025-10-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Keycloak adapter and Spring Boot starter are replaced with Spring Security OAuth2 configuration, the steps]]></summary>
+        <content type="html"><![CDATA[<p>Keycloak adapter and Spring Boot starter are replaced with Spring Security OAuth2 configuration, the steps
+taken are already in <a href="https://grauds.github.io/clematis.doc/docs/web-applications-security/keycloak-adapter-decommission">the documentation</a></p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="maintenance" term="maintenance"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Clematis Desktop Java 21 & Refactoring]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-ui-update</id>
