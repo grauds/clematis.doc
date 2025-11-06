@@ -14,7 +14,7 @@
         <updated>2025-10-30T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Keycloak adapter and Spring Boot starter are replaced with Spring Security OAuth2 configuration, the steps]]></summary>
         <content type="html"><![CDATA[<p>Keycloak adapter and Spring Boot starter are replaced with Spring Security OAuth2 configuration, the steps
-taken are already in <a href="https://grauds.github.io/clematis.doc/docs/web-applications-security/keycloak-adapter-decommission">the documentation</a></p>]]></content>
+taken are already in <a class="" href="https://grauds.github.io/clematis.doc/docs/web-applications-security/keycloak-adapter-decommission">the documentation</a></p>]]></content>
         <author>
             <name>Anton Troshin</name>
             <uri>https://github.com/grauds</uri>
@@ -27,17 +27,17 @@ taken are already in <a href="https://grauds.github.io/clematis.doc/docs/web-app
         <link href="https://grauds.github.io/clematis.doc/blog/clematis-desktop-ui-update"/>
         <updated>2025-09-23T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Clematis Desktop]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://github.com/grauds/clematis.desktop" target="_blank" rel="noopener noreferrer">Clematis Desktop</a>
+        <content type="html"><![CDATA[<p><a href="https://github.com/grauds/clematis.desktop" target="_blank" rel="noopener noreferrer" class="">Clematis Desktop</a>
 is updated to work with Java version 21. There were a few steps were made:</p>
 <ul>
-<li>Gradle is updated to 9.1.0</li>
-<li>Changes in build files syntax to support Gradle 9.1.0</li>
+<li class="">Gradle is updated to 9.1.0</li>
+<li class="">Changes in build files syntax to support Gradle 9.1.0</li>
 </ul>
 <img src="https://grauds.github.io/clematis.doc/assets/images/desktop-2024a03d7aba98f8df161f66ff18c10a.png" width="530px">
 <p>The project gradually accepts new language features as much of the old code is being
 refactored, for example, to remove the lengthy Desktop class and break down
 its functionality into smaller classes, organized in a more Java Swing way. More details are
-available in the <a href="https://github.com/grauds/clematis.desktop/tree/master/modules/ui" target="_blank" rel="noopener noreferrer">README</a>.</p>]]></content>
+available in the <a href="https://github.com/grauds/clematis.desktop/tree/master/modules/ui" target="_blank" rel="noopener noreferrer" class="">README</a>.</p>]]></content>
         <author>
             <name>Anton Troshin</name>
             <uri>https://github.com/grauds</uri>
@@ -52,12 +52,12 @@ available in the <a href="https://github.com/grauds/clematis.desktop/tree/master
         <summary type="html"><![CDATA[Leaving the links here to come back later:]]></summary>
         <content type="html"><![CDATA[<p>Leaving the links here to come back later:</p>
 <ul>
-<li>Web Codegen Scorer →  <a href="https://goo.gle/web-codegen-scorer" target="_blank" rel="noopener noreferrer">goo.gle/web-codegen-scorer</a></li>
-<li>Web Codegen Scorer Blog →  <a href="https://goo.gle/meet-web-codegen-scorer-blog" target="_blank" rel="noopener noreferrer">goo.gle/meet-web-codegen-scorer-blog</a></li>
-<li>Angular AI Tutor →  <a href="https://goo.gle/ng-ai-tutor" target="_blank" rel="noopener noreferrer">goo.gle/ng-ai-tutor</a></li>
-<li>Gemini CLI →  <a href="https://goo.gle/try-gemini-cli" target="_blank" rel="noopener noreferrer">goo.gle/try-gemini-cli</a></li>
-<li>Angular.dev MCP Server  →  <a href="https://goo.gle/angular-mcp-server" target="_blank" rel="noopener noreferrer">goo.gle/angular-mcp-server</a></li>
-<li>Firebase Studio Angular Template → <a href="https://goo.gle/firebase-studio-angular-template" target="_blank" rel="noopener noreferrer">goo.gle/firebase-studio-angular-template</a></li>
+<li class="">Web Codegen Scorer →  <a href="https://goo.gle/web-codegen-scorer" target="_blank" rel="noopener noreferrer" class="">goo.gle/web-codegen-scorer</a></li>
+<li class="">Web Codegen Scorer Blog →  <a href="https://goo.gle/meet-web-codegen-scorer-blog" target="_blank" rel="noopener noreferrer" class="">goo.gle/meet-web-codegen-scorer-blog</a></li>
+<li class="">Angular AI Tutor →  <a href="https://goo.gle/ng-ai-tutor" target="_blank" rel="noopener noreferrer" class="">goo.gle/ng-ai-tutor</a></li>
+<li class="">Gemini CLI →  <a href="https://goo.gle/try-gemini-cli" target="_blank" rel="noopener noreferrer" class="">goo.gle/try-gemini-cli</a></li>
+<li class="">Angular.dev MCP Server  →  <a href="https://goo.gle/angular-mcp-server" target="_blank" rel="noopener noreferrer" class="">goo.gle/angular-mcp-server</a></li>
+<li class="">Firebase Studio Angular Template → <a href="https://goo.gle/firebase-studio-angular-template" target="_blank" rel="noopener noreferrer" class="">goo.gle/firebase-studio-angular-template</a></li>
 </ul>]]></content>
         <author>
             <name>Anton Troshin</name>
@@ -71,8 +71,8 @@ available in the <a href="https://github.com/grauds/clematis.desktop/tree/master
         <link href="https://grauds.github.io/clematis.doc/blog/clematis-weather-api"/>
         <updated>2025-09-14T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[One of the previously planned features to add to the Clematis Weather API, it is now a new]]></summary>
-        <content type="html"><![CDATA[<p>One of the <a href="https://grauds.github.io/clematis.doc/blog/new-ideas-post">previously planned</a> features to add to the Clematis Weather API, it is now a new
-repository on GitHub: <a href="https://github.com/grauds/clematis.weather" target="_blank" rel="noopener noreferrer">https://github.com/grauds/clematis.weather</a>. This is a work in progress,
+        <content type="html"><![CDATA[<p>One of the <a class="" href="https://grauds.github.io/clematis.doc/blog/new-ideas-post">previously planned</a> features to add to the Clematis Weather API, it is now a new
+repository on GitHub: <a href="https://github.com/grauds/clematis.weather" target="_blank" rel="noopener noreferrer" class="">https://github.com/grauds/clematis.weather</a>. This is a work in progress,
 the results are yet to be improved, no releases yet, but the basic functionality is there. Used CLIP to match
 a weather image to a weather description.</p>]]></content>
         <author>
@@ -89,7 +89,7 @@ a weather image to a weather description.</p>]]></content>
         <updated>2025-09-14T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Upgraded to Angular v20 using Nx migration tool and some manual fixes,]]></summary>
         <content type="html"><![CDATA[<p>Upgraded to Angular v20 using Nx migration tool and some manual fixes,
-according to the official <a href="https://angular.dev/update-guide?v=19.0-20.0&amp;l=3" target="_blank" rel="noopener noreferrer">migration guide</a>.</p>]]></content>
+according to the official <a href="https://angular.dev/update-guide?v=19.0-20.0&amp;l=3" target="_blank" rel="noopener noreferrer" class="">migration guide</a>.</p>]]></content>
         <author>
             <name>Anton Troshin</name>
             <uri>https://github.com/grauds</uri>
@@ -107,8 +107,8 @@ according to the official <a href="https://angular.dev/update-guide?v=19.0-20.0&
         <content type="html"><![CDATA[<p>The goal is to cut the time spent on maintenance of Java applications and network resources and spare time
 for work and creativity. So Zabbix comes at handy again:</p>
 <ol>
-<li>Java Applications Monitoring, the documentation is <a href="https://grauds.github.io/clematis.doc/docs/recipe-book/zabbix/jmxmp_setup">ready</a></li>
-<li>TrueNAS Monitoring, the documentation is <a href="https://grauds.github.io/clematis.doc/docs/recipe-book/zabbix/truenas_setup">ready</a></li>
+<li class="">Java Applications Monitoring, the documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/recipe-book/zabbix/jmxmp_setup">ready</a></li>
+<li class="">TrueNAS Monitoring, the documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/recipe-book/zabbix/truenas_setup">ready</a></li>
 </ol>]]></content>
         <author>
             <name>Anton Troshin</name>
@@ -123,7 +123,7 @@ for work and creativity. So Zabbix comes at handy again:</p>
         <link href="https://grauds.github.io/clematis.doc/blog/jenkins-migrated"/>
         <updated>2025-07-31T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Documentation is ready]]></summary>
-        <content type="html"><![CDATA[<p>Documentation is <a href="https://grauds.github.io/clematis.doc/docs/recipe-book/jenkins/migration_to_lxc">ready</a>
+        <content type="html"><![CDATA[<p>Documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/recipe-book/jenkins/migration_to_lxc">ready</a>
 for the migration of the Jenkins build server to a dedicated location.</p>]]></content>
         <author>
             <name>Anton Troshin</name>
@@ -137,7 +137,7 @@ for the migration of the Jenkins build server to a dedicated location.</p>]]></c
         <link href="https://grauds.github.io/clematis.doc/blog/security-chapter"/>
         <updated>2025-06-30T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Documentation is ready for the migration of Clematis Money Tracker application to HTTPS and]]></summary>
-        <content type="html"><![CDATA[<p>Documentation is <a href="https://grauds.github.io/clematis.doc/docs/web-applications-security">ready</a> for the migration of Clematis Money Tracker application to HTTPS and
+        <content type="html"><![CDATA[<p>Documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/web-applications-security">ready</a> for the migration of Clematis Money Tracker application to HTTPS and
 upgrade of the technological stack.</p>]]></content>
         <author>
             <name>Anton Troshin</name>
@@ -165,9 +165,9 @@ The documentation is updated.</p>]]></content>
         <link href="https://grauds.github.io/clematis.doc/blog/gradle-update-post"/>
         <updated>2025-05-24T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[The Palantir Docker Plugin is now EOL, which probably is the old news,]]></summary>
-        <content type="html"><![CDATA[<p>The <a href="https://github.com/palantir/gradle-docker" target="_blank" rel="noopener noreferrer">Palantir Docker Plugin</a> is now EOL, which probably is the old news,
+        <content type="html"><![CDATA[<p>The <a href="https://github.com/palantir/gradle-docker" target="_blank" rel="noopener noreferrer" class="">Palantir Docker Plugin</a> is now EOL, which probably is the old news,
 however, the worse part is that it is waiting to be updated for Gradle 8.12 and up:
-<a href="https://github.com/palantir/gradle-docker/issues/801" target="_blank" rel="noopener noreferrer">https://github.com/palantir/gradle-docker/issues/801</a>.</p>
+<a href="https://github.com/palantir/gradle-docker/issues/801" target="_blank" rel="noopener noreferrer" class="">https://github.com/palantir/gradle-docker/issues/801</a>.</p>
 <p>Some Clematis APIs are dependent on the plugin, so looking for workarounds or removal.</p>]]></content>
         <author>
             <name>Anton Troshin</name>
@@ -183,14 +183,14 @@ however, the worse part is that it is waiting to be updated for Gradle 8.12 and 
         <summary type="html"><![CDATA[Throwing in some stuff to experiment with:]]></summary>
         <content type="html"><![CDATA[<p>Throwing in some stuff to experiment with:</p>
 <ol>
-<li>Backends for Frontends (BFF): we need some aggregation to
+<li class="">Backends for Frontends (BFF): we need some aggregation to
 build the next web application, Clematis Day.
-Will probably be using <a href="https://bff-patterns.com/" target="_blank" rel="noopener noreferrer">https://bff-patterns.com</a>.</li>
-<li>Use <a href="https://storybook.js.org/" target="_blank" rel="noopener noreferrer">Storybook</a> to build the next
+Will probably be using <a href="https://bff-patterns.com/" target="_blank" rel="noopener noreferrer" class="">https://bff-patterns.com</a>.</li>
+<li class="">Use <a href="https://storybook.js.org/" target="_blank" rel="noopener noreferrer" class="">Storybook</a> to build the next
 web application.</li>
-<li>Use <a href="https://headlessui.com/" target="_blank" rel="noopener noreferrer">Headless UI</a> in the next web application to
+<li class="">Use <a href="https://headlessui.com/" target="_blank" rel="noopener noreferrer" class="">Headless UI</a> in the next web application to
 get a feeling of how to be ready for any UIKit.</li>
-<li>Add ML/Deep Learning to Clematis Weather API to select a weather picture.</li>
+<li class="">Add ML/Deep Learning to Clematis Weather API to select a weather picture.</li>
 </ol>]]></content>
         <author>
             <name>Anton Troshin</name>
@@ -279,7 +279,7 @@ files containing taxonomies.</p>]]></content>
         <summary type="html"><![CDATA[Starting renovation of the old legacy project about maths]]></summary>
         <content type="html"><![CDATA[<p>Starting renovation of the old legacy project about maths
 and its usage in the Java code for dynamic calculation of
-algorithmic values - <a href="https://github.com/grauds/clematis.math.parser" target="_blank" rel="noopener noreferrer">Clematis Math Parser</a>.</p>]]></content>
+algorithmic values - <a href="https://github.com/grauds/clematis.math.parser" target="_blank" rel="noopener noreferrer" class="">Clematis Math Parser</a>.</p>]]></content>
         <author>
             <name>Anton Troshin</name>
             <uri>https://github.com/grauds</uri>
