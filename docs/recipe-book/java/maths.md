@@ -32,3 +32,37 @@ How it works:
 * Then, a is squared modulo mod and b is shifted right by 1 (divided by 2).
 * This repeats until b becomes 0.
 * The result is returned.
+
+## GCD
+
+Greatest common divisor of two numbers:
+
+```java
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+````
+
+The same without recursion:
+
+````java
+    static int gcd(int a, int b) {
+        a = Math.abs(a);
+        b = Math.abs(b);
+        if (a == 0) {
+            return b;
+        }
+        if (b == 0) {
+            return a;
+        }
+        while (b != 0) {
+            int t = a % b;
+            a = b;
+            b = t;
+        }
+        return a;
+    }
+````
