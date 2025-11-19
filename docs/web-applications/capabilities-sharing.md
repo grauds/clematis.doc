@@ -138,3 +138,6 @@ storage:
   api:
     url: http://localhost:8081/api/storage
 ```
+:::info
+Useful article on Medium [How Spring Boot Implements Feign Clients for REST APIs](https://medium.com/@AlexanderObregon/how-spring-boot-implements-feign-clients-for-rest-apis-8a4108fa248c)
+:::
