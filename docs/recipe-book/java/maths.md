@@ -66,3 +66,21 @@ The same without recursion:
         return a;
     }
 ````
+
+## LCM
+
+Least common multiple of two numbers:
+```java
+int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+}
+```
+
+## Integer Ceil Division
+
+Integer division rounded up to the nearest integer.
+```java
+int ceilDiv(int B, int N) {
+    return (B + N - 1) / N;
+}
+`````
