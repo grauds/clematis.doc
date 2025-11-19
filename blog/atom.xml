@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2025-10-30T00:00:00.000Z</updated>
+    <updated>2025-11-19T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Storage API Client is Released]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-storage-api-client</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-storage-api-client"/>
+        <updated>2025-11-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Clematis Storage API is one of the low-level microservices, useful]]></summary>
+        <content type="html"><![CDATA[<p>Clematis Storage API is one of the low-level microservices, useful
+for the rest of applications which would like to store files. The client for Spring
+is now deployed to GitHub packages:</p>
+<div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.clematis.storage</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">storage-api-client</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">1.0.2</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
+<p>Documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/web-applications/capabilities-sharing">ready</a></p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="feign" term="feign"/>
+        <category label="storage" term="storage"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Decommission of Keycloak Spring Adapter]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/keycloak-adapter-decom</id>
