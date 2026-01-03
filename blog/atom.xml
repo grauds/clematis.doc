@@ -2,11 +2,41 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2025-11-19T00:00:00.000Z</updated>
+    <updated>2026-01-03T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Clematis Desktop Plugins Installer]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-rtui</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-desktop-rtui"/>
+        <updated>2026-01-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The next update for Clematis Desktop includes a new version of Runtime Manager UI plugin enriched]]></summary>
+        <content type="html"><![CDATA[<p>The next update for Clematis Desktop includes a new version of Runtime Manager UI plugin enriched
+with plugins downloader and installer, plus some more JVM monitors with GC marks.</p>
+<img src="https://grauds.github.io/clematis.doc/assets/images/desktop_plugins_ui-ce26289fc207c4d62a77337abab7de3e.png" width="530px">
+<p>There are many ideas yet to be implemented, the current list of changes is as follows:</p>
+<ol>
+<li class="">Removed Kiwi Plugin 'expected' type.</li>
+<li class="">Kiwi Plugin type control: ANY type can be loaded as SYSTEM or USER types of plugins, otherwise the types have to match</li>
+<li class="">Replaced plugin list with plugin table in Runtime Manager UI</li>
+<li class="">Fixed Kiwi Plugin classloader resource bundle issue</li>
+<li class="">Improved layout of the monitors' section</li>
+<li class="">Improved layout of the tabbed pane</li>
+<li class="">New type of UI extension shells which is loaded as USER plugins but common for all users.
+Their lifecycle is slightly different from the one of SYSTEM plugins, since these shells are
+being destroyed at the end of each user session.</li>
+<li class="">Plugin download from a URL and automatic installation afterward</li>
+<li class="">Plugins uninstallation buttons</li>
+<li class="">New log panel component</li>
+</ol>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="desktop" term="desktop"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Storage API Client is Released]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-storage-api-client</id>
