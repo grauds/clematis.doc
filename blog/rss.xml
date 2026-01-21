@@ -4,10 +4,34 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Sat, 03 Jan 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 21 Jan 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Jenkins Migration to Java 25 LTS]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/jenkins-java-25</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/jenkins-java-25</guid>
+            <pubDate>Wed, 21 Jan 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[My Turnkey Jenkins LXC stopped updates via apt a month ago, so I had to update the key:]]></description>
+            <content:encoded><![CDATA[<p>My Turnkey Jenkins LXC stopped updates via apt a month ago, so I had to update the key:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2026.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc &gt; /dev/null</span><br></span></code></pre></div></div>
+<p>And to update the repository:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list</span><br></span></code></pre></div></div>
+<p>Also, Jenkins needs Java 21 or higher. Installing it via deb package (Zulu):</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo dpkg -i zulu25.32.17-ca-jdk25.0.2-linux_amd64.deb</span><br></span></code></pre></div></div>
+<p>In case any dependencies are missing, install them:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo apt --fix-broken install -y</span><br></span></code></pre></div></div>
+<p>Finally, fix the jenkins service path:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">nano /lib/systemd/system/jenkins.service</span><br></span></code></pre></div></div>
+<p>Change</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ExecStart=/usr/bin/java -jar /usr/share/jenkins/jenkins.war`</span><br></span></code></pre></div></div>
+<p>to</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">ExecStart=/usr/bin/java -jar /usr/share/java/jenkins.war</span><br></span></code></pre></div></div>
+<p>Reload systemd:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">sudo systemctl daemon-reload</span><br></span></code></pre></div></div>]]></content:encoded>
+            <category>maintenance</category>
+        </item>
         <item>
             <title><![CDATA[Clematis Desktop Plugins Installer]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/clematis-desktop-rtui</link>
