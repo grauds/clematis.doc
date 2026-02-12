@@ -4,10 +4,27 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Wed, 21 Jan 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 12 Feb 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Java Libraries and Services Upgraded to support Java 25]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/java-backend-upgrade</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/java-backend-upgrade</guid>
+            <pubDate>Thu, 12 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[The following libraries and services were upgraded to be built with Java 25 and Gradle 9 on Jenkins,]]></description>
+            <content:encoded><![CDATA[<p>The following libraries and services were upgraded to be built with Java 25 and Gradle 9 on Jenkins,
+to run on Java 25 and to use the latest versions of Spring Boot 3 (there applicable, of course):</p>
+<ul>
+<li class=""><code>Cosmic API</code></li>
+<li class=""><code>Weather API</code></li>
+<li class=""><code>Storage API</code></li>
+<li class=""><code>Math Parser</code></li>
+<li class=""><code>Skos Parser</code></li>
+</ul>]]></content:encoded>
+            <category>maintenance</category>
+        </item>
         <item>
             <title><![CDATA[Jenkins Migration to Java 25 LTS]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/jenkins-java-25</link>
@@ -270,17 +287,6 @@ a web user interface backed up by a database to store the FORTRAN output.</p>
             <description><![CDATA[Rewriting a short Groovy project to parse and trim SKOS]]></description>
             <content:encoded><![CDATA[<p>Rewriting a short Groovy project to parse and trim SKOS
 files containing taxonomies.</p>]]></content:encoded>
-            <category>Schedule</category>
-        </item>
-        <item>
-            <title><![CDATA[Math Parser]]></title>
-            <link>https://grauds.github.io/clematis.doc/blog/math-parser-post</link>
-            <guid>https://grauds.github.io/clematis.doc/blog/math-parser-post</guid>
-            <pubDate>Fri, 19 Jul 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Starting renovation of the old legacy project about maths]]></description>
-            <content:encoded><![CDATA[<p>Starting renovation of the old legacy project about maths
-and its usage in the Java code for dynamic calculation of
-algorithmic values - <a href="https://github.com/grauds/clematis.math.parser" target="_blank" rel="noopener noreferrer" class="">Clematis Math Parser</a>.</p>]]></content:encoded>
             <category>Schedule</category>
         </item>
     </channel>

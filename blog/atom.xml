@@ -2,11 +2,32 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2026-01-21T00:00:00.000Z</updated>
+    <updated>2026-02-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Java Libraries and Services Upgraded to support Java 25]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/java-backend-upgrade</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/java-backend-upgrade"/>
+        <updated>2026-02-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The following libraries and services were upgraded to be built with Java 25 and Gradle 9 on Jenkins,]]></summary>
+        <content type="html"><![CDATA[<p>The following libraries and services were upgraded to be built with Java 25 and Gradle 9 on Jenkins,
+to run on Java 25 and to use the latest versions of Spring Boot 3 (there applicable, of course):</p>
+<ul>
+<li class=""><code>Cosmic API</code></li>
+<li class=""><code>Weather API</code></li>
+<li class=""><code>Storage API</code></li>
+<li class=""><code>Math Parser</code></li>
+<li class=""><code>Skos Parser</code></li>
+</ul>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="maintenance" term="maintenance"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Jenkins Migration to Java 25 LTS]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/jenkins-java-25</id>
@@ -341,21 +362,6 @@ a web user interface backed up by a database to store the FORTRAN output.</p>
         <summary type="html"><![CDATA[Rewriting a short Groovy project to parse and trim SKOS]]></summary>
         <content type="html"><![CDATA[<p>Rewriting a short Groovy project to parse and trim SKOS
 files containing taxonomies.</p>]]></content>
-        <author>
-            <name>Anton Troshin</name>
-            <uri>https://github.com/grauds</uri>
-        </author>
-        <category label="Schedule" term="Schedule"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Math Parser]]></title>
-        <id>https://grauds.github.io/clematis.doc/blog/math-parser-post</id>
-        <link href="https://grauds.github.io/clematis.doc/blog/math-parser-post"/>
-        <updated>2024-07-19T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Starting renovation of the old legacy project about maths]]></summary>
-        <content type="html"><![CDATA[<p>Starting renovation of the old legacy project about maths
-and its usage in the Java code for dynamic calculation of
-algorithmic values - <a href="https://github.com/grauds/clematis.math.parser" target="_blank" rel="noopener noreferrer" class="">Clematis Math Parser</a>.</p>]]></content>
         <author>
             <name>Anton Troshin</name>
             <uri>https://github.com/grauds</uri>
