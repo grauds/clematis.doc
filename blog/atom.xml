@@ -2,11 +2,43 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2026-02-12T00:00:00.000Z</updated>
+    <updated>2026-03-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Clematis Desktop Java 25]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-ui-update-25</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-desktop-ui-update-25"/>
+        <updated>2026-03-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Clematis Desktop]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://github.com/grauds/clematis.desktop" target="_blank" rel="noopener noreferrer" class="">Clematis Desktop</a>
+is updated to work with Java 25.</p>
+<p>The project gradually accepts <a href="https://docs.oracle.com/en/java/javase/25/language/java-language-changes-summary.html" target="_blank" rel="noopener noreferrer" class="">new language features</a>, so it won't be compiling with
+the earlier JDKs soon.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="desktop" term="desktop"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Cosmic Web Application Upgrade]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/cosmic-ui-upgrade</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/cosmic-ui-upgrade"/>
+        <updated>2026-03-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The commit]]></summary>
+        <content type="html"><![CDATA[<p>The <a href="https://github.com/grauds/clematis.cosmic.ui/commit/fd7cc51a940e6ac648c9035042b79bc3844f860b" target="_blank" rel="noopener noreferrer" class="">commit</a>
+upgrades the application to React 19.2 and refreshes the surrounding toolchain to newer compatible versions, including React DOM, Redux Toolkit, Vite, TypeScript, ESLint, and Vitest.
+It also moves the routing stack from the older React Router line to v7, which brings API and behavior changes in navigation and route handling.
+The build and CI environment are updated as well, with the pipeline switching to Node 22 and the dependency graph modernized to match newer package requirements.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="maintenance" term="maintenance"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Java Libraries and Services Upgraded to Support Java 25]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/java-backend-upgrade</id>
@@ -69,11 +101,11 @@ with plugins downloader and installer, plus some more JVM monitors with GC marks
 <ol>
 <li class="">Removed Kiwi Plugin 'expected' type.</li>
 <li class="">Kiwi Plugin type control: ANY type can be loaded as SYSTEM or USER types of plugins, otherwise the types have to match</li>
-<li class="">Replaced plugin list with plugin table in Runtime Manager UI</li>
+<li class="">Replaced the plugin list with the plugin table in Runtime Manager UI</li>
 <li class="">Fixed Kiwi Plugin classloader resource bundle issue</li>
 <li class="">Improved layout of the monitors' section</li>
 <li class="">Improved layout of the tabbed pane</li>
-<li class="">New type of UI extension shells which is loaded as USER plugins but common for all users.
+<li class="">New type of UI extension shells which are loaded as USER plugins but are common for all users.
 Their lifecycle is slightly different from the one of SYSTEM plugins, since these shells are
 being destroyed at the end of each user session.</li>
 <li class="">Plugin download from a URL and automatic installation afterward</li>
@@ -131,7 +163,7 @@ is updated to work with Java version 21. There were a few steps were made:</p>
 <li class="">Changes in build files syntax to support Gradle 9.1.0</li>
 </ul>
 <img src="https://grauds.github.io/clematis.doc/assets/images/desktop-2024a03d7aba98f8df161f66ff18c10a.png" width="530px">
-<p>The project gradually accepts new language features as much of the old code is being
+<p>The project gradually accepts <a href="https://docs.oracle.com/en/java/javase/25/language/java-language-changes-summary.html" target="_blank" rel="noopener noreferrer" class="">new language features</a> as much of the old code is being
 refactored, for example, to remove the lengthy Desktop class and break down
 its functionality into smaller classes, organized in a more Java Swing way. More details are
 available in the <a href="https://github.com/grauds/clematis.desktop/tree/master/modules/ui" target="_blank" rel="noopener noreferrer" class="">README</a>.</p>]]></content>
@@ -313,8 +345,8 @@ get a feeling of how to be ready for any UIKit.</li>
         <id>https://grauds.github.io/clematis.doc/blog/cosmic-post</id>
         <link href="https://grauds.github.io/clematis.doc/blog/cosmic-post"/>
         <updated>2024-11-15T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Working on the FORTRAN based legacy project, trying to bring it closer]]></summary>
-        <content type="html"><![CDATA[<p>Working on the FORTRAN based legacy project, trying to bring it closer
+        <summary type="html"><![CDATA[Working on the FORTRAN-based legacy project, trying to bring it closer]]></summary>
+        <content type="html"><![CDATA[<p>Working on the FORTRAN-based legacy project, trying to bring it closer
 to the modern web applications workflow. The idea is to make
 a web user interface backed up by a database to store the FORTRAN output.</p>
 <p><img decoding="async" loading="lazy" alt="Overview" src="https://grauds.github.io/clematis.doc/assets/images/overview-4291aa86eb2804e6438203359919af90.png" width="1074" height="466" class="img_ev3q"></p>]]></content>
@@ -333,35 +365,6 @@ a web user interface backed up by a database to store the FORTRAN output.</p>
         <content type="html"><![CDATA[<p>Math Parser is now deployed to GitHub packages:</p>
 <div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.clematis</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">math-parser</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">1.0-SNAPSHOT</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
 ]]></content>
-        <author>
-            <name>Anton Troshin</name>
-            <uri>https://github.com/grauds</uri>
-        </author>
-        <category label="Schedule" term="Schedule"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Skos Parser is Released]]></title>
-        <id>https://grauds.github.io/clematis.doc/blog/skos-parser-released-post</id>
-        <link href="https://grauds.github.io/clematis.doc/blog/skos-parser-released-post"/>
-        <updated>2024-10-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Skos Parser is now deployed to GitHub packages:]]></summary>
-        <content type="html"><![CDATA[<p>Skos Parser is now deployed to GitHub packages:</p>
-<div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.clematis</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">skos-parser</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">1.0-SNAPSHOT</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
-]]></content>
-        <author>
-            <name>Anton Troshin</name>
-            <uri>https://github.com/grauds</uri>
-        </author>
-        <category label="Schedule" term="Schedule"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Skos Parser]]></title>
-        <id>https://grauds.github.io/clematis.doc/blog/skos-parser-post</id>
-        <link href="https://grauds.github.io/clematis.doc/blog/skos-parser-post"/>
-        <updated>2024-08-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Rewriting a short Groovy project to parse and trim SKOS]]></summary>
-        <content type="html"><![CDATA[<p>Rewriting a short Groovy project to parse and trim SKOS
-files containing taxonomies.</p>]]></content>
         <author>
             <name>Anton Troshin</name>
             <uri>https://github.com/grauds</uri>
