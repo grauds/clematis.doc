@@ -13,11 +13,11 @@ with plugins downloader and installer, plus some more JVM monitors with GC marks
 There are many ideas yet to be implemented, the current list of changes is as follows:
 1. Removed Kiwi Plugin 'expected' type.
 2. Kiwi Plugin type control: ANY type can be loaded as SYSTEM or USER types of plugins, otherwise the types have to match
-3. Replaced plugin list with plugin table in Runtime Manager UI
+3. Replaced the plugin list with the plugin table in Runtime Manager UI
 4. Fixed Kiwi Plugin classloader resource bundle issue
 5. Improved layout of the monitors' section
 6. Improved layout of the tabbed pane
-7. New type of UI extension shells which is loaded as USER plugins but common for all users. 
+7. New type of UI extension shells which are loaded as USER plugins but are common for all users. 
 Their lifecycle is slightly different from the one of SYSTEM plugins, since these shells are 
 being destroyed at the end of each user session.
 8. Plugin download from a URL and automatic installation afterward
