@@ -3,9 +3,11 @@ sidebar_position: 4
 tags:
   - angular
   - nginx
+  - https
+  - keycloak
 ---
 
-# Frontend Switch to HTTPS
+# Angular Frontend Switch to HTTPS
 
 Keycloak checks storage access during authentication to know if it is able to work with the local storage of the client's
 browser. If the connection is not secured, development console will show a message ```Access to storage is not allowed from this context```.
@@ -66,13 +68,122 @@ Since the builds and deploys are handled by Jenkins, the ultimate destination fo
 internal [Jenkins storage for secret files](https://www.jenkins.io/doc/book/using/using-credentials/).
 For example, the names can be: ```nginx-ssl-cert``` and ```nginx-ssl-key```.
 
+### Storing The Certificate In A Docker Volume
+
+Now the Jenkins pipeline can be used to export files from Jenkins internal
+storage to the remote Docker volume, the certificate files have to be uniquely
+named to avoid conflicts.
+
+``` title="Jenkinsfile"
+pipeline {
+    agent any
+    environment {
+      CERT_DIR = "${WORKSPACE}/docker/nginx/ssl"
+    }
+   
+    stages {
+    
+        # The rest of the pipeline
+    
+        stage('Prepare Directories') {
+            steps {
+                sh '''
+                   # Create directory structure with proper permissions
+                    mkdir -p "${CERT_DIR}"
+                    chmod 700 "${CERT_DIR}"
+                    ls -al "${CERT_DIR}"
+                '''
+            }
+        }
+    
+        stage('Deploy Certificates') {
+            steps {
+                withCredentials([
+                   file(credentialsId: 'nginx-ssl-cert', variable: 'SSL_CERT'),
+                   file(credentialsId: 'nginx-ssl-key', variable: 'SSL_KEY')
+                ]) {
+                    sh '''
+                      cp "$SSL_CERT" "${CERT_DIR}/clematis-mt-ssl-cert.crt"
+                      cp "$SSL_KEY" "${CERT_DIR}/clematis-mt-ssl-key.key"
+                      chmod 644 "${CERT_DIR}/clematis-mt-ssl-cert.crt"
+                      chmod 600 "${CERT_DIR}/clematis-mt-ssl-key.key"           
+                    '''
+               }
+            }
+        }
+        
+         stage('Prepare SSL Volume') {
+          steps {
+            sshagent (credentials: ['yoda-anton-key']) {
+              sh '''
+                # 1. Ensure the volume exists (does nothing if it already exists)
+                ssh ${SSH_DEST} "docker volume create jenkins_ssl_certs"
+    
+                # 2. Stream and overwrite files (tar overwrites by default)
+                tar -C "${CERT_DIR}" -cf - . | ssh ${SSH_DEST} "docker run --rm -i -v jenkins_ssl_certs:/ssl alpine tar -C /ssl -xf -"
+    
+                # 3. Update permissions on the new/updated files
+                ssh ${SSH_DEST} "docker run --rm -v jenkins_ssl_certs:/ssl alpine sh -c 'chmod 644 /ssl/clematis-mt-ssl-cert.crt && chmod 600 /ssl/clematis-mt-ssl-key.key'"
+              '''
+            }
+          }
+        }
+        
+        // ...
+    }
+    
+    post {
+        always {
+          sh '''
+            rm -rf "${CERT_DIR}"
+          '''
+        }
+    }
+}
+```
+To recap:
+
+* Create the directory to store certificate in the workspace
+* Copy the certificate to the directory created above
+* Prepare an SSL volume and copy the certificate to it.
+* Deploy the applications to the Docker containers
+* Remove the directory with certificates from the workspace
+
+### Docker Compose Modification
+
+The next step is to make sure the Docker container will get the files from the
+Docker volume; it should be mounted to the application container, for example:
+
+```
+volumes:
+    - ssl_certs:/usr/local/openresty/nginx/ssl:ro
+```
+The full example:
+
+``` title="apps/money-tracker-ui/jenkins/docker-compose.yml"
+services:
+  money-tracker-ui:
+    container_name: clematis-money-tracker-ui
+    image: money.tracker.ui.uat:latest
+    ports:
+      - '18081:80'
+      - '18443:443'
+    volumes:
+      - ./nginx-default.conf:/etc/nginx/conf.d/default.conf
+      - ssl_certs:/usr/local/openresty/nginx/ssl:ro
+    networks:
+      - clematis
+    restart: unless-stopped
+    
+```
+
 ### Adding SSL To Nginx in Openresty
 
 Money Tracker Web Application is using [Openresty](https://openresty.org/en/) image for deployment;
 this affects the paths needed to install certificates and configuration file.
 
-The configuration file:
-
+Mind the same file names for the certificate and the key as
+in the previous section, (volume contains all the files):
 ```nginx configuration title="/etc/nginx/conf.d/default.conf"
 server {
     # Redirect HTTP to HTTPS
@@ -87,8 +198,8 @@ server {
     root /var/www/money-tracker-ui;
 
     # SSL configuration for OpenResty
-    ssl_certificate /usr/local/openresty/nginx/ssl/certificate.crt;
-    ssl_certificate_key /usr/local/openresty/nginx/ssl/private.key;
+    ssl_certificate /usr/local/openresty/nginx/ssl/clematis-mt-ssl-cert.crt;
+    ssl_certificate_key /usr/local/openresty/nginx/ssl/clematis-mt-ssl-key.key;
 
     # Recommended SSL settings
     ssl_protocols TLSv1.2 TLSv1.3;
@@ -140,138 +251,9 @@ server {
 }
 ```
 As a result, Nginx expects to find a certificate in its local container path:
-
 ```
 /usr/local/openresty/nginx/ssl
 ```
-
-### Docker Compose Modification
-
-The next step is to make sure the Docker container will get the files in the directory it expects.
-One of the best approaches is to create a Docker volume and to copy the files from Jenkins
-credentials storage there; then it should be mounted to the application container,
-for example:
-
-```
-volumes:
-    - ssl_certs:/usr/local/openresty/nginx/ssl:ro
-```
-The full example:
-
-``` title="apps/money-tracker-ui/jenkins/docker-compose.yml"
-services:
-  money-tracker-ui:
-    container_name: clematis-money-tracker-ui
-    image: money.tracker.ui.uat:latest
-    ports:
-      - '18081:80'
-      - '18443:443'
-    volumes:
-      - ./nginx-default.conf:/etc/nginx/conf.d/default.conf
-      - ssl_certs:/usr/local/openresty/nginx/ssl:ro
-    networks:
-      - clematis
-    restart: unless-stopped
-    
-```
-:::info
-Since Jenkins is running in a Docker container, the path for ```nginx-default.conf``` has to be given
-relative to the host machine file system. The shortcut is to hardcode it, since it is immutable if
-the name of the job is not changed.
-:::
-
-
-### Storing The Certificate In A Docker Volume
-
-Now the Jenkins pipeline can be used to re/create the volume and to copy the certificate files to it:
-
-``` title="Jenkinsfile"
-pipeline {
-    agent any
-    environment {
-      CERT_DIR = "${WORKSPACE}/docker/nginx/ssl"
-    }
-   
-    stages {
-    
-        # The rest of the pipeline
-    
-        stage('Prepare Directories') {
-            steps {
-                sh '''
-                   # Create directory structure with proper permissions
-                    mkdir -p "${CERT_DIR}"
-                    chmod 700 "${CERT_DIR}"
-                    ls -al "${CERT_DIR}"
-                '''
-            }
-        }
-    
-        stage('Deploy Certificates') {
-        
-            steps {
-                script {
-                     // Using secret files
-                      withCredentials([
-                         file(credentialsId: 'nginx-ssl-cert', variable: 'SSL_CERT'),
-                         file(credentialsId: 'nginx-ssl-key', variable: 'SSL_KEY')
-                      ]) {
-                          sh """
-                              # Copy certificates
-                              cp "$SSL_CERT" "${CERT_DIR}/certificate.crt"
-                              cp "$SSL_KEY" "${CERT_DIR}/private.key"
-                    
-                              # Set proper permissions
-                              chmod 644 "${CERT_DIR}/certificate.crt"
-                              chmod 600 "${CERT_DIR}/private.key"
-                    
-                          """
-                     }
-                }
-            }
-        }
-        
-        stage('Prepare SSL Volume') {
-            steps {
-                script {
-                    sh '''
-                        # First create or clear the volume
-                        docker run --rm -v jenkins_ssl_certs:/ssl alpine sh -c "rm -rf /ssl/* && mkdir -p /ssl"
-    
-                        # Then copy the certificates from the workspace
-                        docker cp "${CERT_DIR}/." $(docker create --rm -v jenkins_ssl_certs:/ssl alpine sh):/ssl/
-    
-                        # Finally set the permissions
-                        docker run --rm -v jenkins_ssl_certs:/ssl alpine sh -c "
-                            chmod 644 /ssl/certificate.crt && \
-                            chmod 600 /ssl/private.key
-                        "
-    
-                    '''
-                }
-            }
-        }
-        
-        // ...
-    }
-    
-    post {
-        always {
-           // Clean up sensitive files after use
-          sh '''
-              if [ -d "${CERT_DIR}" ]; then rm -rf "${CERT_DIR}"; fi
-           '''
-        }
-    }
-}
-```
-To recap:
-
-* Create the directory to store certificate in the workspace
-* Copy the certificate to the directory created above
-* Prepare an SSL volume and copy the certificate to it.
-* Deploy the applications to the Docker containers
-* Remove the directory with certificates from the workspace
 
 ## How To Trust A Certificate
 
