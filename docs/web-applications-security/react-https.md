@@ -162,6 +162,22 @@ server {
 
     client_max_body_size 200M;
 
+    location /api/ {
+        proxy_pass http://192.168.1.118:18089/api/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header   X-Forwarded-Host $host;
+        proxy_set_header   X-Forwarded-Server $host;
+        proxy_set_header   X-Forwarded-Proto https;
+        proxy_set_header   X-Forwarded-Port 18080;
+        proxy_set_header   X-Real-IP $remote_addr;
+        proxy_cache_bypass $http_upgrade;
+    }
+    
+    ...(other locations)
+
     location / {
         root /var/www/html;
         index index.html index.htm;
@@ -179,4 +195,15 @@ server {
 After securing user - browser communication, the application backend
 should be secured as well. Overwise some browsers like Safari will
 not allow connecting to the application.
+:::
+
+:::note
+Plase keep in mind that Spring Hateoas should be taken into 
+account in proxy configuration, it needs to know the original
+host and port of the user request. Therefore, the application backend
+also has to have the following configuration:
+```title="src/main/resources/application.yml"
+server:
+  forward-headers-strategy: framework
+```
 :::
