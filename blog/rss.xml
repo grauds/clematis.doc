@@ -4,10 +4,22 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Wed, 18 Mar 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 30 Apr 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Cosmic Web Application HTTPS]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/react-https</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/react-https</guid>
+            <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cosmic Web Application is using React, and the installation of HTTPS is a bit different from the]]></description>
+            <content:encoded><![CDATA[<p>Cosmic Web Application is using React, and the installation of HTTPS is a bit different from the
+previous installation in Cosmic Money Tracker Angular application. Also, the first application uses
+Nginx while the latter – Lua. To mind the process, the following <a class="" href="https://grauds.github.io/clematis.doc/docs/web-applications-security/react-https">manual</a> is provided.</p>]]></content:encoded>
+            <category>maintenance</category>
+            <category>https</category>
+        </item>
         <item>
             <title><![CDATA[Clematis Desktop Java 25]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/clematis-desktop-ui-update-25</link>
@@ -218,6 +230,7 @@ for the migration of the Jenkins build server to a dedicated location.</p>]]></c
             <content:encoded><![CDATA[<p>Documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/web-applications-security">ready</a> for the migration of Clematis Money Tracker application to HTTPS and
 upgrade of the technological stack.</p>]]></content:encoded>
             <category>maintenance</category>
+            <category>https</category>
         </item>
         <item>
             <title><![CDATA[Decommission of Clematis Auth API]]></title>
@@ -279,17 +292,6 @@ get a feeling of how to be ready for any UIKit.</li>
 to the modern web applications workflow. The idea is to make
 a web user interface backed up by a database to store the FORTRAN output.</p>
 <p><img decoding="async" loading="lazy" alt="Overview" src="https://grauds.github.io/clematis.doc/assets/images/overview-4291aa86eb2804e6438203359919af90.png" width="1074" height="466" class="img_ev3q"></p>]]></content:encoded>
-            <category>Schedule</category>
-        </item>
-        <item>
-            <title><![CDATA[Math Parser is Released]]></title>
-            <link>https://grauds.github.io/clematis.doc/blog/math-parser-released-post</link>
-            <guid>https://grauds.github.io/clematis.doc/blog/math-parser-released-post</guid>
-            <pubDate>Fri, 25 Oct 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Math Parser is now deployed to GitHub packages:]]></description>
-            <content:encoded><![CDATA[<p>Math Parser is now deployed to GitHub packages:</p>
-<div class="language-xml codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-xml codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">org.clematis</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">groupId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">math-parser</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">artifactId</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain">1.0-SNAPSHOT</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">version</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">dependency</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><br></span></code></pre></div></div>
-]]></content:encoded>
             <category>Schedule</category>
         </item>
     </channel>
