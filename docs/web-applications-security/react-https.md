@@ -7,7 +7,7 @@ tags:
 ---
 # React Frontend Switch to HTTPS
 
-This time we will switch another frontend to HTTPS, it is Clematis Cosmic made with React.
+This time we will switch another frontend to HTTPS; it is Clematis Cosmic made with React.
 The first step is again to generate the self-signed certificate in a preferred way.
 
 ### Generate Mkcert Certificates
@@ -198,7 +198,7 @@ not allow connecting to the application.
 :::
 
 :::note
-Plase keep in mind that Spring Hateoas should be taken into 
+Please keep in mind that Spring Hateoas should be taken into 
 account in proxy configuration, it needs to know the original
 host and port of the user request. Therefore, the application backend
 also has to have the following configuration:
