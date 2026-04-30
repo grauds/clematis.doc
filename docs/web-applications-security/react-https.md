@@ -155,7 +155,7 @@ server {
     server_name localhost;
 
     ssl_certificate     /etc/nginx/ssl/clematis-cosmic-ssl-cert.crt;
-    ssl_certificate_key /etc/nginx/ssl/clematis-cosmic-ssl-key.crt;
+    ssl_certificate_key /etc/nginx/ssl/clematis-cosmic-ssl-key.key;
 
     ssl_protocols       TLSv1.2 TLSv1.3;
     ssl_ciphers         HIGH:!aNULL:!MD5;
