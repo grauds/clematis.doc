@@ -13,8 +13,8 @@
             <link>https://grauds.github.io/clematis.doc/blog/react-https</link>
             <guid>https://grauds.github.io/clematis.doc/blog/react-https</guid>
             <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[Cosmic Web Application is using React, and the installation of HTTPS is a bit different from the]]></description>
-            <content:encoded><![CDATA[<p>Cosmic Web Application is using React, and the installation of HTTPS is a bit different from the
+            <description><![CDATA[Cosmic Web application is using React, and the installation of HTTPS is a bit different from the]]></description>
+            <content:encoded><![CDATA[<p>Cosmic Web application is using React, and the installation of HTTPS is a bit different from the
 previous installation in Cosmic Money Tracker Angular application. Also, the first application uses
 Nginx while the latter – Lua. To mind the process, the following <a class="" href="https://grauds.github.io/clematis.doc/docs/web-applications-security/react-https">manual</a> is provided.</p>]]></content:encoded>
             <category>maintenance</category>
