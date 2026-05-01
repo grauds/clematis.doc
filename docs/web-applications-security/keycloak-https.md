@@ -150,17 +150,28 @@ The goal is to have the Keycloak Web UI loaded with a valid certificate in your 
 
  <img src={require('@site/static/img/valid_keycloak_certificate.png').default} width="730px"></img>
 
-The procedure is different for various operating systems, for macOS it is as follows:
+The procedure is different for various operating systems, but here we assume we have
+the root CA certificate from the server which generated the site certificate:
 
-1. Safari uses the Keychain Access utility built into macOS to manage digital certificates. It may
-not work as expected, there are several issues with adding certificates to the list of trusted ones.
-2. It is better to use Chrome to open the certificate and export it from the browser, saving it
-to the local drive. [More info](https://www.google.com/search?q=use+Chrome+to+open+the+certificate+and+export+it+from+the+browser%2C+saving+it+to+the+local+drive.&oq=use+Chrome+to+open+the+certificate+and+export+it+from+the+browser%2C+saving+it+to+the+local+drive.&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg70gEHNTY2ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8).
-3. The certificate file then can be opened with the Keychain Access utility and selecting 'Always Trust' option.
+1. To get one, run the following command on the server where `mkcert` was installed, for example:
+````bash
+$ mkcert -CAROOT
+/home/anton/.local/share/mkcert
+````
+and then check the files in the directory:
+````bash
+$ ls -l /home/anton/.local/share/mkcert
+total 8
+-r-------- 1 anton anton 2484 Jul  1  2025 rootCA-key.pem
+-rw-r--r-- 1 anton anton 1643 Jul  1  2025 rootCA.pem
+````
+2. Copy the `rootCA.pem` file to the local client machine.
+3. The certificate file then can be opened with the Keychain Access utility and selecting 'Always Trust' option
+on macOS or follow the instructions for your operating system.
 
 <img src={require('@site/static/img/trusting_certificate.png').default} width="630px"></img>
 
-The good thing about locally trusted certificate authorities is that the browsers and 
-other client components which are keen on security procedures make no difference between
-certificates issued locally and production certificates from the official authorities. That
-is why self-signed certificates are less convenient.
+:::tip
+Once the application is moved to its own domain name, it will be possible to get the certificate from the 
+certificate authority.
+:::
