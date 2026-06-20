@@ -2,11 +2,42 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2026-05-23T00:00:00.000Z</updated>
+    <updated>2026-06-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Clematis Desktop 2.0.0]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-2</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-desktop-2"/>
+        <updated>2026-06-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The next major release]]></summary>
+        <content type="html"><![CDATA[<p>The next major <a href="https://github.com/grauds/clematis.desktop/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer" class="">release</a>
+of Clematis Desktop is out. It includes core libraries, two plugins and installers
+for Mac and Linux.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="desktop" term="desktop"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Proxmox FS Comparison]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/proxmox-fs-comparison</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/proxmox-fs-comparison"/>
+        <updated>2026-06-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Leaving it here for reference. Using ZFS, looking to]]></summary>
+        <content type="html"><![CDATA[<p>Leaving it here for reference. Using ZFS, looking to
+fix some rare IO delays.</p>
+<table><thead><tr><th style="text-align:left">RAID Type</th><th style="text-align:left">RAM Consumption</th><th style="text-align:left">Consumer SSD Friendly?</th><th style="text-align:left">Bit-Rot Protection?</th><th style="text-align:left">Built-In Proxmox GUI Setup?</th></tr></thead><tbody><tr><td style="text-align:left"><strong>ZFS</strong></td><td style="text-align:left">🔴 Extremely High</td><td style="text-align:left">🔴 No (High Wear)</td><td style="text-align:left">🟢 Yes (Active)</td><td style="text-align:left">🟢 Yes</td></tr><tr><td style="text-align:left"><strong>Hardware RAID</strong></td><td style="text-align:left">🟢 Extremely Low</td><td style="text-align:left">🟡 Moderate</td><td style="text-align:left">🔴 No</td><td style="text-align:left">🟢 Yes (As LVM)</td></tr><tr><td style="text-align:left"><strong>Linux mdadm</strong></td><td style="text-align:left">🟢 Extremely Low</td><td style="text-align:left">🟢 Yes (Low Wear)</td><td style="text-align:left">🔴 No</td><td style="text-align:left">🔴 No (CLI Only)</td></tr><tr><td style="text-align:left"><strong>Ceph</strong></td><td style="text-align:left">🔴 High</td><td style="text-align:left">🔴 No (Enterprise Only)</td><td style="text-align:left">🟢 Yes (Active)</td><td style="text-align:left">🟢 Yes</td></tr></tbody></table>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="proxmox" term="proxmox"/>
+        <category label="maintenance" term="maintenance"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Clematis Desktop Source Editor]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-sed</id>
@@ -340,41 +371,5 @@ however, the worse part is that it is waiting to be updated for Gradle 8.12 and 
             <uri>https://github.com/grauds</uri>
         </author>
         <category label="maintenance" term="maintenance"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[New Pet Projects Ideas]]></title>
-        <id>https://grauds.github.io/clematis.doc/blog/new-ideas-post</id>
-        <link href="https://grauds.github.io/clematis.doc/blog/new-ideas-post"/>
-        <updated>2025-03-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Throwing in some stuff to experiment with:]]></summary>
-        <content type="html"><![CDATA[<p>Throwing in some stuff to experiment with:</p>
-<ol>
-<li class="">Backends for Frontends (BFF): we need some aggregation to
-build the next web application, Clematis Day.
-Will probably be using <a href="https://bff-patterns.com/" target="_blank" rel="noopener noreferrer" class="">https://bff-patterns.com</a>.</li>
-<li class="">Use <a href="https://storybook.js.org/" target="_blank" rel="noopener noreferrer" class="">Storybook</a> to build the next
-web application.</li>
-<li class="">Use <a href="https://headlessui.com/" target="_blank" rel="noopener noreferrer" class="">Headless UI</a> in the next web application to
-get a feeling of how to be ready for any UIKit.</li>
-<li class="">Add ML/Deep Learning to Clematis Weather API to select a weather picture.</li>
-</ol>]]></content>
-        <author>
-            <name>Anton Troshin</name>
-            <uri>https://github.com/grauds</uri>
-        </author>
-        <category label="Idea" term="Idea"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Cosmic is Released]]></title>
-        <id>https://grauds.github.io/clematis.doc/blog/cosmic-released-post</id>
-        <link href="https://grauds.github.io/clematis.doc/blog/cosmic-released-post"/>
-        <updated>2025-01-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Cosmic 1.0.0 is now released and shipped to its end users.]]></summary>
-        <content type="html"><![CDATA[<p>Cosmic 1.0.0 is now released and shipped to its end users.</p>]]></content>
-        <author>
-            <name>Anton Troshin</name>
-            <uri>https://github.com/grauds</uri>
-        </author>
-        <category label="Schedule" term="Schedule"/>
     </entry>
 </feed>

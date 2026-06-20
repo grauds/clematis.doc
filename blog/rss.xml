@@ -4,10 +4,33 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Sat, 23 May 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 20 Jun 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Clematis Desktop 2.0.0]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/clematis-desktop-2</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/clematis-desktop-2</guid>
+            <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[The next major release]]></description>
+            <content:encoded><![CDATA[<p>The next major <a href="https://github.com/grauds/clematis.desktop/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer" class="">release</a>
+of Clematis Desktop is out. It includes core libraries, two plugins and installers
+for Mac and Linux.</p>]]></content:encoded>
+            <category>desktop</category>
+        </item>
+        <item>
+            <title><![CDATA[Proxmox FS Comparison]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/proxmox-fs-comparison</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/proxmox-fs-comparison</guid>
+            <pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Leaving it here for reference. Using ZFS, looking to]]></description>
+            <content:encoded><![CDATA[<p>Leaving it here for reference. Using ZFS, looking to
+fix some rare IO delays.</p>
+<table><thead><tr><th style="text-align:left">RAID Type</th><th style="text-align:left">RAM Consumption</th><th style="text-align:left">Consumer SSD Friendly?</th><th style="text-align:left">Bit-Rot Protection?</th><th style="text-align:left">Built-In Proxmox GUI Setup?</th></tr></thead><tbody><tr><td style="text-align:left"><strong>ZFS</strong></td><td style="text-align:left">🔴 Extremely High</td><td style="text-align:left">🔴 No (High Wear)</td><td style="text-align:left">🟢 Yes (Active)</td><td style="text-align:left">🟢 Yes</td></tr><tr><td style="text-align:left"><strong>Hardware RAID</strong></td><td style="text-align:left">🟢 Extremely Low</td><td style="text-align:left">🟡 Moderate</td><td style="text-align:left">🔴 No</td><td style="text-align:left">🟢 Yes (As LVM)</td></tr><tr><td style="text-align:left"><strong>Linux mdadm</strong></td><td style="text-align:left">🟢 Extremely Low</td><td style="text-align:left">🟢 Yes (Low Wear)</td><td style="text-align:left">🔴 No</td><td style="text-align:left">🔴 No (CLI Only)</td></tr><tr><td style="text-align:left"><strong>Ceph</strong></td><td style="text-align:left">🔴 High</td><td style="text-align:left">🔴 No (Enterprise Only)</td><td style="text-align:left">🟢 Yes (Active)</td><td style="text-align:left">🟢 Yes</td></tr></tbody></table>]]></content:encoded>
+            <category>proxmox</category>
+            <category>maintenance</category>
+        </item>
         <item>
             <title><![CDATA[Clematis Desktop Source Editor]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/clematis-desktop-sed</link>
@@ -269,34 +292,6 @@ however, the worse part is that it is waiting to be updated for Gradle 8.12 and 
 <a href="https://github.com/palantir/gradle-docker/issues/801" target="_blank" rel="noopener noreferrer" class="">https://github.com/palantir/gradle-docker/issues/801</a>.</p>
 <p>Some Clematis APIs are dependent on the plugin, so looking for workarounds or removal.</p>]]></content:encoded>
             <category>maintenance</category>
-        </item>
-        <item>
-            <title><![CDATA[New Pet Projects Ideas]]></title>
-            <link>https://grauds.github.io/clematis.doc/blog/new-ideas-post</link>
-            <guid>https://grauds.github.io/clematis.doc/blog/new-ideas-post</guid>
-            <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Throwing in some stuff to experiment with:]]></description>
-            <content:encoded><![CDATA[<p>Throwing in some stuff to experiment with:</p>
-<ol>
-<li class="">Backends for Frontends (BFF): we need some aggregation to
-build the next web application, Clematis Day.
-Will probably be using <a href="https://bff-patterns.com/" target="_blank" rel="noopener noreferrer" class="">https://bff-patterns.com</a>.</li>
-<li class="">Use <a href="https://storybook.js.org/" target="_blank" rel="noopener noreferrer" class="">Storybook</a> to build the next
-web application.</li>
-<li class="">Use <a href="https://headlessui.com/" target="_blank" rel="noopener noreferrer" class="">Headless UI</a> in the next web application to
-get a feeling of how to be ready for any UIKit.</li>
-<li class="">Add ML/Deep Learning to Clematis Weather API to select a weather picture.</li>
-</ol>]]></content:encoded>
-            <category>Idea</category>
-        </item>
-        <item>
-            <title><![CDATA[Cosmic is Released]]></title>
-            <link>https://grauds.github.io/clematis.doc/blog/cosmic-released-post</link>
-            <guid>https://grauds.github.io/clematis.doc/blog/cosmic-released-post</guid>
-            <pubDate>Sat, 25 Jan 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Cosmic 1.0.0 is now released and shipped to its end users.]]></description>
-            <content:encoded><![CDATA[<p>Cosmic 1.0.0 is now released and shipped to its end users.</p>]]></content:encoded>
-            <category>Schedule</category>
         </item>
     </channel>
 </rss>
