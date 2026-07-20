@@ -4,10 +4,26 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Sat, 20 Jun 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 20 Jul 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Money Tracker UI with Clematis Storage API]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/clematis-money-tracker-ui-storage</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/clematis-money-tracker-ui-storage</guid>
+            <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Added a significantly renovated design plus integration with Clematis Storage API gives]]></description>
+            <content:encoded><![CDATA[<p>Added a significantly renovated design plus integration with Clematis Storage API gives
+a persistent storage for commodities, organizations and accounts main images.</p>
+<img src="https://grauds.github.io/clematis.doc/assets/images/thumbnails-5e8e118d1e55e0a872700b3ad8419f6d.png" width="530px">
+<p>The images themselves can be simply pasted from the clipboard in a new image uploader component,
+this makes the authoring of entity front image easier.</p>
+<img src="https://grauds.github.io/clematis.doc/assets/images/image_uploader-733215d7d534cd028eb3655ea53f84fe.png" width="300px">]]></content:encoded>
+            <category>angular</category>
+            <category>typescript</category>
+            <category>money-tracker</category>
+        </item>
         <item>
             <title><![CDATA[Clematis Desktop 2.0.0]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/clematis-desktop-2</link>
@@ -234,6 +250,7 @@ according to the official <a href="https://angular.dev/update-guide?v=19.0-20.0&
             <category>angular</category>
             <category>typescript</category>
             <category>maintenance</category>
+            <category>money-tracker</category>
         </item>
         <item>
             <title><![CDATA[Zabbix Installed and Configured]]></title>
@@ -279,18 +296,6 @@ upgrade of the technological stack.</p>]]></content:encoded>
             <description><![CDATA[The embedded Keycloak project is decommissioned in favor of a standalone Proxmox virtual machine.]]></description>
             <content:encoded><![CDATA[<p>The embedded Keycloak project is decommissioned in favor of a standalone Proxmox virtual machine.
 The documentation is updated.</p>]]></content:encoded>
-            <category>maintenance</category>
-        </item>
-        <item>
-            <title><![CDATA[Gradle and Palantir Docker Plugin]]></title>
-            <link>https://grauds.github.io/clematis.doc/blog/gradle-update-post</link>
-            <guid>https://grauds.github.io/clematis.doc/blog/gradle-update-post</guid>
-            <pubDate>Sat, 24 May 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[The Palantir Docker Plugin is now EOL, which probably is the old news,]]></description>
-            <content:encoded><![CDATA[<p>The <a href="https://github.com/palantir/gradle-docker" target="_blank" rel="noopener noreferrer" class="">Palantir Docker Plugin</a> is now EOL, which probably is the old news,
-however, the worse part is that it is waiting to be updated for Gradle 8.12 and up:
-<a href="https://github.com/palantir/gradle-docker/issues/801" target="_blank" rel="noopener noreferrer" class="">https://github.com/palantir/gradle-docker/issues/801</a>.</p>
-<p>Some Clematis APIs are dependent on the plugin, so looking for workarounds or removal.</p>]]></content:encoded>
             <category>maintenance</category>
         </item>
     </channel>

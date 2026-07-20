@@ -2,11 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2026-06-20T00:00:00.000Z</updated>
+    <updated>2026-07-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Money Tracker UI with Clematis Storage API]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-money-tracker-ui-storage</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-money-tracker-ui-storage"/>
+        <updated>2026-07-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Added a significantly renovated design plus integration with Clematis Storage API gives]]></summary>
+        <content type="html"><![CDATA[<p>Added a significantly renovated design plus integration with Clematis Storage API gives
+a persistent storage for commodities, organizations and accounts main images.</p>
+<img src="https://grauds.github.io/clematis.doc/assets/images/thumbnails-5e8e118d1e55e0a872700b3ad8419f6d.png" width="530px">
+<p>The images themselves can be simply pasted from the clipboard in a new image uploader component,
+this makes the authoring of entity front image easier.</p>
+<img src="https://grauds.github.io/clematis.doc/assets/images/image_uploader-733215d7d534cd028eb3655ea53f84fe.png" width="300px">]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="angular" term="angular"/>
+        <category label="typescript" term="typescript"/>
+        <category label="money-tracker" term="money-tracker"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Clematis Desktop 2.0.0]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-2</id>
@@ -293,6 +313,7 @@ according to the official <a href="https://angular.dev/update-guide?v=19.0-20.0&
         <category label="angular" term="angular"/>
         <category label="typescript" term="typescript"/>
         <category label="maintenance" term="maintenance"/>
+        <category label="money-tracker" term="money-tracker"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Zabbix Installed and Configured]]></title>
@@ -350,22 +371,6 @@ upgrade of the technological stack.</p>]]></content>
         <summary type="html"><![CDATA[The embedded Keycloak project is decommissioned in favor of a standalone Proxmox virtual machine.]]></summary>
         <content type="html"><![CDATA[<p>The embedded Keycloak project is decommissioned in favor of a standalone Proxmox virtual machine.
 The documentation is updated.</p>]]></content>
-        <author>
-            <name>Anton Troshin</name>
-            <uri>https://github.com/grauds</uri>
-        </author>
-        <category label="maintenance" term="maintenance"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Gradle and Palantir Docker Plugin]]></title>
-        <id>https://grauds.github.io/clematis.doc/blog/gradle-update-post</id>
-        <link href="https://grauds.github.io/clematis.doc/blog/gradle-update-post"/>
-        <updated>2025-05-24T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[The Palantir Docker Plugin is now EOL, which probably is the old news,]]></summary>
-        <content type="html"><![CDATA[<p>The <a href="https://github.com/palantir/gradle-docker" target="_blank" rel="noopener noreferrer" class="">Palantir Docker Plugin</a> is now EOL, which probably is the old news,
-however, the worse part is that it is waiting to be updated for Gradle 8.12 and up:
-<a href="https://github.com/palantir/gradle-docker/issues/801" target="_blank" rel="noopener noreferrer" class="">https://github.com/palantir/gradle-docker/issues/801</a>.</p>
-<p>Some Clematis APIs are dependent on the plugin, so looking for workarounds or removal.</p>]]></content>
         <author>
             <name>Anton Troshin</name>
             <uri>https://github.com/grauds</uri>
