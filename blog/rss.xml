@@ -18,8 +18,19 @@
 a persistent storage for commodities, organizations and accounts main images.</p>
 <img src="https://grauds.github.io/clematis.doc/assets/images/thumbnails-5e8e118d1e55e0a872700b3ad8419f6d.png" width="530px">
 <p>The images themselves can be simply pasted from the clipboard in a new image uploader component,
-this makes the authoring of entity front image easier.</p>
-<img src="https://grauds.github.io/clematis.doc/assets/images/image_uploader-733215d7d534cd028eb3655ea53f84fe.png" width="300px">]]></content:encoded>
+this makes the authoring of entity front image easier:</p>
+<ol>
+<li class="">Paste the image from the clipboard, scale and move it to the desired position. The uploader will
+crop the visible area of the image.</li>
+</ol>
+<img src="https://grauds.github.io/clematis.doc/assets/images/image_uploader_editor-e6b59aed20a076942f88c99d8ef437b9.png" width="300px">
+<ol start="2">
+<li class="">Clicking the "Save" button will upload the image to the Clematis Storage API and will display the resulting
+image in the read-only uploader. In this example the image has been scaled down before upload if
+compared with the first screenshot.</li>
+</ol>
+<img src="https://grauds.github.io/clematis.doc/assets/images/image_uploader-733215d7d534cd028eb3655ea53f84fe.png" width="300px">
+<p>The component sources can be found <a href="https://github.com/grauds/money.tracker.ui/tree/dc6da430a67758327a4afa9c20e88cf3622e1108/libs/shared-components/src/lib/components/photo-uploader" target="_blank" rel="noopener noreferrer" class="">here</a>.</p>]]></content:encoded>
             <category>angular</category>
             <category>typescript</category>
             <category>money-tracker</category>
