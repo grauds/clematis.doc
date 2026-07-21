@@ -7,8 +7,10 @@ tags: [desktop]
 ---
 The next update for Clematis Desktop includes a new version of Runtime Manager UI plugin enriched
 with plugin downloader and installer, plus some more JVM monitors with GC marks. 
-<!-- truncate -->
+
 <img src={require('@site/static/img/desktop_plugins_ui.png').default} width="530px"></img>
+
+<!-- truncate -->
 
 There are many ideas yet to be implemented; the current list of changes is as follows:
 1. Removed Kiwi Plugin 'expected' type.

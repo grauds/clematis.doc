@@ -5,7 +5,7 @@ date: 2026-05-23
 authors: [anton]
 tags: [desktop]
 ---
-Simple Java live compiling source editor, plugin for Java Desktop, 
+Simple Java live compiling source editor plugin for Clematis Desktop, 
 especially useful for offline competitive programming training, 
 preparation for live-coding interviews and development of short algorithms 
 for your Java applications.
