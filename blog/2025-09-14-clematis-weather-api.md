@@ -2,7 +2,7 @@
 slug: clematis-weather-api
 title: Deep Learning for Weather API
 authors: [anton]
-tags: [deep learning, weather]
+tags: [deep learning, similarity, weather]
 ---
 One of the [previously planned](./2025-03-20-new-ideas.md) features to add to the Clematis Weather API, it is now a new 
 repository on GitHub: https://github.com/grauds/clematis.weather. This is a work in progress,
