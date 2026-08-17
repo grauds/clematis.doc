@@ -5,7 +5,8 @@ date: 2026-06-20
 authors: [anton]
 tags: [desktop]
 ---
-The next major [release](https://github.com/grauds/clematis.desktop/releases/tag/v2.0.0) of Clematis Desktop is out.
+The next major [release](https://github.com/grauds/clematis.desktop/releases/tag/v2.0.0) of Clematis Desktop
+(aka [Java Workspace](https://sourceforge.net/projects/clematis/)) is out.
 
 <img src={require('@site/static/img/desktop_2_0_0.png').default} width="530px"></img>
 

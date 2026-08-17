@@ -1,6 +1,6 @@
 ---
 slug: clematis-money-tracker-ui-storage
-title: Money Tracker UI with Clematis Storage API
+title: Money Tracker UI with Storage API
 authors: [anton]
 tags: [angular, typescript, money-tracker]
 ---
