@@ -13,7 +13,7 @@ The `Clematis Weather API` backend can now also answer the question: **How alike
 The primary use case is picking an archive photograph that looks like a requested day, since not all the days
 have photos of that day reflecting weather. 
 
-An [`Observation`](../model/Observation.java) entity from the rp5.ru archive for the day in question is reduced to a small vector of
+An `Observation` entity from the rp5.ru archive for the day in question is reduced to a small vector of
 comparable features, each pair of features is scored on a `0..1` scale, and the scores are combined
 into a single weighted distance. A vantage-point tree is layered on top so that the nearest
 observations out of a large archive can be found without scanning everything.
