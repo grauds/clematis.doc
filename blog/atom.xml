@@ -25,7 +25,7 @@ Documentation is available <a class="" href="https://grauds.github.io/clematis.d
         <category label="weather" term="weather"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Money Tracker UI with Clematis Storage API]]></title>
+        <title type="html"><![CDATA[Money Tracker UI with Storage API]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-money-tracker-ui-storage</id>
         <link href="https://grauds.github.io/clematis.doc/blog/clematis-money-tracker-ui-storage"/>
         <updated>2026-07-20T00:00:00.000Z</updated>
@@ -60,8 +60,9 @@ compared with the first screenshot.</li>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-2</id>
         <link href="https://grauds.github.io/clematis.doc/blog/clematis-desktop-2"/>
         <updated>2026-06-20T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[The next major release of Clematis Desktop is out.]]></summary>
-        <content type="html"><![CDATA[<p>The next major <a href="https://github.com/grauds/clematis.desktop/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer" class="">release</a> of Clematis Desktop is out.</p>
+        <summary type="html"><![CDATA[The next major release of Clematis Desktop]]></summary>
+        <content type="html"><![CDATA[<p>The next major <a href="https://github.com/grauds/clematis.desktop/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer" class="">release</a> of Clematis Desktop
+(aka <a href="https://sourceforge.net/projects/clematis/" target="_blank" rel="noopener noreferrer" class="">Java Workspace</a>) is out.</p>
 <img src="https://grauds.github.io/clematis.doc/assets/images/desktop_2_0_0-ae766a71f3d4e7914378a900f7d8c682.png" width="530px">
 <p>It includes core libraries, two plugins and installers for Mac and Linux. I'm working on
 the Windows installer, it will be added in one of the next updates.</p>]]></content>
