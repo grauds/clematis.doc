@@ -4,10 +4,23 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Mon, 20 Jul 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 17 Aug 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Static Similarity for Weather API]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/clematis-weather-api-similarity</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/clematis-weather-api-similarity</guid>
+            <pubDate>Mon, 17 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Weather API is now able to provide a background image to an observation:]]></description>
+            <content:encoded><![CDATA[<p>Weather API is now able to provide a background image to an observation:</p>
+<img src="https://grauds.github.io/clematis.doc/assets/images/weather_background-31d5be1ff67db7e3aeda7d433c98b105.png" width="530px">
+<p>It is not AI, but the weather data preprocessed in a 'traditional' way.
+Documentation is available <a class="" href="https://grauds.github.io/clematis.doc/docs/static-similarity">here</a>.</p>]]></content:encoded>
+            <category>similarity</category>
+            <category>weather</category>
+        </item>
         <item>
             <title><![CDATA[Money Tracker UI with Clematis Storage API]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/clematis-money-tracker-ui-storage</link>
@@ -250,6 +263,7 @@ repository on GitHub: <a href="https://github.com/grauds/clematis.weather" targe
 the results are yet to be improved, no releases yet, but the basic functionality is there. Used CLIP to match
 a weather image to a weather description.</p>]]></content:encoded>
             <category>deep learning</category>
+            <category>similarity</category>
             <category>weather</category>
         </item>
         <item>
@@ -300,16 +314,6 @@ for the migration of the Jenkins build server to a dedicated location.</p>]]></c
 upgrade of the technological stack.</p>]]></content:encoded>
             <category>maintenance</category>
             <category>https</category>
-        </item>
-        <item>
-            <title><![CDATA[Decommission of Clematis Auth API]]></title>
-            <link>https://grauds.github.io/clematis.doc/blog/auth-decom</link>
-            <guid>https://grauds.github.io/clematis.doc/blog/auth-decom</guid>
-            <pubDate>Sun, 25 May 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[The embedded Keycloak project is decommissioned in favor of a standalone Proxmox virtual machine.]]></description>
-            <content:encoded><![CDATA[<p>The embedded Keycloak project is decommissioned in favor of a standalone Proxmox virtual machine.
-The documentation is updated.</p>]]></content:encoded>
-            <category>maintenance</category>
         </item>
     </channel>
 </rss>
