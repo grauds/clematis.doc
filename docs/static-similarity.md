@@ -27,14 +27,14 @@ directory.
 
 | Class | Kind | Role                                                                                   |
 |---|---|----------------------------------------------------------------------------------------|
-| [`ObservationFeatures`](ObservationFeatures.java) | `record` | The comparable shape of an observation — free-text fields already parsed into numbers. |
-| [`SimilarityFeature`](SimilarityFeature.java) | `enum` | The 13 comparable aspects, each with its own normalisation rule and scale.             |
-| [`SimilarityWeights`](SimilarityWeights.java) | `record` | How much each feature counts. Ships with `PHOTO` and `BALANCED` profiles.              |
-| [`ObservationSimilarityCalculator`](ObservationSimilarityCalculator.java) | utility | Combines per-feature differences into one distance in `0..1`.                          |
-| [`ObservationVPTree`](ObservationVPTree.java) | class | Metric-space index for k-nearest-neighbour search over that distance.                  |
-| [`WeatherPhenomenon`](WeatherPhenomenon.java) | `record` | Classifies the free-prose `WW` field onto independent axes and scores them.            |
-| [`CloudAmount`](CloudAmount.java) | utility | Parses the `N` / `Nh` cloud-cover prose into a sky fraction.                           |
-| [`WindDirections`](WindDirections.java) | utility | Places `WindDirection` on the compass rose as a bearing in degrees.                    |
+| ObservationFeatures | `record` | The comparable shape of an observation — free-text fields already parsed into numbers. |
+| SimilarityFeature | `enum` | The 13 comparable aspects, each with its own normalisation rule and scale.             |
+| SimilarityWeights | `record` | How much each feature counts. Ships with `PHOTO` and `BALANCED` profiles.              |
+| ObservationSimilarityCalculator) | utility | Combines per-feature differences into one distance in `0..1`.                          |
+| ObservationVPTree | class | Metric-space index for k-nearest-neighbour search over that distance.                  |
+| WeatherPhenomenon | `record` | Classifies the free-prose `WW` field onto independent axes and scores them.            |
+| CloudAmount | utility | Parses the `N` / `Nh` cloud-cover prose into a sky fraction.                           |
+| WindDirections | utility | Places `WindDirection` on the compass rose as a bearing in degrees.                    |
 
 Everything in the package is deliberately null-tolerant: the archive is full of gaps (snow depth and
 soil temperature are only reported at some hours, whole fields are empty for the earlier years),
