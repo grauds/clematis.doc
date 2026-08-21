@@ -109,7 +109,7 @@ const config: Config = {
             },
             {
               label: 'Recipe Book',
-              to: '/docs/recipe-book/react/props-and-state',
+              to: '/docs/recipe-book',
             },
           ],
         },
@@ -181,7 +181,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Clematis. Built with Docusaurus.`,
+      copyright: `© 2025 - ${new Date().getFullYear()}, Anton & Clematis. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
