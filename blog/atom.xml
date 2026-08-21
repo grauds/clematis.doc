@@ -2,11 +2,39 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2026-08-17T00:00:00.000Z</updated>
+    <updated>2026-08-21T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Storage API 1.0.0 is released]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-storage-api-1-0-0</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-storage-api-1-0-0"/>
+        <updated>2026-08-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The Storage API v 1.0.0 is released.]]></summary>
+        <content type="html"><![CDATA[<p>The <a href="https://github.com/grauds/clematis.storage.api/releases/tag/v_1_0_0" target="_blank" rel="noopener noreferrer" class="">Storage API v 1.0.0</a> is released.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="similarity" term="similarity"/>
+        <category label="storage" term="storage"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Weather API 1.0.0 is released]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-weather-api-1-0-0</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-weather-api-1-0-0"/>
+        <updated>2026-08-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The Weather API v 1.0.0 is released with similarity analysis.]]></summary>
+        <content type="html"><![CDATA[<p>The <a href="https://github.com/grauds/clematis.weather.api/releases/tag/v_1_0_0" target="_blank" rel="noopener noreferrer" class="">Weather API v 1.0.0</a> is released with similarity analysis.</p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="similarity" term="similarity"/>
+        <category label="weather" term="weather"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Static Similarity for Weather API]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-weather-api-similarity</id>
@@ -365,34 +393,5 @@ for work and creativity. So Zabbix comes at handy again:</p>
         </author>
         <category label="maintenance" term="maintenance"/>
         <category label="monitoring" term="monitoring"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Migration to Jenkins Proxmox LXC]]></title>
-        <id>https://grauds.github.io/clematis.doc/blog/jenkins-migrated</id>
-        <link href="https://grauds.github.io/clematis.doc/blog/jenkins-migrated"/>
-        <updated>2025-07-31T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Documentation is ready]]></summary>
-        <content type="html"><![CDATA[<p>Documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/recipe-book/jenkins/migration_to_lxc">ready</a>
-for the migration of the Jenkins build server to a dedicated location.</p>]]></content>
-        <author>
-            <name>Anton Troshin</name>
-            <uri>https://github.com/grauds</uri>
-        </author>
-        <category label="maintenance" term="maintenance"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Migration to latest Keycloak, Angular and HTTPS]]></title>
-        <id>https://grauds.github.io/clematis.doc/blog/security-chapter</id>
-        <link href="https://grauds.github.io/clematis.doc/blog/security-chapter"/>
-        <updated>2025-06-30T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Documentation is ready for the migration of Clematis Money Tracker application to HTTPS and]]></summary>
-        <content type="html"><![CDATA[<p>Documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/web-applications-security">ready</a> for the migration of Clematis Money Tracker application to HTTPS and
-upgrade of the technological stack.</p>]]></content>
-        <author>
-            <name>Anton Troshin</name>
-            <uri>https://github.com/grauds</uri>
-        </author>
-        <category label="maintenance" term="maintenance"/>
-        <category label="https" term="https"/>
     </entry>
 </feed>

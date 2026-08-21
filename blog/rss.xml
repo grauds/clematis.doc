@@ -4,10 +4,30 @@
         <title>Clematis Explained Blog</title>
         <link>https://grauds.github.io/clematis.doc/blog</link>
         <description>Clematis Explained Blog</description>
-        <lastBuildDate>Mon, 17 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 21 Aug 2026 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Storage API 1.0.0 is released]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/clematis-storage-api-1-0-0</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/clematis-storage-api-1-0-0</guid>
+            <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[The Storage API v 1.0.0 is released.]]></description>
+            <content:encoded><![CDATA[<p>The <a href="https://github.com/grauds/clematis.storage.api/releases/tag/v_1_0_0" target="_blank" rel="noopener noreferrer" class="">Storage API v 1.0.0</a> is released.</p>]]></content:encoded>
+            <category>similarity</category>
+            <category>storage</category>
+        </item>
+        <item>
+            <title><![CDATA[Weather API 1.0.0 is released]]></title>
+            <link>https://grauds.github.io/clematis.doc/blog/clematis-weather-api-1-0-0</link>
+            <guid>https://grauds.github.io/clematis.doc/blog/clematis-weather-api-1-0-0</guid>
+            <pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[The Weather API v 1.0.0 is released with similarity analysis.]]></description>
+            <content:encoded><![CDATA[<p>The <a href="https://github.com/grauds/clematis.weather.api/releases/tag/v_1_0_0" target="_blank" rel="noopener noreferrer" class="">Weather API v 1.0.0</a> is released with similarity analysis.</p>]]></content:encoded>
+            <category>similarity</category>
+            <category>weather</category>
+        </item>
         <item>
             <title><![CDATA[Static Similarity for Weather API]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/clematis-weather-api-similarity</link>
@@ -294,27 +314,6 @@ for work and creativity. So Zabbix comes at handy again:</p>
 </ol>]]></content:encoded>
             <category>maintenance</category>
             <category>monitoring</category>
-        </item>
-        <item>
-            <title><![CDATA[Migration to Jenkins Proxmox LXC]]></title>
-            <link>https://grauds.github.io/clematis.doc/blog/jenkins-migrated</link>
-            <guid>https://grauds.github.io/clematis.doc/blog/jenkins-migrated</guid>
-            <pubDate>Thu, 31 Jul 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Documentation is ready]]></description>
-            <content:encoded><![CDATA[<p>Documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/recipe-book/jenkins/migration_to_lxc">ready</a>
-for the migration of the Jenkins build server to a dedicated location.</p>]]></content:encoded>
-            <category>maintenance</category>
-        </item>
-        <item>
-            <title><![CDATA[Migration to latest Keycloak, Angular and HTTPS]]></title>
-            <link>https://grauds.github.io/clematis.doc/blog/security-chapter</link>
-            <guid>https://grauds.github.io/clematis.doc/blog/security-chapter</guid>
-            <pubDate>Mon, 30 Jun 2025 00:00:00 GMT</pubDate>
-            <description><![CDATA[Documentation is ready for the migration of Clematis Money Tracker application to HTTPS and]]></description>
-            <content:encoded><![CDATA[<p>Documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/web-applications-security">ready</a> for the migration of Clematis Money Tracker application to HTTPS and
-upgrade of the technological stack.</p>]]></content:encoded>
-            <category>maintenance</category>
-            <category>https</category>
         </item>
     </channel>
 </rss>
