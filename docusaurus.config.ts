@@ -104,20 +104,28 @@ const config: Config = {
               to: '/docs/web-applications',
             },
             {
+              label: 'Web Applications Security',
+              to: '/docs/web-applications-security'
+            },
+            {
               label: 'Recipe Book',
               to: '/docs/recipe-book/react/props-and-state',
             },
           ],
         },
         {
-          title: 'All Projects',
+          title: 'Web Applications',
           items: [
             {
-              label: 'Clematis Storage API',
+              label: 'Storage API',
               href: 'https://github.com/grauds/clematis.storage.api',
             },
             {
-              label: 'Clematis Weather API',
+              label: 'Storage API Feign Client',
+              href: 'https://github.com/grauds/clematis.storage.api.client',
+            },
+            {
+              label: 'Weather API',
               href: 'https://github.com/grauds/clematis.weather.api',
             },
             {
@@ -133,14 +141,31 @@ const config: Config = {
               href: 'https://github.com/grauds/clematis.poc.pomodoro',
             },
             {
-              label: 'Cosmic UI',
-              href: 'https://github.com/grauds/clematis.cosmic.ui',
-            },
-            {
-              label: 'Cosmic API',
-              href: 'https://github.com/grauds/clematis.cosmic',
+              label: 'Archived: E-learning prototype',
+              href: 'https://github.com/grauds/clematis.poc.gwtp',
             },
           ],
+        },
+        {
+          title: 'Clematis Java Workspace',
+          items: [
+            {
+              label: 'Desktop',
+              href: 'https://github.com/grauds/clematis.desktop',
+            },
+            {
+              label: 'Code Editor Plugin',
+              href: 'https://github.com/grauds/clematis.desktop.sed',
+            },
+            {
+              label: 'Math Parser',
+              href: 'https://github.com/grauds/clematis.math.parser'
+            },
+            {
+              label: 'SKOS Parser',
+              href: 'https://github.com/grauds/clematis.skos.parser'
+            }
+          ]
         },
         {
           title: 'More',
@@ -152,10 +177,6 @@ const config: Config = {
             {
               label: 'GitHub',
               href: 'https://github.com/grauds',
-            },
-            {
-              label: 'Java Workspace',
-              href: 'https://github.com/grauds/clematis.desktop',
             },
           ],
         },

@@ -10,7 +10,7 @@ tags:
 # Angular Frontend Switch to HTTPS
 
 Keycloak checks storage access during authentication to know if it is able to work with the local storage of the client's
-browser. If the connection is not secured, development console will show a message ```Access to storage is not allowed from this context```.
+browser. If the connection is not secured, the development console will show a message ```Access to storage is not allowed from this context```.
 There is also a definitive bias towards excluding non-secure connections from support in Keycloak, for example in the
 following thread:
 [enforce security on Keycloak users](https://github.com/keycloak/keycloak/discussions/32087).
