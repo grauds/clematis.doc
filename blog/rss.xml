@@ -9,7 +9,7 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Clematis Desktop Visual XML Editor]]></title>
+            <title><![CDATA[Visual XML Editor v1.0.0]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/clematis-desktop-xed</link>
             <guid>https://grauds.github.io/clematis.doc/blog/clematis-desktop-xed</guid>
             <pubDate>Tue, 22 Sep 2026 00:00:00 GMT</pubDate>
@@ -107,7 +107,7 @@ fix some rare IO delays.</p>
             <category>maintenance</category>
         </item>
         <item>
-            <title><![CDATA[Clematis Desktop Source Editor]]></title>
+            <title><![CDATA[Java Source Editor v1.0.0]]></title>
             <link>https://grauds.github.io/clematis.doc/blog/clematis-desktop-sed</link>
             <guid>https://grauds.github.io/clematis.doc/blog/clematis-desktop-sed</guid>
             <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>

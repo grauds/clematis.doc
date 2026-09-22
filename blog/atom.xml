@@ -8,7 +8,7 @@
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
     <entry>
-        <title type="html"><![CDATA[Clematis Desktop Visual XML Editor]]></title>
+        <title type="html"><![CDATA[Visual XML Editor v1.0.0]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-xed</id>
         <link href="https://grauds.github.io/clematis.doc/blog/clematis-desktop-xed"/>
         <updated>2026-09-22T00:00:00.000Z</updated>
@@ -134,7 +134,7 @@ fix some rare IO delays.</p>
         <category label="maintenance" term="maintenance"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Clematis Desktop Source Editor]]></title>
+        <title type="html"><![CDATA[Java Source Editor v1.0.0]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-sed</id>
         <link href="https://grauds.github.io/clematis.doc/blog/clematis-desktop-sed"/>
         <updated>2026-05-23T00:00:00.000Z</updated>
