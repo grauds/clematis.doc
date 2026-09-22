@@ -14,5 +14,5 @@ for your Java applications.
 
 Repository: https://github.com/grauds/clematis.desktop.sed
 
-Use this link to download the latest version in the Clematis Java Workspace plugins installer:
-https://github.com/grauds/clematis.desktop.sed/releases/download/latest/sed_latest.jar
+Use this link to download the version 1.0.0 in the Clematis Java Workspace plugins installer:
+https://github.com/grauds/clematis.desktop.sed/releases/download/v1_0_0/sed_1_0_0.jar
