@@ -158,6 +158,10 @@ const config: Config = {
               href: 'https://github.com/grauds/clematis.desktop.sed',
             },
             {
+              label: 'Visual XML Editor Plugin',
+              href: 'https://github.com/grauds/clematis.desktop.xed',
+            },
+            {
               label: 'Math Parser',
               href: 'https://github.com/grauds/clematis.math.parser'
             },
