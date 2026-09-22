@@ -1,6 +1,6 @@
 ---
 slug: clematis-desktop-xed
-title: Clematis Desktop Visual XML Editor
+title: Visual XML Editor v1.0.0
 date: 2026-09-22
 authors: [anton]
 tags: [desktop]

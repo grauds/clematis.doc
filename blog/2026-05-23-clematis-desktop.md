@@ -1,6 +1,6 @@
 ---
 slug: clematis-desktop-sed
-title: Clematis Desktop Source Editor
+title: Java Source Editor v1.0.0
 date: 2026-05-23
 authors: [anton]
 tags: [desktop]
