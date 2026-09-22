@@ -2,11 +2,29 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://grauds.github.io/clematis.doc/blog</id>
     <title>Clematis Explained Blog</title>
-    <updated>2026-08-21T00:00:00.000Z</updated>
+    <updated>2026-09-22T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://grauds.github.io/clematis.doc/blog"/>
     <subtitle>Clematis Explained Blog</subtitle>
     <icon>https://grauds.github.io/clematis.doc/img/clematis_small.svg</icon>
+    <entry>
+        <title type="html"><![CDATA[Clematis Desktop Visual XML Editor]]></title>
+        <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-xed</id>
+        <link href="https://grauds.github.io/clematis.doc/blog/clematis-desktop-xed"/>
+        <updated>2026-09-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A simple visual XML editor plugin for Clematis Desktop to make a fragment of formatted text]]></summary>
+        <content type="html"><![CDATA[<p>A simple visual XML editor plugin for Clematis Desktop to make a fragment of formatted text
+backed up by XML document structure.</p>
+<img src="https://grauds.github.io/clematis.doc/assets/images/desktop_xed-e4b0aac1fdccb40ec120f258f8ecb79a.png" width="530px">
+<p>Repository: <a href="https://github.com/grauds/clematis.desktop.xed" target="_blank" rel="noopener noreferrer" class="">https://github.com/grauds/clematis.desktop.xed</a></p>
+<p>Use this link to download the release 1.0.0 in the Clematis Java Workspace plugins installer:
+<a href="https://github.com/grauds/clematis.desktop.xed/releases/download/v1_0_0/xed_1_0_0.jar" target="_blank" rel="noopener noreferrer" class="">https://github.com/grauds/clematis.desktop.xed/releases/download/v1_0_0/xed_1_0_0.jar</a></p>]]></content>
+        <author>
+            <name>Anton Troshin</name>
+            <uri>https://github.com/grauds</uri>
+        </author>
+        <category label="desktop" term="desktop"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Storage API 1.0.0 is released]]></title>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-storage-api-1-0-0</id>
@@ -120,8 +138,8 @@ fix some rare IO delays.</p>
         <id>https://grauds.github.io/clematis.doc/blog/clematis-desktop-sed</id>
         <link href="https://grauds.github.io/clematis.doc/blog/clematis-desktop-sed"/>
         <updated>2026-05-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Simple Java live compiling source editor plugin for Clematis Desktop,]]></summary>
-        <content type="html"><![CDATA[<p>Simple Java live compiling source editor plugin for Clematis Desktop,
+        <summary type="html"><![CDATA[A simple Java live compiling source editor plugin for Clematis Desktop,]]></summary>
+        <content type="html"><![CDATA[<p>A simple Java live compiling source editor plugin for Clematis Desktop,
 especially useful for offline competitive programming training,
 preparation for live-coding interviews and development of short algorithms
 for your Java applications.</p>
@@ -373,24 +391,5 @@ according to the official <a href="https://angular.dev/update-guide?v=19.0-20.0&
         <category label="typescript" term="typescript"/>
         <category label="maintenance" term="maintenance"/>
         <category label="money-tracker" term="money-tracker"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Zabbix Installed and Configured]]></title>
-        <id>https://grauds.github.io/clematis.doc/blog/zabbix-setup</id>
-        <link href="https://grauds.github.io/clematis.doc/blog/zabbix-setup"/>
-        <updated>2025-08-11T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[The goal is to cut the time spent on maintenance of Java applications and network resources and spare time]]></summary>
-        <content type="html"><![CDATA[<p>The goal is to cut the time spent on maintenance of Java applications and network resources and spare time
-for work and creativity. So Zabbix comes at handy again:</p>
-<ol>
-<li class="">Java Applications Monitoring, the documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/recipe-book/zabbix/jmxmp_setup">ready</a></li>
-<li class="">TrueNAS Monitoring, the documentation is <a class="" href="https://grauds.github.io/clematis.doc/docs/recipe-book/zabbix/truenas_setup">ready</a></li>
-</ol>]]></content>
-        <author>
-            <name>Anton Troshin</name>
-            <uri>https://github.com/grauds</uri>
-        </author>
-        <category label="maintenance" term="maintenance"/>
-        <category label="monitoring" term="monitoring"/>
     </entry>
 </feed>
