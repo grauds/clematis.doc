@@ -164,11 +164,18 @@ artifactory_password=cmVmd...
 The repositories' management is best done in `settings.gradle`, for example:
 
 ```gradle title="settings.gradle"
-dependencyResolutionManagement {
+pluginManagement {
     repositories {
-        // Check if the pipeline explicitly requested Artifactory
         def useArtifactory = System.getenv("USE_ARTIFACTORY") == "true"
         if (useArtifactory) {
+            maven {
+                url "http://192.168.1.174:8082/artifactory/maven-central-proxy"
+                allowInsecureProtocol = true
+                credentials {
+                    username = providers.gradleProperty("artifactory_user").orNull ?: System.getenv("ARTIFACTORY_USER")
+                    password = providers.gradleProperty("artifactory_password").orNull ?: System.getenv("ARTIFACTORY_PASSWORD")
+                }
+            }
             maven {
                 url "http://192.168.1.174:8082/artifactory/gradle-plugins-remote"
                 allowInsecureProtocol = true
@@ -177,8 +184,21 @@ dependencyResolutionManagement {
                     password = providers.gradleProperty("artifactory_password").orNull ?: System.getenv("ARTIFACTORY_PASSWORD")
                 }
             }
+        } else {
+            // Default fallback for local machine dev and GitHub Actions
+            gradlePluginPortal()
+            google()
+        }
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        // Check if the pipeline explicitly requested Artifactory
+        def useArtifactory = System.getenv("USE_ARTIFACTORY") == "true"
+        if (useArtifactory) {
             maven {
-                url = System.getenv("ARTIFACTORY_MAVEN_URL")
+                url "http://192.168.1.174:8082/artifactory/maven-central-proxy"
                 allowInsecureProtocol = true
                 credentials {
                     username = providers.gradleProperty("artifactory_user").orNull ?: System.getenv("ARTIFACTORY_USER")
