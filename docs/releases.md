@@ -11,12 +11,13 @@ A list of latest releaseas and packages for Clematis projects:
 
 | Module Name | Version | Release | Package Links |
 | :--- | :--- | :--- | :--- |
+| **Commons Spring Library** | `1.0.0-SNAPSHOT` | *N/A* | [Package](https://github.com/grauds/clematis.commons.spring/packages/3319380) |
+| **Storage API Client** | `1.1.0` | [v1_1_0](https://github.com/grauds/clematis.storage.api.client/releases/tag/v1_1_0) | [Core Jar](https://github.com/grauds/clematis.storage.api.client/packages/2734782) \| [Spring Boot 2 Jar](https://github.com/grauds/clematis.storage.api.client/packages/3066820) |
 | **Java Workspace** | `2.0.2` | [v2.0.2](https://github.com/grauds/clematis.desktop/releases/tag/v2.0.2) | [Core Jar](https://github.com/grauds/clematis.desktop/packages/3033179) \| [Core API Jar](https://github.com/grauds/clematis.desktop/packages/3033845) \| [UI API](https://github.com/grauds/clematis.desktop/packages/3033137) \| [Widgets](https://github.com/grauds/clematis.desktop/packages/3033099) |
 | **Kiwi Library** | `2.5.0-SNAPSHOT` | *N/A* | [Package](https://github.com/grauds/clematis.desktop/packages/3033095) |
 | **Math Parser** | `1.0.0` | [v1_0_0](https://github.com/grauds/clematis.math.parser/releases/tag/v1_0_0) | [Package](https://github.com/grauds/clematis.math.parser/packages/3319378?version=1.0.0) |
-| **Commons Spring Library** | `1.0.0-SNAPSHOT` | *N/A* | [Package](https://github.com/grauds/clematis.commons.spring/packages/3319380) |
-| **Storage API Client** | `1.0.3.1` | [v_1_0_3_0](https://github.com/grauds/clematis.storage.api.client/releases/tag/v_1_0_3_0) | [Core Jar](https://github.com/grauds/clematis.storage.api.client/packages/2734782) \| [Spring Boot 2 Jar](https://github.com/grauds/clematis.storage.api.client/packages/3066820) |
-
+| **Code Editor Plugin for Clematis Java Workspace** | `1.0.1` | [v1_0_1](https://github.com/grauds/clematis.desktop.sed/releases/tag/v1_0_1) | [Package](https://github.com/grauds/clematis.desktop.sed/packages/3264612)
+| **Visual XML Editor Plugin for Clematis Java Workspace** | `1.0.0` | [v1_0_0](https://github.com/grauds/clematis.desktop.xed/releases/tag/v1_0_0) | [Package](https://github.com/grauds/clematis.desktop.xed/packages/3264501)
 ---
 
 ## Dependency Configurations
@@ -272,6 +273,27 @@ Repo: https://github.com/grauds/clematis.math.parser
   </TabItem>
 </Tabs>
 
+### Code Editor Plugin for Clematis Java Workspace
+
+Repo: https://github.com/grauds/clematis.desktop.sed
+```xml
+<dependency>
+  <groupId>org.clematis.desktop</groupId>
+  <artifactId>sed</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
+Repo: https://github.com/grauds/clematis.desktop.xed
+### Visual XML Editor Plugin for Clematis Java Workspace
+
+```xml
+<dependency>
+  <groupId>org.clematis.desktop</groupId>
+  <artifactId>xed</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
 ### Commons Spring Library
 
 Repo: https://github.com/grauds/clematis.commons.spring
@@ -309,7 +331,7 @@ Repo: https://github.com
   <dependency>
     <groupId>org.clematis.storage</groupId>
     <artifactId>storage-api-client</artifactId>
-    <version>1.0.3.1</version>
+    <version>1.1.0</version>
   </dependency>
   ```
 
@@ -317,7 +339,7 @@ Repo: https://github.com
   <TabItem value="gradle" label="Gradle (Groovy)">
 
   ```groovy
-  implementation 'org.clematis.storage:storage-api-client:1.0.3.1'
+  implementation 'org.clematis.storage:storage-api-client:1.1.0'
   ```
 
   </TabItem>
@@ -331,7 +353,7 @@ Repo: https://github.com
   <dependency>
     <groupId>org.clematis.storage</groupId>
     <artifactId>storage-api-client-spring2</artifactId>
-    <version>1.0.3.1</version>
+    <version>1.1.0</version>
   </dependency>
   ```
 
@@ -339,7 +361,7 @@ Repo: https://github.com
   <TabItem value="gradle" label="Gradle (Groovy)">
 
   ```groovy
-  implementation 'org.clematis.storage:storage-api-client-spring2:1.0.3.1'
+  implementation 'org.clematis.storage:storage-api-client-spring2:1.1.0'
   ```
 
   </TabItem>
